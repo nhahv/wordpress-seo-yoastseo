@@ -1,19 +1,22 @@
 {
-  "name": "yoastseo",
+  "name": "@nhahv/wordpress-seo-yoastseo",
   "description": "Yoast clientside page analysis",
   "homepage": "https://github.com/Yoast/",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "keywords": [
     "Yoast",
     "SEO",
     "text analysis"
   ],
   "main": "index.js",
+  "types": "types/index.d.ts",
   "license": "GPL-3.0",
   "version": "1.91.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Yoast/javascript.git",
-    "directory": "packages/yoastseo"
+    "url": "https://github.com/nhahv/wordpress-seo-yoastseo.git"
   },
   "scripts": {
     "start": "npm start --prefix examples/webpack",
@@ -36,6 +39,7 @@
     "babel-core": "^6.26.0",
     "babel-jest": "^23.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-es2017": "^6.24.1",
     "babel-register": "^6.16.3",
