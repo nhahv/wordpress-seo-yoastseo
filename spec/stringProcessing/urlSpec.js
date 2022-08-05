@@ -1,4 +1,4 @@
-import url from "../../src/stringProcessing/url";
+import url from "../../src/stringProcessing/urlUtils";
 
 describe( "A URL helper", function() {
 	describe( "removeHash", function() {

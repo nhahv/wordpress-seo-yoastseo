@@ -8,7 +8,7 @@ import findKeywordInUrl from "../stringProcessing/findKeywordInUrl.js";
 import getAnchors from "../stringProcessing/getAnchorsFromText.js";
 import getLinkType from "../stringProcessing/getLinkType.js";
 import matchTextWithArray from "../stringProcessing/matchTextWithArray";
-import urlHelper from "../stringProcessing/url.js";
+import urlHelper from "../stringProcessing/urlUtils";
 
 import { flatten } from "lodash-es";
 import { uniq } from "lodash-es";
@@ -21,10 +21,10 @@ import { uniq } from "lodash-es";
  *
  * @returns {boolean} Whether the anchor is pointing at itself.
  */
-const linkToSelf = function( anchor, permalink ) {
-	const anchorLink = urlHelper.getFromAnchorTag( anchor );
+const linkToSelf = function (anchor, permalink) {
+	const anchorLink = urlHelper.getFromAnchorTag(anchor);
 
-	return urlHelper.areEqual( anchorLink, permalink );
+	return urlHelper.areEqual(anchorLink, permalink);
 };
 
 /**
@@ -34,14 +34,14 @@ const linkToSelf = function( anchor, permalink ) {
  *
  * @returns {Array} The array of all anchors that are not pointing at the paper itself.
  */
-const filterAnchorsLinkingToSelf = function( anchors, permalink ) {
-	const anchorsLinkingToSelf = anchors.map( function( anchor ) {
-		return linkToSelf( anchor, permalink );
-	} );
+const filterAnchorsLinkingToSelf = function (anchors, permalink) {
+	const anchorsLinkingToSelf = anchors.map(function (anchor) {
+		return linkToSelf(anchor, permalink);
+	});
 
-	anchors = anchors.filter( function( anchor, index ) {
-		return anchorsLinkingToSelf[ index ] === false;
-	} );
+	anchors = anchors.filter(function (anchor, index) {
+		return anchorsLinkingToSelf[index] === false;
+	});
 
 	return anchors;
 };
@@ -54,13 +54,13 @@ const filterAnchorsLinkingToSelf = function( anchors, permalink ) {
  *
  * @returns {Array} The array of all anchors that contain keyphrase or synonyms.
  */
-const filterAnchorsContainingTopic = function( anchors, topicForms, locale ) {
-	const anchorsContainingKeyphraseOrSynonyms = anchors.map( function( anchor ) {
-		return findKeywordInUrl( anchor, topicForms, locale );
-	} );
-	anchors = anchors.filter( function( anchor, index ) {
-		return anchorsContainingKeyphraseOrSynonyms[ index ] === true;
-	} );
+const filterAnchorsContainingTopic = function (anchors, topicForms, locale) {
+	const anchorsContainingKeyphraseOrSynonyms = anchors.map(function (anchor) {
+		return findKeywordInUrl(anchor, topicForms, locale);
+	});
+	anchors = anchors.filter(function (anchor, index) {
+		return anchorsContainingKeyphraseOrSynonyms[index] === true;
+	});
 
 	return anchors;
 };
@@ -73,36 +73,36 @@ const filterAnchorsContainingTopic = function( anchors, topicForms, locale ) {
  *
  * @returns {Array} The array of all anchors contained in the keyphrase or synonyms.
  */
-const filterAnchorsContainedInTopic = function( anchors, topicForms, locale ) {
+const filterAnchorsContainedInTopic = function (anchors, topicForms, locale) {
 	// Prepare keyphrase and synonym forms for comparison with anchors.
-	const keyphraseAndSynonymsWords = [ flatten( topicForms.keyphraseForms ) ];
+	const keyphraseAndSynonymsWords = [flatten(topicForms.keyphraseForms)];
 	const synonymsForms = topicForms.synonymsForms;
-	for ( let i = 0; i < synonymsForms.length; i++ ) {
-		keyphraseAndSynonymsWords.push( flatten( synonymsForms[ i ] ) );
+	for (let i = 0; i < synonymsForms.length; i++) {
+		keyphraseAndSynonymsWords.push(flatten(synonymsForms[i]));
 	}
 
-	const language = getLanguage( locale );
+	const language = getLanguage(locale);
 	const anchorsContainedInTopic = [];
 
-	anchors.forEach( function( currentAnchor ) {
+	anchors.forEach(function (currentAnchor) {
 		// Get single words from the anchor.
-		let anchorWords = uniq( getWords( currentAnchor ) );
+		let anchorWords = uniq(getWords(currentAnchor));
 
 		// Filter function words out of the anchor text.
-		anchorWords = filterFunctionWordsFromArray( anchorWords, language );
+		anchorWords = filterFunctionWordsFromArray(anchorWords, language);
 
 		// Check if anchorWords are contained in the topic phrase words
-		for ( let i = 0; i < keyphraseAndSynonymsWords.length; i++ ) {
-			if ( anchorWords.every( anchorWord => matchTextWithArray( anchorWord, keyphraseAndSynonymsWords[ i ], locale ).count > 0 ) ) {
-				anchorsContainedInTopic.push( true );
+		for (let i = 0; i < keyphraseAndSynonymsWords.length; i++) {
+			if (anchorWords.every(anchorWord => matchTextWithArray(anchorWord, keyphraseAndSynonymsWords[i], locale).count > 0)) {
+				anchorsContainedInTopic.push(true);
 				break;
 			}
 		}
-	} );
+	});
 
-	anchors = anchors.filter( function( anchor, index ) {
-		return anchorsContainedInTopic[ index ] === true;
-	} );
+	anchors = anchors.filter(function (anchor, index) {
+		return anchorsContainedInTopic[index] === true;
+	});
 
 	return anchors;
 };
@@ -117,33 +117,33 @@ const filterAnchorsContainedInTopic = function( anchors, topicForms, locale ) {
  *
  * @returns {Object} How many anchors contained the keyphrase or synonyms, what are these anchors
  */
-const keywordInAnchor = function( paper, researcher, anchors, permalink ) {
+const keywordInAnchor = function (paper, researcher, anchors, permalink) {
 	const result = { totalKeyword: 0, matchedAnchors: [] };
 
 	const keyword = paper.getKeyword();
 
 	// If no keyword is set, return empty result.
-	if ( keyword === "" ) {
+	if (keyword === "") {
 		return result;
 	}
 
 	// Filter out anchors that point at the paper itself.
-	anchors = filterAnchorsLinkingToSelf( anchors, permalink );
-	if ( anchors.length === 0 ) {
+	anchors = filterAnchorsLinkingToSelf(anchors, permalink);
+	if (anchors.length === 0) {
 		return result;
 	}
 
 	const locale = paper.getLocale();
-	const topicForms = researcher.getResearch( "morphology" );
+	const topicForms = researcher.getResearch("morphology");
 
 	// Check if any anchors contain keyphrase or synonyms in them.
-	anchors = filterAnchorsContainingTopic( anchors, topicForms, locale );
-	if ( anchors.length === 0 ) {
+	anchors = filterAnchorsContainingTopic(anchors, topicForms, locale);
+	if (anchors.length === 0) {
 		return result;
 	}
 
 	// Check if content words from the anchors are all within the keyphrase or the synonyms.
-	anchors = filterAnchorsContainedInTopic( anchors, topicForms, locale );
+	anchors = filterAnchorsContainedInTopic(anchors, topicForms, locale);
 	result.totalKeyword = anchors.length;
 	result.matchedAnchors = anchors;
 
@@ -172,8 +172,8 @@ const keywordInAnchor = function( paper, researcher, anchors, permalink ) {
  * otherDofollow: other links without a nofollow attribute.
  * otherNofollow: other links with a nofollow attribute.
  */
-const countLinkTypes = function( paper, researcher ) {
-	const anchors = getAnchors( paper.getText() );
+const countLinkTypes = function (paper, researcher) {
+	const anchors = getAnchors(paper.getText());
 	const permalink = paper.getPermalink();
 
 	const linkCount = {
@@ -194,17 +194,17 @@ const countLinkTypes = function( paper, researcher ) {
 		otherNofollow: 0,
 	};
 
-	for ( let i = 0; i < anchors.length; i++ ) {
-		const currentAnchor = anchors[ i ];
+	for (let i = 0; i < anchors.length; i++) {
+		const currentAnchor = anchors[i];
 
-		const linkType = getLinkType( currentAnchor, permalink );
-		const linkFollow = checkNofollow( currentAnchor );
+		const linkType = getLinkType(currentAnchor, permalink);
+		const linkFollow = checkNofollow(currentAnchor);
 
-		linkCount[ linkType + "Total" ]++;
-		linkCount[ linkType + linkFollow ]++;
+		linkCount[linkType + "Total"]++;
+		linkCount[linkType + linkFollow]++;
 	}
 
-	const keywordInAnchors = keywordInAnchor( paper, researcher, anchors, permalink );
+	const keywordInAnchors = keywordInAnchor(paper, researcher, anchors, permalink);
 	linkCount.keyword.totalKeyword = keywordInAnchors.totalKeyword;
 	linkCount.keyword.matchedAnchors = keywordInAnchors.matchedAnchors;
 

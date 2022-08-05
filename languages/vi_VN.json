@@ -1,0 +1,366 @@
+{
+    "messages": {
+        "": {
+            "domain": "messages",
+            "lang": "vi-VN",
+            "plural_forms": "nplurals=2; plural=n == 1 ? 0 : 1"
+        },
+        "The copy scores %1$s in the %2$s test, which is considered %3$s to read. %4$s": [
+            "Điểm sao chép %1$s trong bài kiểm tra %2$s, được coi là %3$s để đọc. %4$s"
+        ],
+        "very easy": [
+            "rất dễ"
+        ],
+        "easy": [
+            "dễ"
+        ],
+        "fairly easy": [
+            "khá dễ"
+        ],
+        "ok": [
+            "ok"
+        ],
+        "fairly difficult": [
+            "khá khó"
+        ],
+        "Try to make shorter sentences to improve readability.": [
+            "Cố gắng viết ngắn hơn để cải thiện độ dễ đọc."
+        ],
+        "difficult": [
+            "khó"
+        ],
+        "Try to make shorter sentences, using less difficult words to improve readability.": [
+            "Cố gắng viết các câu ngắn hơn, sử dụng các từ ít khó hiểu để cải thiện độ dễ đọc."
+        ],
+        "very difficult": [
+            "rất khó"
+        ],
+        "None of the paragraphs are too long, which is great.": [
+            "Không có đoạn văn nào quá dài, rất tốt."
+        ],
+        "%1$d of the paragraphs contains more than the recommended maximum of %2$d words. Are you sure all information is about the same topic, and therefore belongs in one single paragraph?": [
+            "%1$d đoạn văn có nhiều hơn khuyến nghị tối đa %2$d từ. Hãy chắc chắn nội dung cùng chủ đề và nó có thuộc một đoạn duy nhất?",
+            "%1$d đoạn văn có nhiều hơn khuyến nghị tối đa %2$d từ. Hãy chắc chắn nội dung cùng chủ đề và nó có thuộc một đoạn duy nhất?"
+        ],
+        "%1$s of the sentences contain %2$spassive voice%3$s, which is less than or equal to the recommended maximum of %4$s.": [
+            "%1$s câu là %2$scâu bị động%3$s, ít hơn hoặc bằng mức khuyến nghị tốt đa %4$s."
+        ],
+        "%1$s of the sentences contain %2$spassive voice%3$s, which is more than the recommended maximum of %4$s. Try to use their active counterparts.": [
+            "%1$s câu là %2$scâu bị động%3$s, nhiều hơn mức khuyến nghị tốt đa %4$s.Hãy cố gắng sử dụng câu chủ động."
+        ],
+        "The text contains %2$d consecutive sentences starting with the same word. Try to mix things up!": [
+            "Nội dung có %2$d câu bắt đầu bằng cùng một từ, hãy đảo chúng lên!",
+            "Nội dung có %1$d trường hợp mà %2$d hay nhiều câu bắt đầu bằng cùng một từ, hãy đảo chúng lên!"
+        ],
+        "The meta description contains no sentences %1$sover %2$s words%3$s.": [
+            "Mô tả không chứa câu nào %1$squá%2$s kí tự%3$s."
+        ],
+        "The meta description contains %1$d sentence %2$sover %3$s words%4$s. Try to shorten this sentence.": [
+            "Mô tả bao gồm %1$d câu %2$squá %3$s từ%4$s. Thử rút gọn hơn.",
+            "Mô tả bao gồm %1$d câu %2$squá %3$s từ%4$s. Thử rút gọn hơn."
+        ],
+        "%1$s of the sentences contain %2$smore than %3$s words%4$s, which is less than or equal to the recommended maximum of %5$s.": [
+            "%1$s của các câu có chứa %2$svượt quá%3$s số từ%4$s, thấp hơn hoặc bằng mức tối đa khuyến nghị là %5$s."
+        ],
+        "%1$s of the sentences contain %2$smore than %3$s words%4$s, which is more than the recommended maximum of %5$s. Try to shorten the sentences.": [
+            "%1$s của các câu có chứa %2$svượt quá%3$s số từ%4$s, dài hơn mức tối đa khuyến nghị là %5$s. Hãy rút gọn câu."
+        ],
+        "Great job with using %1$ssubheadings%2$s!": [
+            "Rất tốt khi sử dụng %1$stiêu đề phụ (Subheading)%2$s!"
+        ],
+        "%1$d section of your text is longer than %2$d words and is not separated by any subheadings. Add %3$ssubheadings%4$s to improve readability.": [
+            "%1$d đoạn của văn bản dài hơn %2$d từ và không được phân tác bởi tiêu đề phụ nào. Thêm %3$stiêu đề phụ (Subheading)%4$s để cải thiện độ dễ đọc.",
+            "%1$d đoạn của văn bản dài hơn %2$d từ và không được phân tác bởi tiêu đề phụ nào. Thêm %3$stiêu đề phụ (Subheading)%4$s để cải thiện độ dễ đọc."
+        ],
+        "You are not using any subheadings, although your text is rather long. Try and add  some %1$ssubheadings%2$s.": [
+            "Không sử dụng bất kỳ tiêu đề phụ nào, cho nên nội dung trông khá dài. Hãy thêm một vài %1$stiêu đề phụ%2$s."
+        ],
+        "You are not using any %1$ssubheadings%2$s, but your text is short enough and probably doesn't need them.": [
+            "Không sử dụng bất kỳ %1$stiêu đề phụ%2$s nào, tuy nhiên nội dung khá ngắn nên có lẽ không cần đến chúng."
+        ],
+        "You have far too little content, please add some content to enable a good analysis.": [
+            "Nội dung khá là ngắn, hãy viết thêm để được phân tích tốt hơn."
+        ],
+        "%1$s of the sentences contain a %2$stransition word%3$s or phrase, which is less than the recommended minimum of %4$s.": [
+            "%1$s của các câu có chứa %2$stừ nối%3$s hoặc cụm từ, ít hơn mức khuyến nghị tối thiểu là %4$s."
+        ],
+        "%1$s of the sentences contain a %2$stransition word%3$s or phrase, which is great.": [
+            "%1$s của các câu có chứa %2$stừ nối%3$s hoặc cụm từ, rất tốt."
+        ],
+        "%1$s of the words contain %2$sover %3$s syllables%4$s, which is less than or equal to the recommended maximum of %5$s.": [
+            "%1$s của các câu có chứa %2$squá %3$s âm tiết%4$s, ít hơn mức khuyến nghị tối thiểu là %5$s."
+        ],
+        "%1$s of the words contain %2$sover %3$s syllables%4$s, which is more than the recommended maximum of %5$s.": [
+            "%1$s của các câu có chứa %2$squá %3$s âm tiết%4$s, nhiều hơn mức khuyến nghị tối đa là %5$s."
+        ],
+        "No %1$sinternal links%2$s appear in this page, consider adding some as appropriate.": [
+            "Không có %1$sliên kết nội bộ%2$s nào, xem xét thêm một số liên kết nội bộ nếu thích hợp."
+        ],
+        "This page has %1$s %2$sinternal link(s)%3$s, all nofollowed.": [
+            "Nội dung có %1$s %2$sliên kết nội bộ%3$s, tất cả đều nofollow."
+        ],
+        "This page has %1$s %2$sinternal link(s)%3$s.": [
+            "Nội dung có %1$s %2$sliên kết nội bộ%3$s."
+        ],
+        "This page has %1$s nofollowed %2$sinternal link(s)%3$s and %4$s normal internal link(s).": [
+            "Nội dung có %1$s nofollowed %2$sliên kết nội bộ%3$s và %4$s liên kết nội bộ thông thường."
+        ],
+        "The focus keyword appears in the %1$sfirst paragraph%2$s of the copy.": [
+            "Từ khóa chính thường xuất hiện ở %1$sđoạn đầu tiên%2$s của nội dung."
+        ],
+        "The focus keyword doesn't appear in the %1$sfirst paragraph%2$s of the copy. Make sure the topic is clear immediately.": [
+            "Từ khóa chính không xuất hiện ở %1$sđoạn đầu tiên%2$s của nội dung. Hãy làm nổi bật chủ đề."
+        ],
+        "No %1$sfocus keyword%2$s was set for this page. If you do not set a focus keyword, no score can be calculated.": [
+            "Không có %1$stừ khóa chính%2$s nào được đặt cho trang. Nếu không đặt từ khóa chính, không thể tính điểm."
+        ],
+        "The %1$skeyphrase%2$s is over 10 words, a keyphrase should be shorter.": [
+            "%1$sChuối từ khóa chính%2$s nhiều hơn 10 từ, chuỗi từ khóa chính nên ngắn hơn."
+        ],
+        "The exact-match %3$skeyword density%4$s is %1$s, which is too low; the focus keyword was found %2$d times.": [
+            "%3$sMật độ từ khóa%4$s chính xác là %1$s, rất thấp, từ khóa chính xuất hiện %2$d lần."
+        ],
+        "The exact-match %3$skeyword density%4$s is %1$s, which is too low; the focus keyword was found %2$d time.": [
+            "%3$sMật độ từ khóa%4$s chính xác là %1$s, rất thấp, từ khóa chính xuất hiện %2$d lần.",
+            "%3$sMật độ từ khóa%4$s chính xác là %1$s, rất thấp, từ khóa chính xuất hiện %2$d lần."
+        ],
+        "The exact-match %3$skeyword density%4$s is %1$s, which is great; the focus keyword was found %2$d time.": [
+            "%3$sMật độ từ khóa%4$s chính xác là %1$s, rất tốt, từ khóa chính xuất hiện %2$d lần.",
+            "%3$sMật độ từ khóa%4$s chính xác là %1$s, rất tốt, từ khóa chính xuất hiện %2$d lần."
+        ],
+        "The exact-match %4$skeyword density%5$s is %1$s, which is over the advised %3$s maximum; the focus keyword was found %2$d time.": [
+            "%4$sMật độ từ khóa%5$s chính xác là %1$s, nhiều hơn khuyến nghị tối đa là %3$s; từ khóa chính xuất hiện %2$d lần.",
+            "%4$sMật độ từ khóa%5$s chính xác là %1$s, nhiều hơn khuyến nghị tối đa là %3$s; từ khóa chính xuất hiện %2$d lần."
+        ],
+        "The exact-match %4$skeyword density%5$s is %1$s, which is way over the advised %3$s maximum; the focus keyword was found %2$d time.": [
+            "%4$sMật độ từ khóa%5$s chính xác là %1$s, nhiều hơn nhiều khuyến nghị tối đa là %3$s; từ khóa chính xuất hiện %2$d lần.",
+            "%4$sMật độ từ khóa%5$s chính xác là %1$s, nhiều hơn nhiều khuyến nghị tối đa là %3$s; từ khóa chính xuất hiện %2$d lần."
+        ],
+        "The focus keyword contains a stop word. This may or may not be wise depending on the circumstances. %1$sLearn more about the stop words%2$s.": [
+            "Từ khóa chính chứa từ dùng. Nó có thể không tốt trong một số hoàn cảnh. %1$sTìm hiểu thêm về từ dừng%2$s.",
+            "Từ khóa chính chứa %3$d từ dùng. Nó có thể không tốt trong một số hoàn cảnh. %1$sTìm hiểu thêm về từ dừng%2$s."
+        ],
+        "Use your keyword or synonyms more often in your text so that we can check %1$skeyword distribution%2$s.": [
+            "Sử dụng từ khóa hoặc từ đồng nghĩa nhiều hơn trong nội dung để có thể kiểm tra %1$smật độ từ khóa%2$s."
+        ],
+        "Large parts of your text do not contain the keyword. Try to %1$sdistribute%2$s the keyword more evenly.": [
+            "Phần lớn nội dung không chứa từ khóa chính. Hãy tăng %1$smật độ%2$s từ khóa chính.",
+            "Phần lớn nội dung không chứa từ khóa chính hoặc các từ đồng nghĩa. Hãy tăng %1$smật độ%2$s của chúng."
+        ],
+        "Some parts of your text do not contain the keyword. Try to %1$sdistribute%2$s the keyword more evenly.": [
+            "Một phần nội dung không chứa từ khóa chính. Hãy tăng %1$smật độ%2$s từ khóa chính.",
+            "Một phần nội dung không chứa từ khóa chính hoặc các từ đồng nghĩa. Hãy tăng %1$smật độ%2$s của chúng."
+        ],
+        "Your keyword is %1$sdistributed%2$s evenly throughout the text. That's great.": [
+            "Từ khóa chính có %1$smật độ%2$s đồng đều trong nội dung. Rất tốt.",
+            "Từ khóa chính và các từ đồng nghĩa có %1$smật độ%2$s đồng đều trong nội dung. Rất tốt."
+        ],
+        "A meta description has been specified, but it %1$sdoes not contain the focus keyword%2$s.": [
+            "Nội dung mô tả meta đã có, nhưng nó %1$skhông chứa từ khóa chính%2$s."
+        ],
+        "No %1$smeta description%2$s has been specified. Search engines will display copy from the page instead.": [
+            "Không có %1$smô tả meta%2$s được thiết lập. Search engine sẽ hiển thị một phần nội dung trên trang để thay thế."
+        ],
+        "The %1$smeta description%2$s is under %3$d characters long. However, up to %4$d characters are available.": [
+            "%1$sMô tả meta%2$s dưới %3$d ký tự. Tuy nhiên, bạn có thể tăng chúng lên %4$d ký tự."
+        ],
+        "The %1$smeta description%2$s is over %3$d characters. Reducing the length will ensure the entire description will be visible.": [
+            "%1$sMô tả meta%2$s nhiều hơn %3$d ký tự. Rút ngắn độ dài để đảm bảo toàn bộ mô tả được hiển thị."
+        ],
+        "The %1$smeta description%2$s has a nice length.": [
+            "%1$sMô tả meta%2$s có độ dài thích hợp."
+        ],
+        "No %1$soutbound links%2$s appear in this page, consider adding some as appropriate.": [
+            "Không có  %1$sliên kết ngoài%2$s trên trang, có thể thêm chúng nếu phù hợp."
+        ],
+        "This page has %1$s %2$soutbound link(s)%3$s, all nofollowed.": [
+            "Nội dung có %1$s %2$sliên kết ngoài%3$s, tất cả đều nofollow."
+        ],
+        "This page has %1$s nofollowed %2$soutbound link(s)%3$s and %4$s normal outbound link(s).": [
+            "Nội dung có %1$s nofollow %2$sliên kết ngoài%3$s và %4$s liên kết ngoài thông thường."
+        ],
+        "This page has %1$s %2$soutbound link(s)%3$s.": [
+            "Nội dung có %1$s %2$sliên kết ngoài%3$s."
+        ],
+        "The %1$sSEO title%2$s is too short. Use the space to add keyword variations or create compelling call-to-action copy.": [
+            "%1$sTiêu đề SEO %2$s quá ngắn. Hãy tận dụng để thêm những từ khóa hoặc câu từ để thu hút người đọc."
+        ],
+        "The %1$sSEO title%2$s has a nice length.": [
+            "%1$sTiêu đề SEO%2$s có độ dài thích hợp."
+        ],
+        "The %1$sSEO title%2$s is wider than the viewable limit.": [
+            "%1$sTiêu đề SEO%2$s có độ dài vượt quá giới hạn."
+        ],
+        "Please create an %1$sSEO title%2$s.": [
+            "Hãy thêm tiêu %1$sTiêu đề SEO%2$s."
+        ],
+        "The focus keyword appears in %1$d (out of %2$d) %3$ssubheadings%4$s in your copy.": [
+            "Từ khóa chính xuất hiện ở %1$d (trên tổng số %2$d) %3$stiêu đề phụ%4$s của nội dung."
+        ],
+        "You have not used the focus keyword in any %1$ssubheading%2$s (such as an H2) in your copy.": [
+            "Từ khóa chính không xuất hiện ở bất kỳ %1$stiêu đề phụ%2$s (ví dụ như H2) nào của nội dung."
+        ],
+        "The text contains %1$d word.": [
+            "Nội dung chứa %1$d từ.",
+            "Nội dung chứa %1$d từ."
+        ],
+        "This is more than or equal to the %2$srecommended minimum%3$s of %4$d word.": [
+            "Dài hơn hoặc bằng %2$sđộ dài tối thiểu%3$s của %4$d từ.",
+            "Dài hơn hoặc bằng %2$sđộ dài tối thiểu%3$s của %4$d từ."
+        ],
+        "This is slightly below the %2$srecommended minimum%3$s of %4$d word. Add a bit more copy.": [
+            "Hơi ít so với %2$sđộ dài tối thiểu%3$s của %4$d từ. Hãy thêm một chút.",
+            "Hơi ít so với %2$sđộ dài tối thiểu%3$s của %4$d từ. Hãy thêm một chút."
+        ],
+        "This is below the %2$srecommended minimum%3$s of %4$d word. Add more content that is relevant for the topic.": [
+            "Khá ít so với %2$sđộ dài tối thiểu%3$s của %4$d từ. Hãy thêm nhiều nội dung liên quan đến chủ đề.",
+            "Khá ít so với %2$sđộ dài tối thiểu%3$s của %4$d từ. Hãy thêm nhiều nội dung liên quan đến chủ đề."
+        ],
+        "This is far below the %2$srecommended minimum%3$s of %4$d word. Add more content that is relevant for the topic.": [
+            "Quá ít so với %2$sđộ dài tối thiểu%3$s của %4$d từ. Hãy thêm nhiều nội dung liên quan đến chủ đề.",
+            "Quá ít so với %2$sđộ dài tối thiểu%3$s của %4$d từ. Hãy thêm nhiều nội dung liên quan đến chủ đề."
+        ],
+        "You're %1$slinking to another page with the focus keyword%2$s you want this page to rank for. Consider changing that if you truly want this page to rank.": [
+            "Bạn đang %1$sliên kết ngoài trang với từ khóa chính%2$s mà bạn muốn xếp hạng tìm kiếm. Xem xét thay đổi nó nếu bạn muốn tăng thứ hạng."
+        ],
+        "No %1$simages%2$s appear in this page, consider adding some as appropriate.": [
+            "Không có %1$shình ảnh%2$s hiển thị trong nội dung, hãy thêm một số hình ảnh nếu thích hợp."
+        ],
+        "The %1$simages%2$s on this page contain alt attributes with the focus keyword.": [
+            "%1$sHình ảnh%2$s trông nội dung có chứa từ khóa chính trong thuộc tính ALT."
+        ],
+        "The %1$simages%2$s on this page do not have alt attributes containing the focus keyword.": [
+            "%1$sHình ảnh%2$s trong nội dung không chứa từ khóa chính trong thuộc tính ALT."
+        ],
+        "The %1$simages%2$s on this page contain alt attributes.": [
+            "%1$sHình ảnh%2$s trong nội dung có thuộc tính ALT."
+        ],
+        "The %1$simages%2$s on this page are missing alt attributes.": [
+            "%1$sHình ảnh%2$s trong nội dung thiếu thuộc tính ALT."
+        ],
+        "The focus keyword '%1$s' does not appear in the %2$sSEO title%3$s.": [
+            "Từ khóa chính '%1$s' không có trong %2$stiêu đề SEO%3$s."
+        ],
+        "The %1$sSEO title%2$s contains the focus keyword, at the beginning which is considered to improve rankings.": [
+            "%1$sTiêu đề SEO%2$s có chứa từ khóa chính ở đầu câu sẽ cải thiện thứ hạng rankings."
+        ],
+        "The %1$sSEO title%2$s contains the focus keyword, but it does not appear at the beginning; try and move it to the beginning.": [
+            "%1$sTiêu đề SEO%2$s có chứa từ khóa chính, nhưng không ở đầu câu; hãy cố gắng cho lên đầu."
+        ],
+        "The focus keyword does not appear in the %1$sURL%2$s for this page. If you decide to rename the URL be sure to check the old URL 301 redirects to the new one!": [
+            "Từ khóa chính không xuất hiện ở %1$sURL%2$s của trang. Nếu bạn quyết định đổi đường dẫn, hãy chắc chắn chuyển hướng 301 đường dẫn cũ sang đường dẫn mới!"
+        ],
+        "The focus keyword appears in the %1$sURL%2$s for this page.": [
+            "Từ khóa chính xuất hiện ở %1$sURL%2$s của trang."
+        ],
+        "The slug for this page is a bit long, consider shortening it.": [
+            "Đường dẫn trang hơi dài một chút, hãy rút ngắn."
+        ],
+        "The slug for this page contains a %1$sstop word%2$s, consider removing it.": [
+            "Đường dẫn trang có chứa %1$stừ dừng%2$s, hãy xem xét bỏ đi.",
+            "Đường dẫn trang có chứa %1$stừ dừng%2$s, hãy xem xét bỏ đi."
+        ],
+        "http://en.wikipedia.org/wiki/Stop_words": [
+            "https://vi.wikipedia.org/wiki/Từ_dừng"
+        ],
+        "An error occurred in the '%1$s' assessment": [
+            "Một lỗi đã xảy ra ở bước kiểm tra '%1$s'"
+        ],
+        "You've %1$snever used this focus keyword before%2$s, very good.": [
+            "Chưa từng sử dụng %1$stừ khóa chính%2$s trước đây, rất tốt."
+        ],
+        "You've used this focus keyword %1$sonce before%2$s. It’s probably a good idea to read about %3$swhy you should not use your focus keyword more than once%4$s.": [
+            "Từ khóa chính đã sử dụng %1$smột lần%2$s trước đây. Nên tham khảo ý kiến %3$stại sao không nên dùng lại từ khóa chính%4$s."
+        ],
+        "You've used this focus keyword %1$s%2$d times before%3$s. It’s probably a good idea to read about %4$swhy you should not use your focus keyword more than once%5$s.": [
+            "Từ khóa chính đã sử dụng %1$s%2$d lần trước đây%3$s. Nên tham khảo ý kiến %4$stại sao không nên dùng lại từ khóa chính%5$s."
+        ],
+        "Feedback": [
+            "Phản hồi"
+        ],
+        "Content optimization: Has feedback": [
+            "Tối ưu hóa nội dung: Cần phản hồi"
+        ],
+        "Bad SEO score": [
+            "Điểm SEO: Thấp"
+        ],
+        "Content optimization: Bad SEO score": [
+            "Tối ưu hóa nội dung: Điểm SEO thấp"
+        ],
+        "Needs improvement": [
+            "Cần cải thiện"
+        ],
+        "OK SEO score": [
+            "Điểm SEO: Khá"
+        ],
+        "Content optimization: OK SEO score": [
+            "Tối ưu hóa nội dung: Điểm SEO khá"
+        ],
+        "OK": [
+            "OK"
+        ],
+        "Good SEO score": [
+            "Điểm SEO: Tốt"
+        ],
+        "Content optimization: Good SEO score": [
+            "Tối ưu hóa nội dung: Điểm SEO tốt"
+        ],
+        "Good": [
+            "Tốt"
+        ],
+        "Marks are disabled in current view": [
+            "Đánh dấu bị tắt trong hiển thị"
+        ],
+        "Mark this result in the text": [
+            "Đánh dấu kết quả này trong nội dung"
+        ],
+        "Remove marks in the text": [
+            "Xóa đánh dấu trong nội dung"
+        ],
+        "Edit snippet": [
+            "Sửa snippet"
+        ],
+        "SEO title": [
+            "Tiêu đề SEO"
+        ],
+        "Slug": [
+            "Đường dẫn"
+        ],
+        "Meta description": [
+            "Meta description"
+        ],
+        "Close snippet editor": [
+            "Đóng cửa sổ"
+        ],
+        "Snippet preview": [
+            "Xem trước đoạn trích"
+        ],
+        "SEO title preview:": [
+            "Xem trước tiêu đề SEO:"
+        ],
+        "Slug preview:": [
+            "Xem trước đường dẫn:"
+        ],
+        "Meta description preview:": [
+            "Xem trước mô tả:"
+        ],
+        "You can click on each element in the preview to jump to the Snippet Editor.": [
+            "Bạn có thể bấm vào mỗi thành phần trong chế độ xem trước để mở công cụ chỉnh sửa Đoạn trích dẫn."
+        ],
+        "Desktop preview": [
+            "Xem thử trên máy tính"
+        ],
+        "Mobile preview": [
+            "Xem thử trên điện thoại"
+        ],
+        "Scroll to see the preview content.": [
+            "Cuộn để xem trước nội dung."
+        ],
+        "Please provide an SEO title by editing the snippet below.": [
+            "Vui lòng nhập tiêu đề SEO bằng cách chỉnh sửa đoạn mã dưới đây."
+        ],
+        "Please provide a meta description by editing the snippet below.": [
+            "Vui lòng cung cấp thẻ mô tả bằng cách sửa đoạn snippet dưới đây."
+        ]
+    }
+}

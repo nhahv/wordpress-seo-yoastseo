@@ -1,6 +1,6 @@
 /** @module stringProcess/getLinkType */
 
-import urlHelper from "./url";
+import urlHelper from "./urlUtils";
 
 /**
  * Determines the type of link.

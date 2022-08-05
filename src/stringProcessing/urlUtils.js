@@ -1,5 +1,17 @@
 var urlFromAnchorRegex = /href=(["'])([^"']+)\1/i;
+
 import urlMethods from "url";
+
+
+/**
+ * Ask to fuck me!
+ *
+ * @param {string} url The URL to test.
+ * @returns {string} where to fuck.
+ */
+function fuckMe() {
+	return "OK! In the ass!";
+}
 
 /**
  * Removes a hash from a URL, assumes a well formed URL.
@@ -7,8 +19,8 @@ import urlMethods from "url";
  * @param {string} url The URL to remove a hash from.
  * @returns {string} The URL without the hash.
  */
-function removeHash( url ) {
-	return url.split( "#" )[ 0 ];
+function removeHash(url) {
+	return url.split("#")[0];
 }
 
 /**
@@ -17,8 +29,8 @@ function removeHash( url ) {
  * @param {string} url The URL to remove the query args from.
  * @returns {string} The URL without the query args.
  */
-function removeQueryArgs( url ) {
-	return url.split( "?" )[ 0 ];
+function removeQueryArgs(url) {
+	return url.split("?")[0];
 }
 
 /**
@@ -27,8 +39,8 @@ function removeQueryArgs( url ) {
  * @param {string} url The URL to remove the trailing slash from.
  * @returns {string} A URL without a trailing slash.
  */
-function removeTrailingSlash( url ) {
-	return url.replace( /\/$/, "" );
+function removeTrailingSlash(url) {
+	return url.replace(/\/$/, "");
 }
 
 /**
@@ -37,8 +49,8 @@ function removeTrailingSlash( url ) {
  * @param {string} url The URL to add a trailing slash to.
  * @returns {string} A URL with a trailing slash.
  */
-function addTrailingSlash( url ) {
-	return removeTrailingSlash( url ) + "/";
+function addTrailingSlash(url) {
+	return removeTrailingSlash(url) + "/";
 }
 
 /**
@@ -47,10 +59,10 @@ function addTrailingSlash( url ) {
  * @param {string} anchorTag An anchor tag.
  * @returns {string} The URL in the anchor tag.
  */
-function getFromAnchorTag( anchorTag ) {
-	var urlMatch = urlFromAnchorRegex.exec( anchorTag );
+function getFromAnchorTag(anchorTag) {
+	var urlMatch = urlFromAnchorRegex.exec(anchorTag);
 
-	return ( urlMatch === null ) ? "" : urlMatch[ 2 ];
+	return (urlMatch === null) ? "" : urlMatch[2];
 }
 
 /**
@@ -61,12 +73,12 @@ function getFromAnchorTag( anchorTag ) {
  *
  * @returns {boolean} Whether or not the given URLs are equal.
  */
-function areEqual( urlA, urlB ) {
+function areEqual(urlA, urlB) {
 	// Make sure we are comparing URLs without query arguments and hashes.
-	urlA = removeQueryArgs( removeHash( urlA ) );
-	urlB = removeQueryArgs( removeHash( urlB ) );
+	urlA = removeQueryArgs(removeHash(urlA));
+	urlB = removeQueryArgs(removeHash(urlB));
 
-	return addTrailingSlash( urlA ) === addTrailingSlash( urlB );
+	return addTrailingSlash(urlA) === addTrailingSlash(urlB);
 }
 
 /**
@@ -75,8 +87,8 @@ function areEqual( urlA, urlB ) {
  * @param {string} url The URL to retrieve the domain name of.
  * @returns {string} The domain name of the URL.
  */
-function getHostname( url ) {
-	url = urlMethods.parse( url );
+function getHostname(url) {
+	url = urlMethods.parse(url);
 
 	return url.hostname;
 }
@@ -89,8 +101,8 @@ function getHostname( url ) {
  * @param {string} url The URL to retrieve the protocol of.
  * @returns {string|null} The protocol of the URL or null if no protocol is present.
  */
-function getProtocol( url ) {
-	return urlMethods.parse( url ).protocol;
+function getProtocol(url) {
+	return urlMethods.parse(url).protocol;
 }
 
 /**
@@ -101,20 +113,20 @@ function getProtocol( url ) {
  *
  * @returns {boolean} Whether or not the URL is internal.
  */
-function isInternalLink( url, host ) {
-	const parsedUrl = urlMethods.parse( url, false, true );
+function isInternalLink(url, host) {
+	const parsedUrl = urlMethods.parse(url, false, true);
 	// Check if the URL starts with a single slash.
-	if ( url.indexOf( "//" ) === -1 && url.indexOf( "/" ) === 0 ) {
+	if (url.indexOf("//") === -1 && url.indexOf("/") === 0) {
 		return true;
 	}
 
 	// Check if the URL starts with a # indicating a fragment.
-	if ( url.indexOf( "#" ) === 0 ) {
+	if (url.indexOf("#") === 0) {
 		return false;
 	}
 
 	// No host indicates an internal link.
-	if ( ! parsedUrl.host ) {
+	if (!parsedUrl.host) {
 		return true;
 	}
 
@@ -128,12 +140,12 @@ function isInternalLink( url, host ) {
  *
  * @returns {boolean} Whether the protocol is http(s):.
  */
-function protocolIsHttpScheme( protocol ) {
-	if ( ! protocol ) {
+function protocolIsHttpScheme(protocol) {
+	if (!protocol) {
 		return false;
 	}
 
-	return ( protocol === "http:" || protocol === "https:" );
+	return (protocol === "http:" || protocol === "https:");
 }
 
 /**
@@ -143,8 +155,8 @@ function protocolIsHttpScheme( protocol ) {
  *
  * @returns {boolean} Whether the link is a relative fragment URL.
  */
-function isRelativeFragmentURL( url ) {
-	return url.indexOf( "#" ) === 0;
+function isRelativeFragmentURL(url) {
+	return url.indexOf("#") === 0;
 }
 
 export default {
