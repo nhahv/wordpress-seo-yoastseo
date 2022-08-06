@@ -34,11 +34,6 @@ module.exports = {
 			{
 				src: "package.json",
 				dest: "dist/",
-				options: {
-					process: function (content, srcpath) {
-						return content.replace(/[sad ]/g, '_');
-					},
-				},
 			},
 			{
 				src: ".babelrc",
