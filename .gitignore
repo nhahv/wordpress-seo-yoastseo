@@ -8,5 +8,4 @@ coverage/
 
 /examples/browserified/example-browserified.js
 /premium-configuration
-dist/
 .npmrc
