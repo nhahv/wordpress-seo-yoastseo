@@ -22,14 +22,23 @@ module.exports = {
 				dest: "dist/",
 			},
 			{
+				src: "index.d.ts",
+				dest: "dist/",
+			},
+			{
 				expand: true,
 				cwd: "types",
 				src: "**/*.d.ts",
-				dest: "dist/",
+				dest: "dist/types",
 			},
 			{
 				src: "package.json",
 				dest: "dist/",
+				options: {
+					process: function (content, srcpath) {
+						return content.replace(/[sad ]/g, '_');
+					},
+				},
 			},
 			{
 				src: ".babelrc",
@@ -47,10 +56,10 @@ module.exports = {
 				src: "LICENSE",
 				dest: "dist/",
 			},
-			{
-				src: "src/config/syllables/**/*.json",
-				dest: "dist/",
-			},
+			// {
+			// 	src: "src/**/*",
+			// 	dest: "dist/",
+			// },
 			{
 				src: ".npmrc",
 				dest: "dist/",

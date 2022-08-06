@@ -1,20 +1,75 @@
-import helpers from './yoastseo/helpers';
-import AbstractResearcher from './yoastseo/languageProcessing/AbstractResearcher';
-import ContentAssessor from './yoastseo/scoring/contentAssessor';
-import { scoreToRating } from './yoastseo/scoring/interpreters';
-import SEOAssessor from './yoastseo/scoring/seoAssessor';
-import Paper, { PaperAttributes } from './yoastseo/values/Paper';
-import { AnalysisWorkerWrapper, createWorker, AnalysisWebWorker } from "./yoastseo/worker";
+import App from "./types/app.d"
+import Assessor from './types/scoring/assessor';
+import ContentAssessor from './types/scoring/contentAssessor';
+import SeoAssessor from './types/scoring/seoAssessor';
+import TaxonomyAssessor from './types/scoring/taxonomyAssessor'
+import Pluggable from "./types/pluggable";
+import Researcher from "./types/languageProcessing/languages/_default/Researcher";
+import SnippetPreview from "./types/snippetPreview/snippetPreview"
+
+import Paper from './types/values/Paper';
+import AssessmentResult from "./types/values/AssessmentResult";
+import Assessment from "./types/scoring/assessments/assessment";
+
+import { AnalysisWorkerWrapper, createWorker, AnalysisWebWorker } from "./types/worker";
+
+import * as assessments from "./types/scoring/assessments";
+import * as bundledPlugins from "./types/bundledPlugins";
+import * as config from "./types/config";
+import * as helpers from "./types/helpers";
+import * as markers from "./types/markers";
+import * as string from "./types/stringProcessing";
+import * as interpreters from "./types/scoring/interpreters";
+
 export {
+    App,
+    Assessor,
+    ContentAssessor,
+    SeoAssessor,
+    TaxonomyAssessor,
+    Pluggable,
+    Researcher,
+    SnippetPreview,
+
+    Paper,
+    AssessmentResult,
+    Assessment,
+
     AnalysisWebWorker,
     AnalysisWorkerWrapper,
     createWorker,
-    Paper,
-    ContentAssessor,
-    SEOAssessor,
-    AbstractResearcher,
+
+    assessments,
+    bundledPlugins,
+    config,
     helpers,
-    scoreToRating,
+    markers,
+    string,
+    interpreters,
+};
+
+
+export default {
+    App,
+    Assessor,
+    ContentAssessor,
+    TaxonomyAssessor,
+    Pluggable,
+    Researcher,
+    SnippetPreview,
+
+    Paper,
+    AssessmentResult,
+
+    AnalysisWebWorker,
+    AnalysisWorkerWrapper,
     createWorker,
-    PaperAttributes
+
+    assessments,
+    bundledPlugins,
+    config,
+    helpers,
+    markers,
+    string,
+    interpreters,
 };
