@@ -56,10 +56,10 @@ module.exports = {
 				src: "LICENSE",
 				dest: "dist/",
 			},
-			// {
-			// 	src: "src/**/*",
-			// 	dest: "dist/",
-			// },
+			{
+				src: "src/config/syllables/**/*.json",
+				dest: "dist/",
+			},
 			{
 				src: ".npmrc",
 				dest: "dist/",
