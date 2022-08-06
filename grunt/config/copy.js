@@ -58,6 +58,10 @@ module.exports = {
 			{
 				src: ".npmrc",
 				dest: "dist/",
+			},
+			{
+				src: "languages/**/*.json",
+				dest: "dist/",
 			}
 		],
 	},
