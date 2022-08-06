@@ -29,7 +29,7 @@ declare class KeywordDensityAssessment extends Assessment {
      *
      * @returns {void}
      */
-    constructor(config?: any);
+    constructor(config?: Object);
     identifier: string;
     _config: any;
     /**
@@ -96,7 +96,7 @@ declare class KeywordDensityAssessment extends Assessment {
      *
      * @returns {Object} The object with calculated score and resultText.
      */
-    calculateResult(i18n: Jed): any;
+    calculateResult(i18n: Jed): Object;
     /**
      * Marks keywords in the text for the keyword density assessment.
      *
@@ -106,4 +106,3 @@ declare class KeywordDensityAssessment extends Assessment {
 }
 import Assessment from "../../assessment";
 import AssessmentResult from "../../values/AssessmentResult";
-//# sourceMappingURL=KeywordDensityAssessment.d.ts.map

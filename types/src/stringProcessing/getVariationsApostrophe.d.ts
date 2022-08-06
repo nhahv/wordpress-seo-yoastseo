@@ -15,4 +15,3 @@ export function getVariationsApostrophe(word: string): any[];
  * @returns {Array} Original array with normalized and non-normalized apostrophes switched.
  */
 export function getVariationsApostropheInArray(forms: any[]): any[];
-//# sourceMappingURL=getVariationsApostrophe.d.ts.map

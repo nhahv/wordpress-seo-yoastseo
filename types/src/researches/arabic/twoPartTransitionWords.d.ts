@@ -4,4 +4,3 @@
  * @returns {Array}                     The array filled with two-part transition words.
  */
 export default function _default(): any[];
-//# sourceMappingURL=twoPartTransitionWords.d.ts.map

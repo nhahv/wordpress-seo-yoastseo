@@ -34,7 +34,7 @@ declare class PaperParser {
      *
      * @returns {Object} The metaData.
      */
-    constructMetaData(paper: Paper): any;
+    constructMetaData(paper: Paper): Object;
     /**
      * Sets a metaData modifying function behind a function name on the internal metaDataModifiers object.
      *
@@ -53,7 +53,6 @@ declare class PaperParser {
      *
      * @returns {Object} A modified metaData object.
      */
-    runMetaDataModifiers(metaData: any, paper: Paper): any;
+    runMetaDataModifiers(metaData: Object, paper: Paper): Object;
 }
 import ParsedPaper from "../ParsedPaper";
-//# sourceMappingURL=PaperParser.d.ts.map

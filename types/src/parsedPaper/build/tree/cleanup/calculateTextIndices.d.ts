@@ -9,4 +9,3 @@ export default calculateTextIndices;
  * @private
  */
 declare function calculateTextIndices(node: any): void;
-//# sourceMappingURL=calculateTextIndices.d.ts.map

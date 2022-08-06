@@ -7,4 +7,3 @@
  * @returns {string} The text with all list structures removed.
  */
 export function mergeListItems(text: string): string;
-//# sourceMappingURL=mergeListItems.d.ts.map

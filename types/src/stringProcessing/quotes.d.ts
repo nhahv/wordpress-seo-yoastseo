@@ -26,4 +26,3 @@ declare function normalizeDoubleQuotes(text: string): string;
  */
 declare function normalizeQuotes(text: string): string;
 export { normalizeSingleQuotes as normalizeSingle, normalizeDoubleQuotes as normalizeDouble, normalizeQuotes as normalize };
-//# sourceMappingURL=quotes.d.ts.map

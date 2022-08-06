@@ -26,7 +26,7 @@ declare class Node {
      *
      * @abstract
      */
-    constructor(type: string, sourceCodeLocation: any | null);
+    constructor(type: string, sourceCodeLocation: Object | null);
     /**
      * Type of node (unique for each child class of Node).
      * @type {string}
@@ -56,7 +56,7 @@ declare class Node {
      *
      * @returns {void}
      */
-    setResearchResult(researchName: string, researchResult: any): void;
+    setResearchResult(researchName: string, researchResult: Object): void;
     /**
      * Returns the research result for the research with the given name.
      *
@@ -64,7 +64,7 @@ declare class Node {
      *
      * @returns {Object|null} The stored results, or null if not found.
      */
-    getResearchResult(researchName: string): any | null;
+    getResearchResult(researchName: string): Object | null;
     /**
      * Checks whether results exist for the research with the given name.
      *
@@ -109,4 +109,3 @@ declare class Node {
     toString(indentation?: number | string): string;
 }
 import SourceCodeLocation from "../SourceCodeLocation";
-//# sourceMappingURL=Node.d.ts.map

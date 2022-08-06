@@ -8,4 +8,3 @@
  * @returns {[string]} The sentences with marks.
  */
 export function markWordsInSentences(wordsToMark: [string], sentences: [string], locale: string): [string];
-//# sourceMappingURL=markWordsInSentences.d.ts.map

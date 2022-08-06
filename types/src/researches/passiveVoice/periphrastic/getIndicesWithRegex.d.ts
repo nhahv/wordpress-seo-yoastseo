@@ -6,4 +6,3 @@
  * @returns {Array} The list of result objects.
  */
 export default function _default(sentencePart: string, regex: RegExp): any[];
-//# sourceMappingURL=getIndicesWithRegex.d.ts.map

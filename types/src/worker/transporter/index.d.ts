@@ -5,4 +5,3 @@ declare namespace _default {
 export default _default;
 import parse from "./parse";
 import serialize from "./serialize";
-//# sourceMappingURL=index.d.ts.map

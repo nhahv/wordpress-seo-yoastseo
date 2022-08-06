@@ -4,4 +4,3 @@
  * @returns {number} Rounded number
  */
 export default function _default(number: number): number;
-//# sourceMappingURL=formatNumber.d.ts.map

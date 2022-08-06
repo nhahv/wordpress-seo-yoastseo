@@ -3,5 +3,4 @@
  *
  * @returns {Object} An object with basic word form creation functions for multiple languages.
  */
-export default function _default(): any;
-//# sourceMappingURL=getBasicWordForms.d.ts.map
+export default function _default(): Object;

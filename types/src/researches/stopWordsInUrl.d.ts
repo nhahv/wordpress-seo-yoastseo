@@ -8,4 +8,3 @@
  * @deprecated since 1.48
  */
 export default function _default(paper: Paper): any[];
-//# sourceMappingURL=stopWordsInUrl.d.ts.map

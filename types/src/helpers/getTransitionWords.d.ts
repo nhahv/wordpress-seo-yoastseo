@@ -5,5 +5,4 @@
  *
  * @returns {Object} The function words for a locale.
  */
-export default function _default(locale: string): any;
-//# sourceMappingURL=getTransitionWords.d.ts.map
+export default function _default(locale: string): Object;

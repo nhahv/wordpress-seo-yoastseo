@@ -10,4 +10,3 @@ export default getElementContent;
  * @private
  */
 declare function getElementContent(element: any, html: string): string;
-//# sourceMappingURL=getElementContent.d.ts.map

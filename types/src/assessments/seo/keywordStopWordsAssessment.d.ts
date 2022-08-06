@@ -21,6 +21,5 @@ declare function keywordHasStopWordsAssessment(paper: Paper, researcher: Researc
  *
  * @returns {boolean} Returns true if the language is available and the paper has a keyword.
  */
-declare function isApplicable(paper: any): boolean;
+declare function isApplicable(paper: Object): boolean;
 import AssessmentResult from "../../values/AssessmentResult";
-//# sourceMappingURL=keywordStopWordsAssessment.d.ts.map

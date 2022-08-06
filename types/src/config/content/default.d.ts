@@ -33,4 +33,3 @@ declare namespace _default {
     }
 }
 export default _default;
-//# sourceMappingURL=default.d.ts.map

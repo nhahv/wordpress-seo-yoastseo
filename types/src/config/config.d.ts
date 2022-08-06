@@ -7,4 +7,3 @@ declare namespace analyzerConfig {
     const maxUrlLength: number;
     const maxMeta: number;
 }
-//# sourceMappingURL=config.d.ts.map

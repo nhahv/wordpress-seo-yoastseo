@@ -18,4 +18,3 @@ declare class ScoreAggregator {
      */
     aggregate(results: AssessmentResult[]): number;
 }
-//# sourceMappingURL=ScoreAggregator.d.ts.map

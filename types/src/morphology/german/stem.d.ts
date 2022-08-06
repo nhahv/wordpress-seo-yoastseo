@@ -6,5 +6,4 @@
  *
  * @returns {string} The stemmed word.
  */
-export default function stem(morphologyDataVerbs: any, word: string): string;
-//# sourceMappingURL=stem.d.ts.map
+export default function stem(morphologyDataVerbs: Object, word: string): string;

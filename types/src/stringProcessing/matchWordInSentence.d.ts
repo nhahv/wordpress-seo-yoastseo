@@ -18,4 +18,3 @@ export function characterInBoundary(character: string): boolean;
  * @returns {boolean} Whether or not the word is present in the sentence.
  */
 export function isWordInSentence(word: string, sentence: string): boolean;
-//# sourceMappingURL=matchWordInSentence.d.ts.map

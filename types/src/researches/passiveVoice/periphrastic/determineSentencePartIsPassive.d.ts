@@ -5,4 +5,3 @@
  * @returns {boolean} Returns true if the sentence part is passive.
  */
 export default function _default(participles: any[]): boolean;
-//# sourceMappingURL=determineSentencePartIsPassive.d.ts.map

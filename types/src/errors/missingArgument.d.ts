@@ -23,4 +23,3 @@ declare class MissingArgumentError {
     name: string;
     message: string;
 }
-//# sourceMappingURL=missingArgument.d.ts.map

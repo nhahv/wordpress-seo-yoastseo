@@ -5,5 +5,4 @@
  *
  * @returns {Object} The configuration object.
  */
-export default function _default(locale: string): any;
-//# sourceMappingURL=combinedConfig.d.ts.map
+export default function _default(locale: string): Object;

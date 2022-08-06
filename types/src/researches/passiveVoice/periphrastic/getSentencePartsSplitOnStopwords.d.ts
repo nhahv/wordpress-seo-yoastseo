@@ -8,4 +8,3 @@ export default splitSentence;
  * @returns {Array}             The array with sentence parts.
  */
 declare function splitSentence(sentence: string, language: string): any[];
-//# sourceMappingURL=getSentencePartsSplitOnStopwords.d.ts.map

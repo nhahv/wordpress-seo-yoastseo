@@ -17,7 +17,7 @@ export default _default;
  *
  * @returns {ProminentWord[]} All prominent words sorted and filtered for this text.
  */
-export function getProminentWords(text: string, abbreviations: string[], language: string, morphologyData: any): ProminentWord[];
+export function getProminentWords(text: string, abbreviations: string[], language: string, morphologyData: Object): ProminentWord[];
 /**
  * Gets prominent words from keyphrase and synonyms, metadescription, title, and subheadings.
  *
@@ -28,7 +28,7 @@ export function getProminentWords(text: string, abbreviations: string[], languag
  *
  * @returns {ProminentWord[]} Prominent words from the paper attributes.
  */
-export function getProminentWordsFromPaperAttributes(attributes: string[], abbreviations: string[], language: string, morphologyData: any): ProminentWord[];
+export function getProminentWordsFromPaperAttributes(attributes: string[], abbreviations: string[], language: string, morphologyData: Object): ProminentWord[];
 /**
  * Returns only those prominent words that occur more than a certain number of times and do not consist of special characters.
  *
@@ -63,4 +63,3 @@ export function collapseProminentWordsOnStem(prominentWords: ProminentWord[]): P
  */
 export function retrieveAbbreviations(text: string): string[];
 import ProminentWord from "../values/ProminentWord";
-//# sourceMappingURL=determineProminentWords.d.ts.map

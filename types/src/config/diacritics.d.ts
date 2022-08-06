@@ -4,5 +4,4 @@
  *
  * @returns {array} diacritics map
  */
-export default function _default(): any[];
-//# sourceMappingURL=diacritics.d.ts.map
+export default function _default(): array;

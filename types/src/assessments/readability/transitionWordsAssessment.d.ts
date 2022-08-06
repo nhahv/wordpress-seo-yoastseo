@@ -20,7 +20,7 @@ declare function transitionWordsAssessment(paper: object, researcher: object, i1
  *
  * @returns {boolean} Returns true if the language is available and the paper is not empty.
  */
-declare function isApplicable(paper: any): boolean;
+declare function isApplicable(paper: Object): boolean;
 /**
  * Marks text for the transition words assessment.
  * @param {Paper} paper The paper to use for the marking.
@@ -29,4 +29,3 @@ declare function isApplicable(paper: any): boolean;
  */
 declare function transitionWordsMarker(paper: Paper, researcher: Researcher): Array<Mark>;
 import Mark from "../../values/Mark.js";
-//# sourceMappingURL=transitionWordsAssessment.d.ts.map

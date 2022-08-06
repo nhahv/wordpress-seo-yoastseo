@@ -30,4 +30,3 @@ declare function isApplicable(paper: Paper): boolean;
  */
 declare function wordComplexityMarker(paper: Paper, researcher: Researcher): any[];
 import AssessmentResult from "../../values/AssessmentResult";
-//# sourceMappingURL=wordComplexityAssessment.d.ts.map

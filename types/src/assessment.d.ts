@@ -22,4 +22,3 @@ declare class Assessment {
      */
     isApplicable(paper: Paper): boolean;
 }
-//# sourceMappingURL=assessment.d.ts.map

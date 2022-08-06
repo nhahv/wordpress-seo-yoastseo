@@ -8,4 +8,3 @@
  * @returns {string} The text with the string replaced
  */
 export default function _default(text: string, stringToReplace: string, replacement: string): string;
-//# sourceMappingURL=replaceString.d.ts.map

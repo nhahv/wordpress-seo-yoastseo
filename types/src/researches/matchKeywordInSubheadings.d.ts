@@ -9,5 +9,4 @@
  *
  * @returns {Object} The result object.
  */
-export default function _default(paper: any, researcher: Researcher): any;
-//# sourceMappingURL=matchKeywordInSubheadings.d.ts.map
+export default function _default(paper: Object, researcher: Researcher): Object;

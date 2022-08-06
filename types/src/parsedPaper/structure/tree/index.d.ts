@@ -10,4 +10,3 @@ import { StructuredNode } from "./nodes";
 import TextContainer from "./TextContainer";
 import FormattingElement from "./FormattingElement";
 export { Heading, LeafNode, List, ListItem, MetadataText, MetadataMiscellaneous, Node, Paragraph, StructuredNode, TextContainer, FormattingElement };
-//# sourceMappingURL=index.d.ts.map

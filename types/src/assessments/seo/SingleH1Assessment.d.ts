@@ -11,7 +11,7 @@ declare class singleH1Assessment extends Assessment {
      *
      * @returns {void}
      */
-    constructor(config?: any);
+    constructor(config?: Object);
     identifier: string;
     _config: any;
     /**
@@ -38,7 +38,7 @@ declare class singleH1Assessment extends Assessment {
      *
      * @returns {Object|null} The calculated score and the feedback string.
      */
-    calculateResult(i18n: Jed): any | null;
+    calculateResult(i18n: Jed): Object | null;
     /**
      * Marks all H1s in the body of the text (except at the very beginning,
      * where they are acceptable and don't need to be changed).
@@ -49,4 +49,3 @@ declare class singleH1Assessment extends Assessment {
 }
 import Assessment from "../../assessment.js";
 import AssessmentResult from "../../values/AssessmentResult.js";
-//# sourceMappingURL=SingleH1Assessment.d.ts.map

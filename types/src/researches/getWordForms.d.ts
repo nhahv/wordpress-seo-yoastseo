@@ -9,5 +9,4 @@ export default getWordForms;
  * @returns {Object} Object with an array of keyphrase forms and an array of arrays of synonyms forms, based on the forms
  * found in the text or created forms.
  */
-declare function getWordForms(paper: Paper, researcher: Researcher): any;
-//# sourceMappingURL=getWordForms.d.ts.map
+declare function getWordForms(paper: Paper, researcher: Researcher): Object;

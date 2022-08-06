@@ -6,4 +6,3 @@
  * @returns {string[]} An array of sentence objects.
  */
 export function parseTextIntoSentences(text: string): string[];
-//# sourceMappingURL=parseText.d.ts.map

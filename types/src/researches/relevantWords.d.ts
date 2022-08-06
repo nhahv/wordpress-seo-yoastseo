@@ -9,5 +9,4 @@ export default relevantWords;
  * @returns {boolean}           result.hasMetaDescription  Whether the metadescription is available in the input paper.
  * @returns {boolean}           result.hasTitle            Whether the title is available in the input paper.
  */
-declare function relevantWords(paper: Paper): any;
-//# sourceMappingURL=relevantWords.d.ts.map
+declare function relevantWords(paper: Paper): Object;

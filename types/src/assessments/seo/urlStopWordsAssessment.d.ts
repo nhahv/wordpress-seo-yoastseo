@@ -11,7 +11,7 @@ export default _default;
  *
  * @returns {boolean} Returns true if the language is available.
  */
-declare function isApplicable(paper: any): boolean;
+declare function isApplicable(paper: Object): boolean;
 /**
  * Execute the Assessment and return a result.
  *
@@ -25,4 +25,3 @@ declare function isApplicable(paper: any): boolean;
  */
 declare function urlHasStopWordsAssessment(paper: Paper, researcher: Researcher, i18n: Jed): AssessmentResult;
 import AssessmentResult from "../../values/AssessmentResult";
-//# sourceMappingURL=urlStopWordsAssessment.d.ts.map

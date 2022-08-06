@@ -65,7 +65,7 @@ export default class Scheduler {
         id: number;
         execute: Function;
         done: Function;
-        data: any;
+        data: Object;
         type: string;
     }): void;
     /**
@@ -82,4 +82,3 @@ export default class Scheduler {
     executeNextTask(): Promise<any>;
 }
 import Task from "./Task";
-//# sourceMappingURL=Scheduler.d.ts.map

@@ -60,7 +60,7 @@ declare class SentenceLengthInTextAssessment extends Assessment {
      * @param {array} sentences The sentences to filter through.
      * @returns {array} Array with all the sentences considered to be too long.
      */
-    getTooLongSentences(sentences: any[]): any[];
+    getTooLongSentences(sentences: array): array;
     /**
      * Get the total amount of sentences that are qualified as being too long.
      *
@@ -71,4 +71,3 @@ declare class SentenceLengthInTextAssessment extends Assessment {
 }
 import Assessment from "../../assessment";
 import AssessmentResult from "../../values/AssessmentResult";
-//# sourceMappingURL=sentenceLengthInTextAssessment.d.ts.map

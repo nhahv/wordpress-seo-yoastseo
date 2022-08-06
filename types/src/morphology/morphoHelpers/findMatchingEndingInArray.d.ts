@@ -6,4 +6,3 @@
  * @returns {string}    The longest matched ending.
  */
 export function findMatchingEndingInArray(string: string, endings: string[]): string;
-//# sourceMappingURL=findMatchingEndingInArray.d.ts.map

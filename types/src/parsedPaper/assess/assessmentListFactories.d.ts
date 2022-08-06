@@ -48,4 +48,3 @@ export function constructRelatedKeyphraseAssessments(): any;
  * @memberOf module:parsedPaper/assess
  */
 export function constructRelatedKeyphraseTaxonomyAssessments(): any;
-//# sourceMappingURL=assessmentListFactories.d.ts.map

@@ -40,7 +40,7 @@ export function maximizeSentenceScores(sentenceScores: any[]): any[];
  *
  * @returns {Object} The scores of topic relevance per portion of text and an array of all word forms to highlight.
  */
-export function keyphraseDistributionResearcher(paper: Paper, researcher: Researcher): any;
+export function keyphraseDistributionResearcher(paper: Paper, researcher: Researcher): Object;
 /**
  * Computes the maximally long piece of text that does not include the topic.
  *
@@ -49,4 +49,3 @@ export function keyphraseDistributionResearcher(paper: Paper, researcher: Resear
  * @returns {number} The maximum number of sentences that do not include the topic.
  */
 export function getDistraction(sentenceScores: any[]): number;
-//# sourceMappingURL=keyphraseDistribution.d.ts.map

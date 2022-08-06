@@ -24,4 +24,3 @@ export function isBlockElement(htmlElementName: string): boolean;
 export function isInlineElement(htmlElementName: string): boolean;
 declare const memoizedGetBlocks: any;
 export { memoizedGetBlocks as getBlocks };
-//# sourceMappingURL=html.d.ts.map

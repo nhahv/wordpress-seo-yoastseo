@@ -47,4 +47,3 @@ export function sortIndices(indices: any[]): any[];
  * Returns an empty array if none are found.
  */
 export function getIndicesByWordListSorted(words: any[], text: string): any[];
-//# sourceMappingURL=indices.d.ts.map

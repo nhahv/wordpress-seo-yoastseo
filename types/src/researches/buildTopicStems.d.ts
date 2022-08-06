@@ -11,7 +11,7 @@
  * @returns {TopicPhrase} Object with an array of StemOriginalPairs of all (content) words in the keyphrase or synonym
  * phrase and information about whether the keyphrase/synonym should be matched exactly.
  */
-export function buildStems(keyphrase: string, language: string, morphologyData: any): TopicPhrase;
+export function buildStems(keyphrase: string, language: string, morphologyData: Object): TopicPhrase;
 /**
  * Retrieves stems of words of the keyphrase and of each synonym phrase using the function that caches
  * the results of previous calls of this function.
@@ -23,7 +23,7 @@ export function buildStems(keyphrase: string, language: string, morphologyData: 
  *
  * @returns {Object} Object with an array of stems of words in the keyphrase and an array of arrays of stems of words in the synonyms.
  */
-export function collectStems(keyphrase: string, synonyms: string, language: string, morphologyData: any): any;
+export function collectStems(keyphrase: string, synonyms: string, language: string, morphologyData: Object): Object;
 /**
  * A topic phrase (i.e., a keyphrase or synonym) with stem-original pairs for the words in the topic phrase.
  *
@@ -74,4 +74,3 @@ export class StemOriginalPair {
     stem: string;
     original: string;
 }
-//# sourceMappingURL=buildTopicStems.d.ts.map

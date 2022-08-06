@@ -22,4 +22,3 @@ export default countLinkTypes;
  * otherNofollow: other links with a nofollow attribute.
  */
 declare function countLinkTypes(paper: Paper, researcher: Researcher): object;
-//# sourceMappingURL=getLinkStatistics.d.ts.map

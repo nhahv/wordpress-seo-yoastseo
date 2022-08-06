@@ -62,4 +62,3 @@ declare class Assessment {
      */
     apply(parsedPaper: ParsedPaper): Promise<AssessmentResult>;
 }
-//# sourceMappingURL=Assessment.d.ts.map

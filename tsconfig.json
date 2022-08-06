@@ -1,18 +1,33 @@
 {
     // Change this to match your project
     "include": [
-        "src/**/*"
+        // "src/**/*.js",
+        "src/app.js",
+        "src/assessment.js",
+        "src/assessor.js",
+        "src/contentAssessor.js",
+        "src/pluggable.js",
+        "src/relatedKeywordAssessor.js",
+        "src/relatedKeywordTaxonomyAssessor.js",
+        "src/researcher.js",
+        "src/seoAssessor.js",
+        "src/snippetPreview.js",
+        "src/snippetPreviewToggler.js",
+        "src/taxonomyAssessor.js",
+        "src/templates.js",
     ],
     "compilerOptions": {
         // Tells TypeScript to read JS files, as
         // normally they are ignored as source files
+        "noImplicitAny": true,
         "allowJs": true,
-        "checkJs": true,
+        "checkJs": false,
         "strict": false,
         "target": "ES2018",
         "module": "commonJS",
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
         "lib": [
             "ES2018"
         ],
@@ -25,9 +40,9 @@
         // Types should go into this directory.
         // Removing this would place the .d.ts files
         // next to the .js files
-        "outDir": "dist2",
+        "outDir": "dist",
         // go to js file when using IDE functions like
         // "Go to Definition" in VSCode
-        "declarationMap": true
+        "declarationMap": false
     }
 }

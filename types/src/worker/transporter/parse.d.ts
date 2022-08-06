@@ -6,4 +6,3 @@
  * @returns {*} The parsed data structure.
  */
 export default function parse(thing: any): any;
-//# sourceMappingURL=parse.d.ts.map

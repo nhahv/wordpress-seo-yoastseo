@@ -8,4 +8,3 @@
  * @returns {boolean} Returns true if passive, otherwise returns false.
  */
 export default function _default(sentencePartText: string, sentencePartAuxiliaries: any[], language: string): boolean;
-//# sourceMappingURL=determinePassiveSentencePart.d.ts.map

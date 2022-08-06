@@ -10,4 +10,3 @@ export default cleanUpTree;
  * @private
  */
 declare function cleanUpTree(tree: any): any;
-//# sourceMappingURL=postParsing.d.ts.map

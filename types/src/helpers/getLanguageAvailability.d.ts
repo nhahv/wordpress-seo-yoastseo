@@ -5,5 +5,4 @@
  * @param {array} languages The list of languages to match.
  * @returns {boolean} Returns true if the language is found in the array.
  */
-export default function _default(locale: string, languages: any[]): boolean;
-//# sourceMappingURL=getLanguageAvailability.d.ts.map
+export default function _default(locale: string, languages: array): boolean;

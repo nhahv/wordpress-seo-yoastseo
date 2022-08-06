@@ -23,4 +23,3 @@ export function searchAndReplaceWithRegex(word: string, groupOfRegexAndReplaceme
  * @returns {string} The modified word.
  */
 export function applyAllReplacements(word: string, listOfRegexAndReplacement: string[]): string;
-//# sourceMappingURL=regexHelpers.d.ts.map

@@ -7,4 +7,3 @@
  * @returns {Array} Array with matches, empty array if no matches found.
  */
 export default function _default(text: string, regexString: string): any[];
-//# sourceMappingURL=matchStringWithRegex.d.ts.map

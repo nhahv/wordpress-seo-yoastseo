@@ -6,4 +6,3 @@
  * @returns {String} The text without double spaces
  */
 export default function _default(text: string): string;
-//# sourceMappingURL=stripSpaces.d.ts.map

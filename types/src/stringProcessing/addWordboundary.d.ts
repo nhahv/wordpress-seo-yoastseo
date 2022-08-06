@@ -11,4 +11,3 @@
  * @returns {string} A regex string that matches the matchString with word boundaries.
  */
 export default function _default(matchString: string, positiveLookAhead?: boolean, extraWordBoundary?: string, locale?: string): string;
-//# sourceMappingURL=addWordboundary.d.ts.map

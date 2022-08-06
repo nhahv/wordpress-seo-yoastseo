@@ -6,4 +6,3 @@
  * @returns {string}        Prefixed and de-prefixed variations of a word.
  */
 export function createBasicWordForms(word: string): string;
-//# sourceMappingURL=createBasicWordForms.d.ts.map

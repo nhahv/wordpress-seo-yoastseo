@@ -7,5 +7,4 @@
  *
  * @returns {Array}                         The array with HungarianParticiple Objects.
  */
-export default function _default(sentencePartText: string, auxiliaries: any, language: string): any[];
-//# sourceMappingURL=getParticiples.d.ts.map
+export default function _default(sentencePartText: string, auxiliaries: Object, language: string): any[];

@@ -9,13 +9,13 @@ export default class Shortlinker {
      *
      * @returns {string} URI encoded query string.
      */
-    static createQueryString(params: any): string;
+    static createQueryString(params: Object): string;
     /**
      * Initialize the Shortlinker class.
      *
      * @param {Object} [config={}] Optional configuration.
      */
-    constructor(config?: any);
+    constructor(config?: Object);
     /**
      * Saves the passed configuration.
      *
@@ -25,10 +25,10 @@ export default class Shortlinker {
      * @returns {void}
      */
     configure(config: {
-        params?: any;
+        params?: Object;
     }): void;
     _config: {
-        params: any;
+        params: Object;
     };
     /**
      * Creates a link by combining the params from the config and appending them to the url.
@@ -38,7 +38,7 @@ export default class Shortlinker {
      *
      * @returns {string} The url with query string.
      */
-    append(url: string, params?: any): string;
+    append(url: string, params?: Object): string;
     /**
      * Creates an anchor opening tag; uses the append function to create the url.
      *
@@ -47,6 +47,5 @@ export default class Shortlinker {
      *
      * @returns {string} The anchor opening tag.
      */
-    createAnchorOpeningTag(url: string, params?: any): string;
+    createAnchorOpeningTag(url: string, params?: Object): string;
 }
-//# sourceMappingURL=Shortlinker.d.ts.map

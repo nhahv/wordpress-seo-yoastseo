@@ -13,7 +13,7 @@ declare class UrlKeywordAssessment extends Assessment {
      *
      * @returns {void}
      */
-    constructor(config?: any);
+    constructor(config?: Object);
     identifier: string;
     _config: any;
     /**
@@ -34,8 +34,7 @@ declare class UrlKeywordAssessment extends Assessment {
      *
      * @returns {Object} The object with calculated score and resultText.
      */
-    calculateResult(i18n: Jed): any;
+    calculateResult(i18n: Jed): Object;
 }
 import Assessment from "../../assessment";
 import AssessmentResult from "../../values/AssessmentResult";
-//# sourceMappingURL=UrlKeywordAssessment.d.ts.map

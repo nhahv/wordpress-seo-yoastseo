@@ -5,4 +5,3 @@ declare namespace _default {
     }
 }
 export default _default;
-//# sourceMappingURL=pl.d.ts.map

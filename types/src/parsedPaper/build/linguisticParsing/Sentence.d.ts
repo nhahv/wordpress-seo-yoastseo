@@ -64,4 +64,3 @@ declare class Sentence {
      */
     getEndIndex(): number;
 }
-//# sourceMappingURL=Sentence.d.ts.map

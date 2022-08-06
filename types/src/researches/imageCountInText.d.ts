@@ -5,4 +5,3 @@
  * @returns {number} The amount of found images
  */
 export default function _default(paper: Paper): number;
-//# sourceMappingURL=imageCountInText.d.ts.map

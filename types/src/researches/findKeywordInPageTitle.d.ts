@@ -9,5 +9,4 @@
  *
  * @returns {Object} result with the information on whether the keyphrase was matched in the title and how.
  */
-export default function _default(paper: any, researcher: Researcher): any;
-//# sourceMappingURL=findKeywordInPageTitle.d.ts.map
+export default function _default(paper: Object, researcher: Researcher): Object;

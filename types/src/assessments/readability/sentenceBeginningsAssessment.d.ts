@@ -20,7 +20,7 @@ declare function sentenceBeginningsAssessment(paper: object, researcher: object,
  *
  * @returns {boolean} Returns true if the language is available and the paper is not empty.
  */
-declare function isApplicable(paper: any): boolean;
+declare function isApplicable(paper: Object): boolean;
 /**
  * Marks all consecutive sentences with the same beginnings.
  * @param {object} paper The paper to use for the assessment.
@@ -28,4 +28,3 @@ declare function isApplicable(paper: any): boolean;
  * @returns {object} All marked sentences.
  */
 declare function sentenceBeginningMarker(paper: object, researcher: object): object;
-//# sourceMappingURL=sentenceBeginningsAssessment.d.ts.map

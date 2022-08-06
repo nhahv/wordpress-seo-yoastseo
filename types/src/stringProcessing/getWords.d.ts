@@ -5,4 +5,3 @@
  * @returns {Array} The array with all words.
  */
 export default function _default(text: string): any[];
-//# sourceMappingURL=getWords.d.ts.map

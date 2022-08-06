@@ -8,4 +8,3 @@
  * @returns {string} The text with all special characters replaced.
  */
 export default function _default(text: string, locale: string): string;
-//# sourceMappingURL=transliterateWPstyle.d.ts.map

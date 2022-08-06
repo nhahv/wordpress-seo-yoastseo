@@ -66,4 +66,3 @@ declare class ReadabilityScoreAggregator extends ScoreAggregator {
     locale: string;
 }
 import ScoreAggregator from "./ScoreAggregator";
-//# sourceMappingURL=ReadabilityScoreAggregator.d.ts.map

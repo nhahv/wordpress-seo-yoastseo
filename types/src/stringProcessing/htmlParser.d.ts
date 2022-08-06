@@ -5,4 +5,3 @@
  * @returns {string} The text without the HTML blocks as defined in the inlineTags array.
  */
 export default function _default(text: string): string;
-//# sourceMappingURL=htmlParser.d.ts.map

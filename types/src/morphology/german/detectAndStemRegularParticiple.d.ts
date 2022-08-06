@@ -6,5 +6,4 @@
  *
  * @returns {string} The participle stem or null if no regular participle was matched.
  */
-export function detectAndStemRegularParticiple(morphologyDataVerbs: any, word: string): string;
-//# sourceMappingURL=detectAndStemRegularParticiple.d.ts.map
+export function detectAndStemRegularParticiple(morphologyDataVerbs: Object, word: string): string;

@@ -21,7 +21,7 @@ export default class SubHeadingsKeywordAssessment extends Assessment {
      *
      * @returns {AssessmentResult} The assessment result.
      */
-    getResult(paper: Paper, researcher: Researcher, i18n: any): AssessmentResult;
+    getResult(paper: Paper, researcher: Researcher, i18n: Object): AssessmentResult;
     _subHeadings: any;
     _minNumberOfSubheadings: number;
     _maxNumberOfSubheadings: number;
@@ -75,8 +75,7 @@ export default class SubHeadingsKeywordAssessment extends Assessment {
      *
      * @returns {Object} The object with the calculated score and the result text.
      */
-    calculateResult(i18n: any): any;
+    calculateResult(i18n: Object): Object;
 }
 import Assessment from "../../assessment";
 import AssessmentResult from "../../values/AssessmentResult";
-//# sourceMappingURL=SubHeadingsKeywordAssessment.d.ts.map

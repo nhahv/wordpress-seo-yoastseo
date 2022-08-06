@@ -9,7 +9,7 @@ declare class SubheadingsDistributionTooLong extends Assessment {
      * @param {Object} config The configuration to use.
      * @returns {void}
      */
-    constructor(config?: any);
+    constructor(config?: Object);
     identifier: string;
     _config: any;
     /**
@@ -21,7 +21,7 @@ declare class SubheadingsDistributionTooLong extends Assessment {
      *
      * @returns {AssessmentResult} The assessment result.
      */
-    getResult(paper: Paper, researcher: Researcher, i18n: any): AssessmentResult;
+    getResult(paper: Paper, researcher: Researcher, i18n: Object): AssessmentResult;
     _subheadingTextsLength: any;
     _tooLongTextsNumber: any;
     _hasSubheadings: boolean;
@@ -47,8 +47,7 @@ declare class SubheadingsDistributionTooLong extends Assessment {
      *
      * @returns {Object} The calculated result.
      */
-    calculateResult(i18n: any): any;
+    calculateResult(i18n: Object): Object;
 }
 import Assessment from "../../assessment";
 import AssessmentResult from "../../values/AssessmentResult";
-//# sourceMappingURL=subheadingDistributionTooLongAssessment.d.ts.map

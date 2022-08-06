@@ -4,4 +4,3 @@
  * @returns {number} The amount of words found in the text.
  */
 export default function _default(paper: Paper): number;
-//# sourceMappingURL=wordCountInText.d.ts.map

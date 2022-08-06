@@ -8,4 +8,3 @@
  * @returns {Array} array An array with all matches of the text.
  */
 export default function _default(text: string, array: any[], locale?: string): any[];
-//# sourceMappingURL=matchTextWithArray.d.ts.map

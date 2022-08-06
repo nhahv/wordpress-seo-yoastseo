@@ -8,4 +8,3 @@ export default countSyllablesInText;
  * @returns {int} The total number of syllables found in the text.
  */
 declare function countSyllablesInText(text: string, locale: string): int;
-//# sourceMappingURL=count.d.ts.map

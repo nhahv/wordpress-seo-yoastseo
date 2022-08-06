@@ -97,4 +97,3 @@ declare function protocolIsHttpScheme(protocol: string): boolean;
  * @returns {boolean} Whether the link is a relative fragment URL.
  */
 declare function isRelativeFragmentURL(url: string): boolean;
-//# sourceMappingURL=urlUtils.d.ts.map

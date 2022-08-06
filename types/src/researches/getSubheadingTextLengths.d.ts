@@ -4,4 +4,3 @@
  * @returns {Array} The array with the length of each subheading.
  */
 export default function _default(paper: Paper): any[];
-//# sourceMappingURL=getSubheadingTextLengths.d.ts.map

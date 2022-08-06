@@ -6,4 +6,3 @@
  * @returns {boolean} True if the length is greater than the recommendedValue, false if it is smaller.
  */
 export default function _default(recommendedValue: number, valueLength: number): boolean;
-//# sourceMappingURL=isValueTooLong.d.ts.map

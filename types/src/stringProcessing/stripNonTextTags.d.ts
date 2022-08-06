@@ -5,4 +5,3 @@
  * @returns {string} The text stripped of tags, except for li, p, dd and h1-h6 tags.
  */
 export default function _default(text: string): string;
-//# sourceMappingURL=stripNonTextTags.d.ts.map

@@ -5,4 +5,3 @@
  * @returns {int} The word count of the given text.
  */
 export default function _default(text: string): int;
-//# sourceMappingURL=countWords.d.ts.map

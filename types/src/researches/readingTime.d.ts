@@ -5,4 +5,3 @@
  * @returns {number|null} The expected reading time in minutes or null if we don't have reading time configuration for a given language.
  */
 export default function _default(paper: Paper): number | null;
-//# sourceMappingURL=readingTime.d.ts.map

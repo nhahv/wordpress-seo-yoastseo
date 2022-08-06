@@ -64,13 +64,13 @@ export default class SentenceTokenizer {
      *
      * @returns {boolean} Returns true if the token is valid ending, false if it is not.
      */
-    isSentenceStart(token: any): boolean;
+    isSentenceStart(token: Object): boolean;
     /**
      * Creates a tokenizer.
      *
      * @returns {Object} The tokenizer and the tokens.
      */
-    createTokenizer(): any;
+    createTokenizer(): Object;
     /**
      * Tokenizes the given text using the given tokenizer.
      *
@@ -120,7 +120,6 @@ export default class SentenceTokenizer {
      *
      * @returns {Sentence[]} An array of sentence objects.
      */
-    getSentencesFromTokens(tokenArray: any[]): Sentence[];
+    getSentencesFromTokens(tokenArray: Object[]): Sentence[];
 }
 import Sentence from "./Sentence";
-//# sourceMappingURL=SentenceTokenizer.d.ts.map

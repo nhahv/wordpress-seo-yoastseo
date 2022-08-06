@@ -22,4 +22,3 @@ export default function _default(word: string, regexAdjective: {
     estExceptions: string[];
     lyExceptions: string[];
 }): string;
-//# sourceMappingURL=getAdjectiveStem.d.ts.map

@@ -36,4 +36,3 @@ declare class Research {
      */
     mergeChildrenResults(results: Array<any>): any;
 }
-//# sourceMappingURL=Research.d.ts.map

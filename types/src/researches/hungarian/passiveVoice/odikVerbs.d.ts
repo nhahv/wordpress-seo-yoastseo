@@ -6,4 +6,3 @@ declare namespace _default {
 export default _default;
 declare const odikVerbStems1: string[];
 declare const odikVerbStems2: string[];
-//# sourceMappingURL=odikVerbs.d.ts.map

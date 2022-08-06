@@ -6,4 +6,3 @@
  * @returns {string} The marked text.
  */
 export default function _default(text: string): string;
-//# sourceMappingURL=addMarkSingleWord.d.ts.map

@@ -5,4 +5,3 @@
  * @returns {number} The score of the flesch reading test
  */
 export default function _default(paper: object): number;
-//# sourceMappingURL=calculateFleschReading.d.ts.map

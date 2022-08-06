@@ -6,4 +6,3 @@
  * @returns {*} The serialized data structure.
  */
 export default function serialize(thing: any): any;
-//# sourceMappingURL=serialize.d.ts.map

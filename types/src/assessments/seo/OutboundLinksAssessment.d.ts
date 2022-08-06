@@ -9,7 +9,7 @@ export default class OutboundLinksAssessment extends Assessment {
      *
      * @returns {void}
      */
-    constructor(config?: any);
+    constructor(config?: Object);
     identifier: string;
     _config: any;
     /**
@@ -38,8 +38,7 @@ export default class OutboundLinksAssessment extends Assessment {
      *
      * @returns {string} The translated string.
      */
-    translateScore(linkStatistics: any, i18n: Jed): string;
+    translateScore(linkStatistics: Object, i18n: Jed): string;
 }
 import Assessment from "../../assessment";
 import AssessmentResult from "../../values/AssessmentResult";
-//# sourceMappingURL=OutboundLinksAssessment.d.ts.map

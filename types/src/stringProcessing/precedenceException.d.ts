@@ -10,4 +10,3 @@
  * sentence part before the participle, otherwise returns false.
  */
 export default function _default(sentencePart: string, participleIndex: number, language: string): boolean;
-//# sourceMappingURL=precedenceException.d.ts.map

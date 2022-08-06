@@ -9,7 +9,7 @@ export default _default;
  * @param {array|object|string|number} subject The subject to get the parsed type from.
  * @returns {string} The parsed type name.
  */
-export function getType(subject: any[] | object | string | number): string;
+export function getType(subject: array | object | string | number): string;
 /**
  * Validates the type of subjects. Throws an error if the type is invalid.
  *
@@ -18,4 +18,3 @@ export function getType(subject: any[] | object | string | number): string;
  * @returns {boolean} Returns true if types matches expected type. Otherwise returns false.
  */
 export function isSameType(subject: object, expectedType: string): boolean;
-//# sourceMappingURL=types.d.ts.map

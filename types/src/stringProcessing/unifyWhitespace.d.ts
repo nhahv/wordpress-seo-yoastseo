@@ -24,4 +24,3 @@ export function unifyWhiteSpace(text: string): string;
  * @returns {string} The text with unified spaces.
  */
 export function unifyAllSpaces(text: string): string;
-//# sourceMappingURL=unifyWhitespace.d.ts.map

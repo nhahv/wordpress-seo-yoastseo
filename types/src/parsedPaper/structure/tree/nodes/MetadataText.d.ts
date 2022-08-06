@@ -18,4 +18,3 @@ declare class MetadataText {
     constructor(type?: string, text?: string);
     text: string;
 }
-//# sourceMappingURL=MetadataText.d.ts.map

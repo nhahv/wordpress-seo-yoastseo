@@ -7,5 +7,4 @@
  * @param {string} [extraBoundary] An extra string that can be added to the wordboundary regex
  * @returns {Object} The matches found and the number of matches.
  */
-export default function _default(text: string, wordToMatch: string, locale: string, extraBoundary?: string): any;
-//# sourceMappingURL=matchTextWithWord.d.ts.map
+export default function _default(text: string, wordToMatch: string, locale: string, extraBoundary?: string): Object;

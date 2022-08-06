@@ -5,4 +5,3 @@
  * @returns {Array} The array containing an object with the paragraph word count and paragraph text.
  */
 export default function _default(paper: Paper): any[];
-//# sourceMappingURL=getParagraphLength.d.ts.map

@@ -5,5 +5,4 @@
  *
  * @returns {Array<string>} All German verb prefixes, sorted by length (descending).
  */
-export function allGermanVerbPrefixesSorted(verbPrefixDataGerman: any): Array<string>;
-//# sourceMappingURL=helpers.d.ts.map
+export function allGermanVerbPrefixesSorted(verbPrefixDataGerman: Object): Array<string>;

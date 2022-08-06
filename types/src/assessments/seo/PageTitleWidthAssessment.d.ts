@@ -9,7 +9,7 @@ export default class PageTitleWidthAssessment extends Assessment {
      *
      * @returns {void}
      */
-    constructor(config?: any);
+    constructor(config?: Object);
     identifier: string;
     _config: any;
     /**
@@ -48,4 +48,3 @@ export default class PageTitleWidthAssessment extends Assessment {
 }
 import Assessment from "../../assessment";
 import AssessmentResult from "../../values/AssessmentResult";
-//# sourceMappingURL=PageTitleWidthAssessment.d.ts.map

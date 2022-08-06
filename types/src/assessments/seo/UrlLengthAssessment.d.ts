@@ -12,7 +12,7 @@ declare class UrlLengthAssessment extends Assessment {
      *
      * @deprecated since 1.48. We have removed it from the assessments since we do not consider it an important SEO factor anymore.
      */
-    constructor(config?: any);
+    constructor(config?: Object);
     identifier: string;
     _config: any;
     /**
@@ -45,4 +45,3 @@ declare class UrlLengthAssessment extends Assessment {
 }
 import Assessment from "../../assessment";
 import AssessmentResult from "../../values/AssessmentResult";
-//# sourceMappingURL=UrlLengthAssessment.d.ts.map

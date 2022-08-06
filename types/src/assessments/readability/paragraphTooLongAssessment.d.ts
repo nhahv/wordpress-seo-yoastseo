@@ -29,4 +29,3 @@ declare function isApplicable(paper: Paper): boolean;
  * @returns {Array} An array with marked paragraphs.
  */
 declare function paragraphLengthMarker(paper: object, researcher: object): any[];
-//# sourceMappingURL=paragraphTooLongAssessment.d.ts.map

@@ -3,5 +3,4 @@
  *
  * @returns {Object} Russian function words.
  */
-export default function _default(): any;
-//# sourceMappingURL=functionWords.d.ts.map
+export default function _default(): Object;

@@ -16,4 +16,3 @@ export default _default;
  */
 declare function taxonomyTextLengthAssessment(paper: Paper, researcher: Researcher, i18n: Jed): AssessmentResult;
 import AssessmentResult from "../../values/AssessmentResult.js";
-//# sourceMappingURL=taxonomyTextLengthAssessment.d.ts.map

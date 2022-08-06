@@ -10,7 +10,7 @@ declare class HTMLTreeConverter {
      *
      * @returns {module:parsedPaper/structure.Node} The converted tree.
      */
-    convert(parse5Tree: any): any;
+    convert(parse5Tree: Object): any;
     /**
      * Converts the tree from a parse5 implementation to a Yoast tree.
      *
@@ -108,4 +108,3 @@ declare class HTMLTreeConverter {
      */
     private _leafNodeAncestor;
 }
-//# sourceMappingURL=HTMLTreeConverter.d.ts.map

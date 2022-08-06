@@ -7,4 +7,3 @@
  * @returns {Array}                     A list with sentence parts.
  */
 export default function _default(sentence: string, language: string): any[];
-//# sourceMappingURL=getSentenceParts.d.ts.map

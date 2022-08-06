@@ -4,4 +4,3 @@
  * @returns {Array} The sentences from the text.
  */
 export default function _default(paper: Paper): any[];
-//# sourceMappingURL=countSentencesFromDescription.d.ts.map

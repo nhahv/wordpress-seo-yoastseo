@@ -6,4 +6,3 @@
  * @returns {string} The link type (other, external or internal).
  */
 export default function _default(text: string, url: string): string;
-//# sourceMappingURL=getLinkType.d.ts.map

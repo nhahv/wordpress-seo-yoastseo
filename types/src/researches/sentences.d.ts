@@ -6,4 +6,3 @@
  * @returns {Array} Sentences found in the paper.
  */
 export default function _default(paper: Paper): any[];
-//# sourceMappingURL=sentences.d.ts.map

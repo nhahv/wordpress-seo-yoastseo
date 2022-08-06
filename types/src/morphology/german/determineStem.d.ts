@@ -6,5 +6,4 @@
  *
  * @returns {string} Stemmed form of the word.
  */
-export function determineStem(word: string, morphologyDataGerman: any): string;
-//# sourceMappingURL=determineStem.d.ts.map
+export function determineStem(word: string, morphologyDataGerman: Object): string;

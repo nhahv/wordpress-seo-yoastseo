@@ -4,4 +4,3 @@
  * @returns {number} The length of the description.
  */
 export default function _default(paper: Paper): number;
-//# sourceMappingURL=metaDescriptionLength.d.ts.map

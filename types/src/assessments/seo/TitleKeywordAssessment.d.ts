@@ -15,7 +15,7 @@ declare class TitleKeywordAssessment extends Assessment {
      *
      * @returns {void}
      */
-    constructor(config?: any);
+    constructor(config?: Object);
     identifier: string;
     _config: any;
     /**
@@ -40,8 +40,7 @@ declare class TitleKeywordAssessment extends Assessment {
      *
      * @returns {Object} Object with score and text.
      */
-    calculateResult(i18n: Jed, keyword: string): any;
+    calculateResult(i18n: Jed, keyword: string): Object;
 }
 import Assessment from "../../assessment";
 import AssessmentResult from "../../values/AssessmentResult";
-//# sourceMappingURL=TitleKeywordAssessment.d.ts.map

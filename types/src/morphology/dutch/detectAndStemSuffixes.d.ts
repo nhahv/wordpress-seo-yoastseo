@@ -6,5 +6,4 @@
  *
  * @returns {string} The stemmed word.
  */
-export default function detectAndStemSuffixes(word: string, morphologyDataNL: any): string;
-//# sourceMappingURL=detectAndStemSuffixes.d.ts.map
+export default function detectAndStemSuffixes(word: string, morphologyDataNL: Object): string;

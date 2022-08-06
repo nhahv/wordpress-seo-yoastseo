@@ -7,4 +7,3 @@
  * @returns {boolean} Returns true if the participle is preceded by a given word, otherwise returns false.
  */
 export default function _default(precedingWords: any[], participleIndex: number): boolean;
-//# sourceMappingURL=precedesIndex.d.ts.map

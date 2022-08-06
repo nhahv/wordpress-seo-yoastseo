@@ -9,4 +9,3 @@
  * @returns {RegExp} regex                              The regex created from the array.
  */
 export default function _default(array: string[], disableWordBoundary?: boolean, extraBoundary?: string, doReplaceDiacritics?: boolean): RegExp;
-//# sourceMappingURL=createRegexFromArray.d.ts.map

@@ -7,4 +7,3 @@
  * @returns {Array} The original array with the function words filtered out.
  */
 export default function _default(array: any[], language: string): any[];
-//# sourceMappingURL=filterFunctionWordsFromArray.d.ts.map

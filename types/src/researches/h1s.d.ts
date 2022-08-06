@@ -6,4 +6,3 @@
  * @returns {Array} An array with all H1s, their content and position.
  */
 export default function _default(paper: Paper): any[];
-//# sourceMappingURL=h1s.d.ts.map

@@ -13,4 +13,3 @@ declare class Headings extends Research {
     calculateFor(node: any): Promise<NodeModule>;
 }
 import Research from "./Research";
-//# sourceMappingURL=Headings.d.ts.map

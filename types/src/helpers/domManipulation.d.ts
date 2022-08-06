@@ -37,4 +37,3 @@ declare function removeClass(element: HTMLElement, className: string): void;
  * @returns {void}
  */
 declare function removeClasses(element: HTMLElement, classes: any[]): void;
-//# sourceMappingURL=domManipulation.d.ts.map

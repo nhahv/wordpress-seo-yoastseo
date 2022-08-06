@@ -20,5 +20,4 @@ declare function sentenceLengthInDescriptionAssessment(paper: object, researcher
  *
  * @returns {boolean} Returns true if the paper has a meta description.
  */
-declare function isApplicable(paper: any): boolean;
-//# sourceMappingURL=sentenceLengthInDescriptionAssessment.d.ts.map
+declare function isApplicable(paper: Object): boolean;

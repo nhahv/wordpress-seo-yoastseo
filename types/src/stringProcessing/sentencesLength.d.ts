@@ -4,4 +4,3 @@
  * @returns {Array} Array with amount of words in each sentence.
  */
 export default function _default(sentences: any[]): any[];
-//# sourceMappingURL=sentencesLength.d.ts.map

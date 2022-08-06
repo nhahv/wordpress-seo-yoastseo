@@ -1,3 +1,2 @@
-declare function _exports(): any;
+declare function _exports(): Object;
 export = _exports;
-//# sourceMappingURL=auxiliaries.d.ts.map

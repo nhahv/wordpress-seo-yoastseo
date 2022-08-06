@@ -13,7 +13,7 @@ declare class FunctionWordsInKeyphraseAssessment extends Assessment {
      *
      * @returns {void}
      */
-    constructor(config?: any);
+    constructor(config?: Object);
     identifier: string;
     _config: any;
     /**
@@ -31,4 +31,3 @@ declare class FunctionWordsInKeyphraseAssessment extends Assessment {
 }
 import Assessment from "../../assessment";
 import AssessmentResult from "../../values/AssessmentResult";
-//# sourceMappingURL=FunctionWordsInKeyphraseAssessment.d.ts.map

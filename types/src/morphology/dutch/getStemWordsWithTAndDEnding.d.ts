@@ -6,5 +6,4 @@
  *
  * @returns {?string} 	The stemmed word or null.
  */
-export function generateCorrectStemWithTAndDEnding(morphologyDataNL: any, word: string): string | null;
-//# sourceMappingURL=getStemWordsWithTAndDEnding.d.ts.map
+export function generateCorrectStemWithTAndDEnding(morphologyDataNL: Object, word: string): string | null;

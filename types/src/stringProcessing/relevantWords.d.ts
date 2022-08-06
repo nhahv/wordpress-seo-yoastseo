@@ -59,7 +59,7 @@ export function sortCombinations(wordCombinations: WordCombination[]): void;
  * @param {array} functionWords The list of function words.
  * @returns {WordCombination[]} Filtered word combinations.
  */
-export function filterFunctionWordsAtEnding(wordCombinations: WordCombination[], functionWords: any[]): WordCombination[];
+export function filterFunctionWordsAtEnding(wordCombinations: WordCombination[], functionWords: array): WordCombination[];
 /**
  * Filters word combinations beginning with certain function words.
  *
@@ -67,7 +67,7 @@ export function filterFunctionWordsAtEnding(wordCombinations: WordCombination[],
  * @param {array} functionWords The list of function words.
  * @returns {WordCombination[]} Filtered word combinations.
  */
-export function filterFunctionWordsAtBeginning(wordCombinations: WordCombination[], functionWords: any[]): WordCombination[];
+export function filterFunctionWordsAtBeginning(wordCombinations: WordCombination[], functionWords: array): WordCombination[];
 /**
  * Filters the list of word combination objects based on the language-specific function word filters.
  * Word combinations with specific parts of speech are removed.
@@ -84,7 +84,7 @@ export function filterFunctionWords(combinations: any[], functionWords: Function
  * @param {array} functionWords The list of function words.
  * @returns {WordCombination[]} Filtered word combinations.
  */
-export function filterFunctionWordsAnywhere(wordCombinations: WordCombination[], functionWords: any[]): WordCombination[];
+export function filterFunctionWordsAnywhere(wordCombinations: WordCombination[], functionWords: array): WordCombination[];
 /**
  * Filters word combinations based on keyword density if the word count is 200 or over.
  *
@@ -120,4 +120,3 @@ export function filterEndingWith(wordCombinations: WordCombination[], str: strin
  */
 declare function filterFunctionWordsAtBeginningAndEnding(wordCombinations: WordCombination[], functionWords: any[]): WordCombination[];
 import WordCombination from "../values/WordCombination.js";
-//# sourceMappingURL=relevantWords.d.ts.map

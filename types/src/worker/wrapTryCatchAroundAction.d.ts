@@ -8,4 +8,3 @@
  * @returns {Function} The wrapped action.
  */
 export default function wrapTryCatchAroundAction(logger: Logger, action: Function, errorMessagePrefix?: string): Function;
-//# sourceMappingURL=wrapTryCatchAroundAction.d.ts.map

@@ -6,4 +6,3 @@ export default removeDuplicateMarks;
  * @returns {Array} A list of de-duplicated marks.
  */
 declare function removeDuplicateMarks(marks: any[]): any[];
-//# sourceMappingURL=removeDuplicateMarks.d.ts.map

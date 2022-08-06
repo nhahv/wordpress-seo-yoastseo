@@ -7,4 +7,3 @@
  * @returns {number} The number of occurrences of the keyword in the headings.
  */
 export default function _default(matches: any[], keywordForms: string[], locale: string): number;
-//# sourceMappingURL=subheadingsMatch.d.ts.map

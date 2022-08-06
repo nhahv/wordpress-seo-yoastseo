@@ -26,7 +26,7 @@ declare class TreeResearcher {
      *
      * @returns {Object} An object containing all available researches.
      */
-    getResearches(): any;
+    getResearches(): Object;
     /**
      * Returns whether a research is known under this name.
      *
@@ -65,7 +65,7 @@ declare class TreeResearcher {
      *
      * @returns {void}.
      */
-    addResearchData(researchName: string, data: any): void;
+    addResearchData(researchName: string, data: Object): void;
     /**
      * Return the research data from a research data provider by research name.
      *
@@ -73,6 +73,5 @@ declare class TreeResearcher {
      *
      * @returns {Object|boolean} The data provided by the provider, false if the data do not exist
      */
-    getData(researchName: string): any | boolean;
+    getData(researchName: string): Object | boolean;
 }
-//# sourceMappingURL=TreeResearcher.d.ts.map

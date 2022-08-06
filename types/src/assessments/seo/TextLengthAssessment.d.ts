@@ -9,7 +9,7 @@ export default class TextLengthAssessment extends Assessment {
      *
      * @returns {void}
      */
-    constructor(config?: any);
+    constructor(config?: Object);
     identifier: string;
     _config: any;
     /**
@@ -30,8 +30,7 @@ export default class TextLengthAssessment extends Assessment {
      *
      * @returns {Object} The score and the feedback string.
      */
-    calculateResult(wordCount: number, i18n: Jed): any;
+    calculateResult(wordCount: number, i18n: Jed): Object;
 }
 import Assessment from "../../assessment";
 import AssessmentResult from "../../values/AssessmentResult";
-//# sourceMappingURL=TextLengthAssessment.d.ts.map

@@ -56,8 +56,7 @@ export default class TextImagesAssessment extends Assessment {
      *
      * @returns {Object} The calculated result.
      */
-    calculateResult(i18n: any): any;
+    calculateResult(i18n: Object): Object;
 }
 import Assessment from "../../assessment";
 import AssessmentResult from "../../values/AssessmentResult";
-//# sourceMappingURL=TextImagesAssessment.d.ts.map

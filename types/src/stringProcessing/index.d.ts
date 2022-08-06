@@ -9,4 +9,3 @@ import wordBoundaries from "../config/wordBoundaries";
 import createRegexFromArray from "./createRegexFromArray";
 import createWordRegex from "./createWordRegex";
 export { stripHTMLTags, stripSpaces, transliterate, replaceDiacritics, imageInText, relevantWords, removeHtmlBlocks, wordBoundaries, createRegexFromArray, createWordRegex as __createWordRegex };
-//# sourceMappingURL=index.d.ts.map

@@ -15,5 +15,4 @@ export function modifyStem(word: string, modificationGroup: string[]): string;
  *
  * @returns {boolean} Whether the vowel should be doubled or not.
  */
-export function isVowelDoublingAllowed(word: string, morphologyDataNLStemmingExceptions: any, morphologyDataNLVerbPrefixes: any): boolean;
-//# sourceMappingURL=stemModificationHelpers.d.ts.map
+export function isVowelDoublingAllowed(word: string, morphologyDataNLStemmingExceptions: Object, morphologyDataNLVerbPrefixes: Object): boolean;

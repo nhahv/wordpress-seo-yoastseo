@@ -7,4 +7,3 @@
  * @returns {Number} The number of keyphrase matches for the entire description.
  */
 export default function _default(paper: Paper, researcher: Researcher): number;
-//# sourceMappingURL=metaDescriptionKeyword.d.ts.map

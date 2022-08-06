@@ -16,7 +16,7 @@ declare class InternalLinksAssessment extends Assessment {
      *
      * @returns {void}
      */
-    constructor(config?: any);
+    constructor(config?: Object);
     identifier: string;
     _config: any;
     /**
@@ -37,8 +37,7 @@ declare class InternalLinksAssessment extends Assessment {
      *
      * @returns {Object} ResultObject with score and text
      */
-    calculateResult(i18n: Jed): any;
+    calculateResult(i18n: Jed): Object;
 }
 import Assessment from "../../assessment";
 import AssessmentResult from "../../values/AssessmentResult";
-//# sourceMappingURL=InternalLinksAssessment.d.ts.map

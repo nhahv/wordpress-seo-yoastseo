@@ -4,4 +4,3 @@
  * @returns {Array} The array containing all paragraphs from the text.
  */
 export default function _default(text: string): any[];
-//# sourceMappingURL=matchParagraphs.d.ts.map

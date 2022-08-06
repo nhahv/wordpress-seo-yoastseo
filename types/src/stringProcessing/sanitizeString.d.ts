@@ -5,4 +5,3 @@
  * @returns {String} The text without characters.
  */
 export default function _default(text: string): string;
-//# sourceMappingURL=sanitizeString.d.ts.map

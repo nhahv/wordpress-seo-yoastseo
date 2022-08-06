@@ -62,7 +62,7 @@ declare class ProminentWord {
      *
      * @returns {Object} The serialized ProminentWord.
      */
-    serialize(): any;
+    serialize(): Object;
 }
 declare namespace ProminentWord {
     /**
@@ -72,6 +72,5 @@ declare namespace ProminentWord {
      *
      * @returns {ProminentWord} The parsed WordCombination.
      */
-    function parse(serialized: any): ProminentWord;
+    function parse(serialized: Object): ProminentWord;
 }
-//# sourceMappingURL=ProminentWord.d.ts.map

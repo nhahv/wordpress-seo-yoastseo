@@ -6,4 +6,3 @@
  * @returns {string} string The string without spaces.
  */
 export default function _default(string: string): string;
-//# sourceMappingURL=removeNonWordCharacters.d.ts.map

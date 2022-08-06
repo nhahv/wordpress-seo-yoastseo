@@ -52,7 +52,7 @@ declare class Mark {
      *
      * @returns {Object} The serialized Mark.
      */
-    serialize(): any;
+    serialize(): Object;
 }
 declare namespace Mark {
     /**
@@ -62,6 +62,5 @@ declare namespace Mark {
      *
      * @returns {Mark} The parsed Mark.
      */
-    function parse(serialized: any): Mark;
+    function parse(serialized: Object): Mark;
 }
-//# sourceMappingURL=Mark.d.ts.map

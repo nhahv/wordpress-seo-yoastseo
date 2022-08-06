@@ -16,7 +16,7 @@ export function checkIfWordEndingIsOnExceptionList(word: string, exceptionList: 
  * @param {Object}		compoundVerbPrefixes	The list of separable and inseparable verb prefixes
  * @returns {boolean}	Whether the word was found on the exception list or not
  */
-export function checkIfWordIsOnVerbExceptionList(word: string, exceptionList: string[], compoundVerbPrefixes: any): boolean;
+export function checkIfWordIsOnVerbExceptionList(word: string, exceptionList: string[], compoundVerbPrefixes: Object): boolean;
 /**
  * Checks whether the word ends in one of the words in an exception list with two stems.
  *
@@ -25,4 +25,3 @@ export function checkIfWordIsOnVerbExceptionList(word: string, exceptionList: st
  * @returns {string} The stem
  */
 export function checkExceptionListWithTwoStems(exceptionListWithTwoStems: any[], word: string): string;
-//# sourceMappingURL=exceptionListHelpers.d.ts.map

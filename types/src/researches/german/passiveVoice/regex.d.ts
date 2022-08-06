@@ -11,5 +11,4 @@ export function exceptions(word: string): any[];
  *
  * @returns {Object} German lists of words relevant for passive voice.
  */
-export default function _default(): any;
-//# sourceMappingURL=regex.d.ts.map
+export default function _default(): Object;

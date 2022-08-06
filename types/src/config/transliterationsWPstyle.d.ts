@@ -6,4 +6,3 @@
  * @returns {Array} An array containing transliteration objects.
  */
 export default function _default(locale: string): any[];
-//# sourceMappingURL=transliterationsWPstyle.d.ts.map

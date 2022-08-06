@@ -14,7 +14,7 @@ declare class KeyphraseLengthAssessment extends Assessment {
      *
      * @returns {void}
      */
-    constructor(config?: any);
+    constructor(config?: Object);
     identifier: string;
     _config: any;
     /**
@@ -36,8 +36,7 @@ declare class KeyphraseLengthAssessment extends Assessment {
      *
      * @returns {Object} Object with score and text.
      */
-    calculateResult(i18n: Jed): any;
+    calculateResult(i18n: Jed): Object;
 }
 import Assessment from "../../assessment";
 import AssessmentResult from "../../values/AssessmentResult";
-//# sourceMappingURL=KeyphraseLengthAssessment.d.ts.map

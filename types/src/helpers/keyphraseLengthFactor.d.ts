@@ -6,4 +6,3 @@
  * @returns {number} The keyphrase length weighting factor.
  */
 export default function _default(keyphraseLength: number): number;
-//# sourceMappingURL=keyphraseLengthFactor.d.ts.map

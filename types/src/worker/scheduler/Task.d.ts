@@ -11,11 +11,10 @@ export default class Task {
      * @param {Object}   [data]  Optional data for when executing the task.
      * @param {string}   type    The type of the task (analyze, analyzeRelatedKeywords, loadScript or customMessage)
      */
-    constructor(id: number, execute: Function, done: Function, data?: any, type?: string);
+    constructor(id: number, execute: Function, done: Function, data?: Object, type?: string);
     id: number;
     execute: Function;
     done: Function;
-    data: any;
+    data: Object;
     type: string;
 }
-//# sourceMappingURL=Task.d.ts.map

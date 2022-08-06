@@ -3,5 +3,4 @@
  *
  * @returns {Object} Forms to be searched for keyword-based assessments for all available languages.
  */
-export default function _default(): any;
-//# sourceMappingURL=getStemForLanguage.d.ts.map
+export default function _default(): Object;

@@ -6,5 +6,4 @@
  *
  * @returns {string} The unique stem.
  */
-export function determineStem(word: string, morphologyDataNL: any): string;
-//# sourceMappingURL=determineStem.d.ts.map
+export function determineStem(word: string, morphologyDataNL: Object): string;

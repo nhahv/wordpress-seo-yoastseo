@@ -34,4 +34,3 @@ export function constructSEOAssessor(i18n: Jed, researcher: any, config: {
  * @memberOf module:parsedPaper/assess
  */
 export function constructReadabilityAssessor(i18n: Jed, researcher: any, isCornerstoneContent?: boolean): any;
-//# sourceMappingURL=assessorFactories.d.ts.map

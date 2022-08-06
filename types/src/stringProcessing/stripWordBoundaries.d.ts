@@ -28,4 +28,3 @@ export function stripWordBoundariesEnd(text: string): string;
  * @returns {String} The text without word boundary markers.
  */
 export function stripWordBoundariesEverywhere(text: string): string;
-//# sourceMappingURL=stripWordBoundaries.d.ts.map

@@ -6,4 +6,3 @@
  * @returns {Function}        A function that will return the first word exceptions.
  */
 export default function _default(locale: string): Function;
-//# sourceMappingURL=getFirstWordExceptions.d.ts.map

@@ -6,4 +6,3 @@
  * @returns {number} The keyword count.
  */
 export default function _default(paper: object, researcher: object): number;
-//# sourceMappingURL=keywordCount.d.ts.map

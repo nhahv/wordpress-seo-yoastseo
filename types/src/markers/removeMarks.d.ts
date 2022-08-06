@@ -5,4 +5,3 @@
  * @returns {string} The unmarked text.
  */
 export default function _default(text: string): string;
-//# sourceMappingURL=removeMarks.d.ts.map

@@ -9,4 +9,3 @@ export default _default;
  * @returns {void}
  */
 export function showTrace(errorMessage?: string): void;
-//# sourceMappingURL=errors.d.ts.map

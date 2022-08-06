@@ -8,4 +8,3 @@
  * @returns {Array} The array with GermanParticiple Objects.
  */
 export default function _default(sentencePartText: string, auxiliaries: any[], language: string): any[];
-//# sourceMappingURL=getParticiples.d.ts.map

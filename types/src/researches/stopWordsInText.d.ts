@@ -5,4 +5,3 @@
  * @returns {Array} An array with all stopwords found in the text.
  */
 export default function _default(text: string): any[];
-//# sourceMappingURL=stopWordsInText.d.ts.map

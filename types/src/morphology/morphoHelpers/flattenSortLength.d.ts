@@ -5,5 +5,4 @@
  *
  * @returns {Array<string>} All words, sorted by length (descending).
  */
-export function flattenSortLength(dataWords: any): Array<string>;
-//# sourceMappingURL=flattenSortLength.d.ts.map
+export function flattenSortLength(dataWords: Object): Array<string>;

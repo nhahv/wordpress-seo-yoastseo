@@ -10,4 +10,3 @@
  * @returns {number} The recommended keyword count.
  */
 export default function _default(text: string, keyphraseLength: number, recommendedKeywordDensity: number, maxOrMin: string): number;
-//# sourceMappingURL=recommendedKeywordCount.d.ts.map

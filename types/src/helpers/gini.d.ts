@@ -6,4 +6,3 @@
  * @returns {number} The Gini coefficient.
  */
 export default function gini(scores: number[]): number;
-//# sourceMappingURL=gini.d.ts.map

@@ -27,7 +27,7 @@ export function determineIrregularStem(word: string, irregulars: any[]): string 
  *
  * @returns {string|null} The base form of the irregular word; null if no irregular stem was found.
  */
-export function determineIrregularVerbStem(word: string, verbMorphology: any): string | null;
+export function determineIrregularVerbStem(word: string, verbMorphology: Object): string | null;
 /**
  * Gets possible stems as a regular noun, adjective and verb.
  *
@@ -36,7 +36,7 @@ export function determineIrregularVerbStem(word: string, verbMorphology: any): s
  *
  * @returns {string} The shortest and the alphabetically-first of possible noun-like, verb-like and adjective-like bases.
  */
-export function determineRegularStem(word: string, morphologyData: any): string;
+export function determineRegularStem(word: string, morphologyData: Object): string;
 /**
  * Returns the stem of the input word using the morphologyData (language-specific).
  *
@@ -45,5 +45,4 @@ export function determineRegularStem(word: string, morphologyData: any): string;
  *
  * @returns {string} Stemmed (or base) form of the word.
  */
-export function determineStem(word: string, morphologyData: any): string;
-//# sourceMappingURL=determineStem.d.ts.map
+export function determineStem(word: string, morphologyData: Object): string;

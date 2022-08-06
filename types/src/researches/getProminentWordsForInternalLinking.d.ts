@@ -10,5 +10,4 @@ export default getProminentWordsForInternalLinking;
  * @returns {boolean}         result.hasMetaDescription Whether the metadescription is available in the input paper.
  * @returns {boolean}         result.hasTitle           Whether the title is available in the input paper.
  */
-declare function getProminentWordsForInternalLinking(paper: Paper, researcher: Researcher): any;
-//# sourceMappingURL=getProminentWordsForInternalLinking.d.ts.map
+declare function getProminentWordsForInternalLinking(paper: Paper, researcher: Researcher): Object;

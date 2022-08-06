@@ -6,4 +6,3 @@
  * @returns {Array} All matches from the original as the transliterated text and keyword.
  */
 export default function _default(text: string, keyword: string, locale: string): any[];
-//# sourceMappingURL=matchTextWithTransliteration.d.ts.map

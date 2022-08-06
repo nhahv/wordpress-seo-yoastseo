@@ -4,4 +4,3 @@
  * @returns {string[]} Indonesian words that look like passive verbs starting in `di`.
  */
 export default function _default(): string[];
-//# sourceMappingURL=nonPassiveVerbsStartingDi.d.ts.map

@@ -6,5 +6,4 @@
  *
  * @returns {boolean} Whether a value was found in the collection.
  */
-export default function includesAny(collection: any | any[], values: any[]): boolean;
-//# sourceMappingURL=includesAny.d.ts.map
+export default function includesAny(collection: Object | array, values: array): boolean;

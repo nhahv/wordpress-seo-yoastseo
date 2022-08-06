@@ -5,4 +5,3 @@
  * @returns {string} The text with all diacritics replaced.
  */
 export default function _default(text: string): string;
-//# sourceMappingURL=replaceDiacritics.d.ts.map

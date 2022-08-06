@@ -24,4 +24,3 @@ export const ignoredHtmlElements: string[];
  * @memberOf module:parsedPaper/builder
  */
 export const headings: string[];
-//# sourceMappingURL=htmlConstants.d.ts.map

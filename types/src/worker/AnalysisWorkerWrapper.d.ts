@@ -22,7 +22,7 @@ declare class AnalysisWorkerWrapper {
      *
      * @returns {Promise} The promise of initialization.
      */
-    initialize(configuration: any): Promise<any>;
+    initialize(configuration: Object): Promise<any>;
     /**
      * Analyzes the paper.
      *
@@ -30,7 +30,7 @@ declare class AnalysisWorkerWrapper {
      *
      * @returns {Promise} The promise of analyses.
      */
-    analyze(paper: any): Promise<any>;
+    analyze(paper: Object): Promise<any>;
     /**
      * Analyzes the paper.
      *
@@ -39,7 +39,7 @@ declare class AnalysisWorkerWrapper {
      *
      * @returns {Promise} The promise of analyses.
      */
-    analyzeRelatedKeywords(paper: any, relatedKeywords?: any): Promise<any>;
+    analyzeRelatedKeywords(paper: Object, relatedKeywords?: Object): Promise<any>;
     /**
      * Imports a script to the worker.
      *
@@ -118,7 +118,7 @@ declare class AnalysisWorkerWrapper {
      *
      * @returns {Promise} The callback promise.
      */
-    createRequestPromise(id: number, data?: any): Promise<any>;
+    createRequestPromise(id: number, data?: Object): Promise<any>;
     /**
      * Sends a request to the worker and returns a promise that will resolve or reject once the worker finishes.
      *
@@ -128,7 +128,7 @@ declare class AnalysisWorkerWrapper {
      *
      * @returns {Promise} A promise that will resolve or reject once the worker finishes.
      */
-    sendRequest(action: string, payload: any, data?: any): Promise<any>;
+    sendRequest(action: string, payload: Object, data?: Object): Promise<any>;
     /**
      * Sends a message to the worker.
      *
@@ -138,6 +138,5 @@ declare class AnalysisWorkerWrapper {
      *
      * @returns {void}
      */
-    send(type: string, id: number, payload?: any): void;
+    send(type: string, id: number, payload?: Object): void;
 }
-//# sourceMappingURL=AnalysisWorkerWrapper.d.ts.map

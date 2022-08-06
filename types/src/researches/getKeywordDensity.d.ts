@@ -6,4 +6,3 @@
  * @returns {number} The keyword density.
  */
 export default function _default(paper: object, researcher: object): number;
-//# sourceMappingURL=getKeywordDensity.d.ts.map

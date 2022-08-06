@@ -6,5 +6,4 @@
  * @param {string} locale The locale used for transliteration.
  * @returns {boolean} If a keyword is found, returns true
  */
-export default function _default(url: string, topicForms: any, locale?: string): boolean;
-//# sourceMappingURL=findKeywordInUrl.d.ts.map
+export default function _default(url: string, topicForms: Object, locale?: string): boolean;

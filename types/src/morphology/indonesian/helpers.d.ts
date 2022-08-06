@@ -16,7 +16,7 @@ export function calculateTotalNumberOfSyllables(word: string): int;
  *
  * @returns {string} The stemmed word.
  */
-export function removeEnding(word: string, regexRules: any[], exceptions: string[], morphologyData: any): string;
+export function removeEnding(word: string, regexRules: any[], exceptions: string[], morphologyData: Object): string;
 /**
  * Checks if the beginning of the word is present in an exception list.
  *
@@ -27,4 +27,3 @@ export function removeEnding(word: string, regexRules: any[], exceptions: string
  * @returns {boolean} Whether the word is found in the list with beginnings.
  */
 export function checkBeginningsList(word: string, prefixLength: int, beginnings: string[]): boolean;
-//# sourceMappingURL=helpers.d.ts.map

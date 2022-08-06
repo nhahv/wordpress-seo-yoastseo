@@ -4,4 +4,3 @@
  * @returns {Array} The list with passive verbs.
  */
 export default function _default(): any[];
-//# sourceMappingURL=passiveVerbsWithLongVowel.d.ts.map

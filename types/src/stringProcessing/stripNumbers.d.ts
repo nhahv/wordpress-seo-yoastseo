@@ -5,4 +5,3 @@
  * @returns {string} The text with numberonly words removed.
  */
 export default function _default(text: string): string;
-//# sourceMappingURL=stripNumbers.d.ts.map

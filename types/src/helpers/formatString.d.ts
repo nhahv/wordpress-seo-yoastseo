@@ -10,5 +10,4 @@
  *
  * @returns {string} The formatted string.
  */
-export default function _default(string: string, formatMap: any, delimiter?: string): string;
-//# sourceMappingURL=formatString.d.ts.map
+export default function _default(string: string, formatMap: Object, delimiter?: string): string;

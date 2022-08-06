@@ -7,4 +7,3 @@
  * @returns {boolean}               Returns true if passive, otherwise returns false.
  */
 export default function _default(sentenceText: string, language: string): boolean;
-//# sourceMappingURL=determinePassiveSentence.d.ts.map

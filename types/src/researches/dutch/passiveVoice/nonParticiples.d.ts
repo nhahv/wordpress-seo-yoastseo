@@ -3,4 +3,3 @@
  * @returns {Array} The list with non-participles.
  */
 export default function _default(): any[];
-//# sourceMappingURL=nonParticiples.d.ts.map

@@ -8,8 +8,7 @@ export default class Result {
      * @param {Object} result The result.
      * @param {Object} [data] Optional extra data.
      */
-    constructor(result: any, data?: any);
-    result: any;
-    data: any;
+    constructor(result: Object, data?: Object);
+    result: Object;
+    data: Object;
 }
-//# sourceMappingURL=Result.d.ts.map

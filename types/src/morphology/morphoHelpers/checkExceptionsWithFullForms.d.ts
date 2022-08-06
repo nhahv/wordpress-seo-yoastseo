@@ -8,4 +8,3 @@
  * @returns {string/null} The created word forms.
  */
 export default function _default(morphologyDataNL: any[], word: string): string;
-//# sourceMappingURL=checkExceptionsWithFullForms.d.ts.map

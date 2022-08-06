@@ -11,5 +11,4 @@
  *
  * @returns {?string}				    The stemmed word or null if the -t/-d should not be stemmed.
  */
-export function stemTOrDFromEndOfWord(morphologyDataNL: any, stemmedWord: string, word: string): string | null;
-//# sourceMappingURL=stemTOrDFromEndOfWord.d.ts.map
+export function stemTOrDFromEndOfWord(morphologyDataNL: Object, stemmedWord: string, word: string): string | null;

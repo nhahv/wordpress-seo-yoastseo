@@ -5,4 +5,3 @@
  * @returns {String} the contents of the alttag, empty if none is set.
  */
 export default function _default(text: string): string;
-//# sourceMappingURL=getAlttagContent.d.ts.map

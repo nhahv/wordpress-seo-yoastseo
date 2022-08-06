@@ -18,4 +18,3 @@ export function removeSuffixesFromFullForm(exceptions: string[], suffixes: strin
  * @returns {string} The stemmed word.
  */
 export function removeSuffixFromFullForm(exceptions: string[], suffix: string, word: string): string;
-//# sourceMappingURL=stemHelpers.d.ts.map

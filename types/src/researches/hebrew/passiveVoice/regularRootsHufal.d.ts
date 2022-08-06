@@ -4,4 +4,3 @@
  * @returns {string[]} Hebrew roots following the binyan huf'al.
  */
 export default function _default(): string[];
-//# sourceMappingURL=regularRootsHufal.d.ts.map

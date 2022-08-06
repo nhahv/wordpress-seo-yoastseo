@@ -32,4 +32,3 @@ declare class MetadataMiscellaneous {
      */
     get data(): any;
 }
-//# sourceMappingURL=MetadataMiscellaneous.d.ts.map

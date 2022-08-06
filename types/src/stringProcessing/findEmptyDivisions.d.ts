@@ -5,4 +5,3 @@
  * @returns {Array} Array containing all empty divisions
  */
 export default function _default(text: string): any[];
-//# sourceMappingURL=findEmptyDivisions.d.ts.map

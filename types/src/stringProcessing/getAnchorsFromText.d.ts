@@ -6,4 +6,3 @@
  * @returns {Array} The matched links in text.
  */
 export default function _default(text: string): any[];
-//# sourceMappingURL=getAnchorsFromText.d.ts.map

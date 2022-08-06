@@ -7,4 +7,3 @@
  * @returns {number} The length of the keyphrase
  */
 export default function _default(paper: Paper, researcher: Researcher): number;
-//# sourceMappingURL=keyphraseLength.d.ts.map

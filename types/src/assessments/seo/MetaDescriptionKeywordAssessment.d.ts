@@ -14,7 +14,7 @@ declare class MetaDescriptionKeywordAssessment extends Assessment {
      *
      * @returns {void}
      */
-    constructor(config?: any);
+    constructor(config?: Object);
     identifier: string;
     _config: any;
     /**
@@ -35,8 +35,7 @@ declare class MetaDescriptionKeywordAssessment extends Assessment {
      *
      * @returns {Object} Result object with score and text.
      */
-    calculateResult(i18n: Jed): any;
+    calculateResult(i18n: Jed): Object;
 }
 import Assessment from "../../assessment";
 import AssessmentResult from "../../values/AssessmentResult";
-//# sourceMappingURL=MetaDescriptionKeywordAssessment.d.ts.map

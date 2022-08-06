@@ -31,7 +31,7 @@ declare class UrlStructure {
      * @param {Object} data A key value store of all the variable parts of the URL structure.
      * @returns {string} A URL with all variables parts filled.
      */
-    buildUrl(data: any): string;
+    buildUrl(data: Object): string;
     /**
      * Builds a URL part for a small part of the URL.
      *
@@ -53,4 +53,3 @@ declare class UrlStructure {
      */
     getStructure(): any[];
 }
-//# sourceMappingURL=urlStructure.d.ts.map

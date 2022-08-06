@@ -10,4 +10,3 @@
  * appears anywhere in between the last (closest to participle) auxiliary and the participle.
  */
 export default function _default(sentencePart: string, participle: string, auxiliaries: string, language: string): boolean;
-//# sourceMappingURL=nonDirectParticiplePrecedenceException.d.ts.map

@@ -7,4 +7,3 @@
  * @returns {Array} The list with participle objects.
  */
 export default function _default(sentencePartText: string, auxiliaries: any[], language: string): any[];
-//# sourceMappingURL=getParticiples.d.ts.map

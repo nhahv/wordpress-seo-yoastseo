@@ -5,5 +5,4 @@
  * @param {Object} morphologyData   The morphology data for Swedish.
  * @returns {string}    The stemmed word.
  */
-export default function stem(word: string, morphologyData: any): string;
-//# sourceMappingURL=stem.d.ts.map
+export default function stem(word: string, morphologyData: Object): string;

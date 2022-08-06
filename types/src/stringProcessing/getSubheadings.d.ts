@@ -48,4 +48,3 @@ export function getSubheadingContentsTopLevel(text: string): string[];
  * @returns {string} The text with removed subheadings.
  */
 export function removeSubheadingsTopLevel(text: string): string;
-//# sourceMappingURL=getSubheadings.d.ts.map

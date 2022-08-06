@@ -4,4 +4,3 @@
  * @returns {string[]} The array filled with exceptions.
  */
 export default function _default(): string[];
-//# sourceMappingURL=firstWordExceptions.d.ts.map

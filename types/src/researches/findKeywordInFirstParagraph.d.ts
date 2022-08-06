@@ -17,5 +17,4 @@
  * @returns {Object} Whether the keyphrase words were found in one sentence, whether the keyphrase words were found in
  * the paragraph, whether a keyphrase or a synonym phrase was matched.
  */
-export default function _default(paper: Paper, researcher: Researcher): any;
-//# sourceMappingURL=findKeywordInFirstParagraph.d.ts.map
+export default function _default(paper: Paper, researcher: Researcher): Object;

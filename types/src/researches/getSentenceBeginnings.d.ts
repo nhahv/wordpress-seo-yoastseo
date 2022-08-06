@@ -5,5 +5,4 @@
  * @param {Researcher} researcher The researcher this research is a part of.
  * @returns {Object} The object containing the first word of each sentence and the corresponding counts.
  */
-export default function _default(paper: Paper, researcher: Researcher): any;
-//# sourceMappingURL=getSentenceBeginnings.d.ts.map
+export default function _default(paper: Paper, researcher: Researcher): Object;

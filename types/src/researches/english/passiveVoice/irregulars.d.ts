@@ -4,4 +4,3 @@
  * @returns {string[]} English irregulars.
  */
 export default function _default(): string[];
-//# sourceMappingURL=irregulars.d.ts.map

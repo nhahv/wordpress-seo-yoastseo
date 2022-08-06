@@ -35,7 +35,7 @@ declare class WordCombination {
      *
      * @returns {array} The list with words.
      */
-    getWords(): any[];
+    getWords(): array;
     /**
      * Returns the word combination length.
      *
@@ -92,8 +92,8 @@ declare class WordCombination {
      * @param {Object} relevantWords A mapping from a word to a relevance.
      * @returns {void}
      */
-    setRelevantWords(relevantWords: any): void;
-    _relevantWords: any;
+    setRelevantWords(relevantWords: Object): void;
+    _relevantWords: Object;
     /**
      * Returns the density of this combination within the text.
      *
@@ -106,7 +106,7 @@ declare class WordCombination {
      *
      * @returns {Object} The serialized WordCombination.
      */
-    serialize(): any;
+    serialize(): Object;
 }
 declare namespace WordCombination {
     const lengthBonus: {
@@ -122,6 +122,5 @@ declare namespace WordCombination {
      *
      * @returns {WordCombination} The parsed WordCombination.
      */
-    function parse(serialized: any): WordCombination;
+    function parse(serialized: Object): WordCombination;
 }
-//# sourceMappingURL=WordCombination.d.ts.map

@@ -6,4 +6,3 @@
  * @returns {string} The parsed slug.
  */
 export default function _default(slug: string): string;
-//# sourceMappingURL=parseSlug.d.ts.map

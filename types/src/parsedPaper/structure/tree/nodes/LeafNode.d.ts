@@ -18,7 +18,7 @@ declare class LeafNode {
      *
      * @returns {void}
      */
-    constructor(type: string, sourceCodeLocation: any);
+    constructor(type: string, sourceCodeLocation: Object);
     /**
      * A container for keeping this leaf node's text.
      * @type {module:parsedPaper/structure.TextContainer}
@@ -55,4 +55,3 @@ declare class LeafNode {
      */
     addFormatting(formatting: FormattingElement): void;
 }
-//# sourceMappingURL=LeafNode.d.ts.map

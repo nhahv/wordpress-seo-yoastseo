@@ -7,7 +7,7 @@
  * @returns {void}
  */
 export function configureShortlinker(config: {
-    params?: any;
+    params?: Object;
 }): void;
 /**
  * Creates a link by combining the params from the config and appending them to the url.
@@ -17,7 +17,7 @@ export function configureShortlinker(config: {
  *
  * @returns {string} The url with query string.
  */
-export function createShortlink(url: string, params?: any): string;
+export function createShortlink(url: string, params?: Object): string;
 /**
  * Creates an anchor opening tag.
  *
@@ -26,5 +26,4 @@ export function createShortlink(url: string, params?: any): string;
  *
  * @returns {string} The anchor opening tag.
  */
-export function createAnchorOpeningTag(url: string, params?: any): string;
-//# sourceMappingURL=singleton.d.ts.map
+export function createAnchorOpeningTag(url: string, params?: Object): string;

@@ -3,5 +3,4 @@
  * @param {array} array The array containing arrays.
  * @returns {RegExp} The regex created from the array.
  */
-export default function _default(array: any[]): RegExp;
-//# sourceMappingURL=createRegexFromDoubleArray.d.ts.map
+export default function _default(array: any): RegExp;

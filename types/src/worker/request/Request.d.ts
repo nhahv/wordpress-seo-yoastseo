@@ -12,10 +12,10 @@ export default class Request {
      * @param {Function} reject  The reject function.
      * @param {Object}  [data]   Optional extra data.
      */
-    constructor(resolve: Function, reject: Function, data?: any);
+    constructor(resolve: Function, reject: Function, data?: Object);
     _resolve: Function;
     _reject: Function;
-    _data: any;
+    _data: Object;
     /**
      * Resolves the request with a result.
      *
@@ -23,7 +23,7 @@ export default class Request {
      *
      * @returns {void}
      */
-    resolve(payload?: any): void;
+    resolve(payload?: Object): void;
     /**
      * Rejects the request with a result.
      *
@@ -31,6 +31,5 @@ export default class Request {
      *
      * @returns {void}
      */
-    reject(payload?: any): void;
+    reject(payload?: Object): void;
 }
-//# sourceMappingURL=Request.d.ts.map

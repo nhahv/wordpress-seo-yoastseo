@@ -58,6 +58,5 @@ declare class TextContainer {
      *
      * @returns {Object} The tree representation of the text.
      */
-    getTree(): any;
+    getTree(): Object;
 }
-//# sourceMappingURL=TextContainer.d.ts.map

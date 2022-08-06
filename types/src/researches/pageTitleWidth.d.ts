@@ -4,4 +4,3 @@
  * @returns {number} The width of the title in pixels
  */
 export default function _default(paper: Paper): number;
-//# sourceMappingURL=pageTitleWidth.d.ts.map

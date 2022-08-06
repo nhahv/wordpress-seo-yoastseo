@@ -17,7 +17,7 @@ declare class SourceCodeLocation {
      * @param {Object} startOffset The start position of the element.
      * @param {Object} endOffset The end position of the element.
      */
-    constructor({ startTag, endTag, startOffset, endOffset }: any | null);
+    constructor({ startTag, endTag, startOffset, endOffset }: Object | null);
     startTag: {
         startOffset: any;
         endOffset: any;
@@ -29,4 +29,3 @@ declare class SourceCodeLocation {
     startOffset: any;
     endOffset: any;
 }
-//# sourceMappingURL=SourceCodeLocation.d.ts.map

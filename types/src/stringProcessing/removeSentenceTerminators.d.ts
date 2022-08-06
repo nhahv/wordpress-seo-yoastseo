@@ -6,4 +6,3 @@
  * @returns {String} The sanitized text.
  */
 export default function _default(text: string): string;
-//# sourceMappingURL=removeSentenceTerminators.d.ts.map

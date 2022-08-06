@@ -7,4 +7,3 @@
  * @returns {int} Number of times the keyword is found.
  */
 export default function _default(paper: Paper, researcher: Researcher): int;
-//# sourceMappingURL=keywordCountInUrl.d.ts.map

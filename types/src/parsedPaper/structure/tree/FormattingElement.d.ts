@@ -12,7 +12,7 @@ declare class FormattingElement {
      * @param {Object} sourceCodeLocation The parse5 formatted location of the element inside of the source code.
      * @param {Object} [attributes=null]  The attributes (as key-value pairs, e.g. `{ href: '...' }` ).
      */
-    constructor(type: string, sourceCodeLocation: any, attributes?: any);
+    constructor(type: string, sourceCodeLocation: Object, attributes?: Object);
     /**
      * Type of formatting element (e.g. "strong", "a").
      * @type {string}
@@ -22,7 +22,7 @@ declare class FormattingElement {
      * Attributes of this element (e.g. "href", "id").
      * @type {?Object}
      */
-    attributes: any | null;
+    attributes: Object | null;
     /**
      * Location inside of the source code.
      * @type {SourceCodeLocation}
@@ -53,4 +53,3 @@ declare class FormattingElement {
     getAttribute(name: string): false | any;
 }
 import SourceCodeLocation from "./SourceCodeLocation";
-//# sourceMappingURL=FormattingElement.d.ts.map

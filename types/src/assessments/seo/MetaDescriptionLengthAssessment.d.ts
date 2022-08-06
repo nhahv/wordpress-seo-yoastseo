@@ -9,7 +9,7 @@ export default class MetaDescriptionLengthAssessment extends Assessment {
      *
      * @returns {void}
      */
-    constructor(config?: any);
+    constructor(config?: Object);
     identifier: string;
     _config: any;
     /**
@@ -48,4 +48,3 @@ export default class MetaDescriptionLengthAssessment extends Assessment {
 }
 import Assessment from "../../assessment";
 import AssessmentResult from "../../values/AssessmentResult";
-//# sourceMappingURL=MetaDescriptionLengthAssessment.d.ts.map

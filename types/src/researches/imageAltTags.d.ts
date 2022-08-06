@@ -7,4 +7,3 @@
  * @returns {object} Object containing all types of found images
  */
 export default function _default(paper: Paper, researcher: Researcher): object;
-//# sourceMappingURL=imageAltTags.d.ts.map

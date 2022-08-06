@@ -7,4 +7,3 @@ export default SEOScoreAggregator;
 declare class SEOScoreAggregator extends ScoreAggregator {
 }
 import ScoreAggregator from "./ScoreAggregator";
-//# sourceMappingURL=SEOScoreAggregator.d.ts.map

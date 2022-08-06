@@ -6,5 +6,4 @@
  *
  * @returns {boolean} Returns true if the match is followed by a given word, otherwise returns false.
  */
-export default function _default(followingWords: any[], match: any): boolean;
-//# sourceMappingURL=followsIndex.d.ts.map
+export default function _default(followingWords: any[], match: Object): boolean;

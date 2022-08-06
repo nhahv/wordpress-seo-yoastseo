@@ -8,4 +8,3 @@ import Node from "./Node";
 import Paragraph from "./Paragraph";
 import StructuredNode from "./StructuredNode";
 export { Heading, LeafNode, List, ListItem, MetadataText, MetadataMiscellaneous, Node, Paragraph, StructuredNode };
-//# sourceMappingURL=index.d.ts.map

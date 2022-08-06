@@ -4,4 +4,3 @@
  */
 export const nonPassivesFullForms: string[];
 export const nonPassiveStems: string[];
-//# sourceMappingURL=nonPassivesTurkish.d.ts.map

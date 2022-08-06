@@ -6,5 +6,4 @@
  *
  * @returns {number} The keyword count.
  */
-export default function _default(paper: any, onlyKeyword?: boolean): number;
-//# sourceMappingURL=topicCount.d.ts.map
+export default function _default(paper: Object, onlyKeyword?: boolean): number;

@@ -5,4 +5,3 @@
  * @returns {string} Returns Dofollow or Nofollow.
  */
 export default function _default(anchorHTML: string): string;
-//# sourceMappingURL=checkNofollow.d.ts.map

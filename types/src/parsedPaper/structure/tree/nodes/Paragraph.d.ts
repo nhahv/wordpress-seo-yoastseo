@@ -13,7 +13,6 @@ declare class Paragraph {
      * @param {Object}  sourceCodeLocation The parse5 formatted location of the element inside of the source code.
      * @param {boolean} [isImplicit=false] If this paragraph is implicit.
      */
-    constructor(sourceCodeLocation: any, isImplicit?: boolean);
+    constructor(sourceCodeLocation: Object, isImplicit?: boolean);
     isImplicit: boolean;
 }
-//# sourceMappingURL=Paragraph.d.ts.map

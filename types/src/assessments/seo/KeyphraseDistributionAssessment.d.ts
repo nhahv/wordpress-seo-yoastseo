@@ -20,7 +20,7 @@ declare class KeyphraseDistributionAssessment extends Assessment {
      *
      * @returns {void}
      */
-    constructor(config?: any);
+    constructor(config?: Object);
     identifier: string;
     _config: any;
     /**
@@ -41,7 +41,7 @@ declare class KeyphraseDistributionAssessment extends Assessment {
      *
      * @returns {Object} Object with score and feedback text.
      */
-    calculateResult(i18n: Jed): any;
+    calculateResult(i18n: Jed): Object;
     /**
      * Creates a marker for all content words in keyphrase and synonyms.
      *
@@ -51,4 +51,3 @@ declare class KeyphraseDistributionAssessment extends Assessment {
 }
 import Assessment from "../../assessment";
 import AssessmentResult from "../../values/AssessmentResult";
-//# sourceMappingURL=KeyphraseDistributionAssessment.d.ts.map

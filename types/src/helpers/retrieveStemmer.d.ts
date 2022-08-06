@@ -7,5 +7,4 @@
  *
  * @returns {Function} A stemmer function for the language.
  */
-export default function _default(language: string, morphologyData: any): Function;
-//# sourceMappingURL=retrieveStemmer.d.ts.map
+export default function _default(language: string, morphologyData: Object): Function;

@@ -25,4 +25,3 @@ export function stripIncompleteTags(text: string): string;
  * @returns {string} The text with removed HTML begin and end block elements
  */
 export function stripBlockTagsAtStartEnd(text: string): string;
-//# sourceMappingURL=stripHTMLTags.d.ts.map

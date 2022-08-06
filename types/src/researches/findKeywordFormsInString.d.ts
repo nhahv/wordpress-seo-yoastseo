@@ -8,7 +8,7 @@
  *
  * @returns {Object} The number and the percentage of the keyphrase words that were matched in the text by at least one form.
  */
-export function findWordFormsInString(keywordForms: any[], text: string, locale: string): any;
+export function findWordFormsInString(keywordForms: any[], text: string, locale: string): Object;
 /**
  * Matches forms of words in the keyphrase and in the synonyms against a given text.
  *
@@ -28,5 +28,4 @@ export function findWordFormsInString(keywordForms: any[], text: string, locale:
  * @returns {Object} The number and the percentage fo the keyphrase words or synonyms that were matched in the text by at least one form,
  * and whether the keyphrase or a synonym was matched.
  */
-export function findTopicFormsInString(topicForms: any, text: string, useSynonyms: boolean, locale: string): any;
-//# sourceMappingURL=findKeywordFormsInString.d.ts.map
+export function findTopicFormsInString(topicForms: Object, text: string, useSynonyms: boolean, locale: string): Object;

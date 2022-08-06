@@ -76,4 +76,3 @@ declare class DeviationFragment {
      */
     getSyllables(): number;
 }
-//# sourceMappingURL=DeviationFragment.d.ts.map

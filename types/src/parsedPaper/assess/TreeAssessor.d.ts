@@ -118,4 +118,3 @@ declare class TreeAssessor {
     getApplicableAssessments(paper: Paper, node: any): Promise<any[]>;
 }
 import AssessmentResult from "../../values/AssessmentResult";
-//# sourceMappingURL=TreeAssessor.d.ts.map

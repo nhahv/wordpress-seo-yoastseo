@@ -7,4 +7,3 @@
  * @returns {Number} The number of occurrences.
  */
 export default function _default(text: string, wordToMatch: string, locale: string): number;
-//# sourceMappingURL=countWordOccurrences.d.ts.map

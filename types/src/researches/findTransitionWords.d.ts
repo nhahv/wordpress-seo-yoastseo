@@ -7,4 +7,3 @@
  * and the total number of sentences containing one or more transition words.
  */
 export default function _default(paper: Paper): object;
-//# sourceMappingURL=findTransitionWords.d.ts.map

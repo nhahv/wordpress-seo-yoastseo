@@ -23,7 +23,7 @@ declare class StructuredNode {
      *
      * @returns {void}
      */
-    constructor(tag: string, sourceCodeLocation: any | null);
+    constructor(tag: string, sourceCodeLocation: Object | null);
     /**
      * Type of structured node (e.g. "div", "section" etc.).
      * @type {string}
@@ -43,4 +43,3 @@ declare class StructuredNode {
      */
     addChild(child: any): void;
 }
-//# sourceMappingURL=StructuredNode.d.ts.map

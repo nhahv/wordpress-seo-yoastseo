@@ -8,4 +8,3 @@
  * @returns {boolean} Returns true if the match is preceded by a given word, otherwise returns false.
  */
 export default function _default(precedingWords: any[], matchIndex: number, addSpace?: boolean): boolean;
-//# sourceMappingURL=includesIndex.d.ts.map

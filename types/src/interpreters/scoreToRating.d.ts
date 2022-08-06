@@ -6,4 +6,3 @@ export default ScoreToRating;
  * @returns {string} The rating, given based on the score.
  */
 declare function ScoreToRating(score: number): string;
-//# sourceMappingURL=scoreToRating.d.ts.map

@@ -5,4 +5,3 @@
  * @returns {number} The number of links found in the text.
  */
 export default function _default(paper: object): number;
-//# sourceMappingURL=countLinks.d.ts.map

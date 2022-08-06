@@ -58,12 +58,11 @@ export default class ParsedPaper {
      *
      * @returns {void}
      */
-    setMetaData(metaData: any): void;
+    setMetaData(metaData: Object): void;
     /**
      * Returns the current metaData of the ParsedPaper.
      *
      * @returns {Object} The metaData.
      */
-    getMetaData(): any;
+    getMetaData(): Object;
 }
-//# sourceMappingURL=ParsedPaper.d.ts.map

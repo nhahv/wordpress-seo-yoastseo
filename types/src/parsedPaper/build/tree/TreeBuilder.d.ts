@@ -56,4 +56,3 @@ declare class TreeBuilder {
      */
     register(language: string, buildFunction: any): void;
 }
-//# sourceMappingURL=TreeBuilder.d.ts.map

@@ -9,4 +9,3 @@ export default buildTree;
  * @memberOf module:parsedPaper/builder
  */
 declare function buildTree(html: string): any;
-//# sourceMappingURL=buildTree.d.ts.map

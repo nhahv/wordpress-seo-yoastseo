@@ -19,4 +19,3 @@ declare class InvalidTypeError {
     name: string;
     message: string;
 }
-//# sourceMappingURL=invalidType.d.ts.map

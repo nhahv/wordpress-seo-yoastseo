@@ -7,4 +7,3 @@ export default createWorker;
  * @returns {Worker} The worker.
  */
 declare function createWorker(url: string): Worker;
-//# sourceMappingURL=createWorker.d.ts.map

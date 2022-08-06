@@ -174,4 +174,3 @@ declare class SnowballProgram {
     insert(...args: any[]): any;
     slice_to(...args: any[]): any;
 }
-//# sourceMappingURL=turkishStemmer.d.ts.map

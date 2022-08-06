@@ -5,4 +5,3 @@
  * @returns {Array} Sentences found in the text.
  */
 export default function _default(text: string): any[];
-//# sourceMappingURL=getSentences.d.ts.map

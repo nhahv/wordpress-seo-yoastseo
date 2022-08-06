@@ -60,7 +60,6 @@ declare class LinkStatistics extends Research {
      *
      * @returns {Promise<Object[]>} The research results.
      */
-    calculateFor(node: any, metadata: any): Promise<any[]>;
+    calculateFor(node: any, metadata: any): Promise<Object[]>;
 }
 import Research from "./Research";
-//# sourceMappingURL=LinkStatistics.d.ts.map

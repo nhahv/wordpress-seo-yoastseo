@@ -3,5 +3,4 @@
  *
  * @returns {Object} French participle exceptions.
  */
-export default function _default(): any;
-//# sourceMappingURL=exceptionsParticiples.d.ts.map
+export default function _default(): Object;

@@ -4,5 +4,4 @@
  *
  * @returns {array} removalWords Returns an array with words.
  */
-export default function _default(): any[];
-//# sourceMappingURL=removalWords.d.ts.map
+export default function _default(): array;

@@ -52,4 +52,3 @@ export function combinations(collection: any[]): any[];
  */
 export function replaceTurkishIs(text: string): any[];
 export const replaceTurkishIsMemoized: any;
-//# sourceMappingURL=specialCharacterMappings.d.ts.map

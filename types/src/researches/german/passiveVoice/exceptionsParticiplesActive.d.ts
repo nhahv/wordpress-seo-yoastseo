@@ -4,4 +4,3 @@
  * @returns {string[]} German participle exceptions.
  */
 export default function _default(): string[];
-//# sourceMappingURL=exceptionsParticiplesActive.d.ts.map

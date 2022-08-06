@@ -33,4 +33,3 @@ export function inRangeStartInclusive(number: number, start: number, end: number
  */
 export function inRangeStartEndInclusive(number: number, start: number, end: number): boolean;
 export { inRangeEndInclusive as inRange };
-//# sourceMappingURL=inRange.d.ts.map

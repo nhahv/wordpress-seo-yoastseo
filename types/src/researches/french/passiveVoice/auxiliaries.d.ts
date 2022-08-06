@@ -3,4 +3,3 @@
  * @returns {Array} The list with auxiliaries.
  */
 export default function _default(): any[];
-//# sourceMappingURL=auxiliaries.d.ts.map

@@ -6,4 +6,3 @@
  * @returns {Array} An array with all synonyms.
  */
 export default function _default(synonyms: string): any[];
-//# sourceMappingURL=parseSynonyms.d.ts.map

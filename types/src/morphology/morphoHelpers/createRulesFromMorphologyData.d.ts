@@ -26,4 +26,3 @@ export function createSingleRuleFromMorphologyData(rule: any[], flags?: string):
  * @returns {Array} Array of objects to be used in the regex-based rules.
  */
 export function createRulesFromMorphologyData(rules: any[], flags?: string): any[];
-//# sourceMappingURL=createRulesFromMorphologyData.d.ts.map

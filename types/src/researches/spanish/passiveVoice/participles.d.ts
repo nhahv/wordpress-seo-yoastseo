@@ -4,4 +4,3 @@
  * @returns {Array} The list with participles.
  */
 export default function _default(): any[];
-//# sourceMappingURL=participles.d.ts.map

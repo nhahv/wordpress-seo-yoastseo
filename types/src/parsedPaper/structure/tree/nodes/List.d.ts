@@ -15,7 +15,7 @@ declare class List {
      *
      * @returns {void}
      */
-    constructor(ordered: boolean, sourceCodeLocation: any);
+    constructor(ordered: boolean, sourceCodeLocation: Object);
     /**
      * If this list is ordered.
      * @type {boolean}
@@ -35,4 +35,3 @@ declare class List {
     addChild(child: ListItem): void;
 }
 import ListItem from "./ListItem";
-//# sourceMappingURL=List.d.ts.map

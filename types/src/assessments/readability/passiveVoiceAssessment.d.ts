@@ -20,7 +20,7 @@ declare function passiveVoiceAssessment(paper: object, researcher: object, i18n:
  *
  * @returns {boolean} Returns true if the language is available and the paper is not empty.
  */
-declare function isApplicable(paper: any): boolean;
+declare function isApplicable(paper: Object): boolean;
 /**
  * Marks all sentences that have the passive voice.
  *
@@ -29,4 +29,3 @@ declare function isApplicable(paper: any): boolean;
  * @returns {object} All marked sentences.
  */
 declare function passiveVoiceMarker(paper: object, researcher: object): object;
-//# sourceMappingURL=passiveVoiceAssessment.d.ts.map

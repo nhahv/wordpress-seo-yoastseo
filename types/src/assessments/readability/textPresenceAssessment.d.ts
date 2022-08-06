@@ -13,4 +13,3 @@ export default _default;
  */
 declare function textPresenceAssessment(paper: Paper, researcher: Researcher, i18n: Jed): AssessmentResult;
 import AssessmentResult from "../../values/AssessmentResult";
-//# sourceMappingURL=textPresenceAssessment.d.ts.map

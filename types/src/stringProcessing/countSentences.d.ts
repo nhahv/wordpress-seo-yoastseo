@@ -5,4 +5,3 @@
  * @returns {number} The number of sentences in the text.
  */
 export default function _default(text: string): number;
-//# sourceMappingURL=countSentences.d.ts.map

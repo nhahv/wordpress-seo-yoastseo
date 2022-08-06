@@ -24,7 +24,7 @@ export function getInfinitive(word: string, regexVerb: {
  *
  * @returns {Array} Array of word forms from the exception list.
  */
-export function checkIrregulars(word: string, irregularVerbs: any[], verbPrefixes: any): any[];
+export function checkIrregulars(word: string, irregularVerbs: any[], verbPrefixes: Object): any[];
 /**
  * Checks if the input word ends with "ing".
  *
@@ -42,5 +42,4 @@ export function endsWithIng(word: string): boolean;
  *
  * @returns {Array} Array of word forms from the exception list.
  */
-export function normalizePrefixed(word: string, verbPrefixes: any): any[];
-//# sourceMappingURL=getVerbStem.d.ts.map
+export function normalizePrefixed(word: string, verbPrefixes: Object): any[];

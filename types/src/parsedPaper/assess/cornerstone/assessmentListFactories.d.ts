@@ -30,4 +30,3 @@ export function constructReadabilityAssessments(): any;
  * @memberOf module:parsedPaper/assess
  */
 export function constructRelatedKeyphraseAssessments(): any;
-//# sourceMappingURL=assessmentListFactories.d.ts.map

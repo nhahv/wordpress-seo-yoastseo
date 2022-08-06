@@ -4,4 +4,3 @@
  * @returns {void}
  */
 export default function _default(): void;
-//# sourceMappingURL=checkException.d.ts.map

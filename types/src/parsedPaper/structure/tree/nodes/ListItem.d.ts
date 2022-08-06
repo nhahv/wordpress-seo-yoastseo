@@ -14,11 +14,10 @@ declare class ListItem {
      *
      * @returns {void}
      */
-    constructor(sourceCodeLocation: any);
+    constructor(sourceCodeLocation: Object);
     /**
      * This ListItem's child nodes.
      * @type {Node[]}
      */
     children: Node[];
 }
-//# sourceMappingURL=ListItem.d.ts.map

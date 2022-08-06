@@ -8,4 +8,3 @@
  * @returns {string} The newly built form of the word.
  */
 export function buildOneFormFromRegex(word: string, regexes: any[]): string;
-//# sourceMappingURL=buildFormRule.d.ts.map

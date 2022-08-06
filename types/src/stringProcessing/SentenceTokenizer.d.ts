@@ -86,7 +86,7 @@ export default class SentenceTokenizer {
      * @param {Object} token The token to validate.
      * @returns {boolean} Returns true if the token is valid sentence start, false if it is not.
      */
-    isSentenceStart(token: any): boolean;
+    isSentenceStart(token: Object): boolean;
     /**
      * Checks if the token is a valid sentence ending. A valid sentence ending is either a full stop or another
      * delimiter such as "?", "!", etc.
@@ -94,7 +94,7 @@ export default class SentenceTokenizer {
      * @param {Object} token The token to validate.
      * @returns {boolean} Returns true if the token is valid sentence ending, false if it is not.
      */
-    isSentenceEnding(token: any): boolean;
+    isSentenceEnding(token: Object): boolean;
     /**
      * Tokens that represent a '<', followed by content until it enters another '<' or '>'
      * gets another pass by the tokenizer.
@@ -104,7 +104,7 @@ export default class SentenceTokenizer {
      * @param {string} currentSentence The current sentence. Sentence parts may get appended by this method.
      * @returns {{tokenSentences, currentSentence}} The found sentences and the current sentence, appended when necessary.
      */
-    tokenizeSmallerThanContent(token: any, tokenSentences: string[], currentSentence: string): {
+    tokenizeSmallerThanContent(token: Object, tokenSentences: string[], currentSentence: string): {
         tokenSentences;
         currentSentence;
     };
@@ -113,7 +113,7 @@ export default class SentenceTokenizer {
      *
      * @returns {Object} The tokenizer and the tokens.
      */
-    createTokenizer(): any;
+    createTokenizer(): Object;
     /**
      * Tokenizes the given text using the given tokenizer.
      *
@@ -121,7 +121,7 @@ export default class SentenceTokenizer {
      * @param {string} text The text to tokenize.
      * @returns {void}
      */
-    tokenize(tokenizer: any, text: string): void;
+    tokenize(tokenizer: Object, text: string): void;
     /**
      * Returns an array of sentences for a given array of tokens, assumes that the text has already been split into blocks.
      *
@@ -130,6 +130,5 @@ export default class SentenceTokenizer {
      *
      * @returns {string[]} A list of sentences.
      */
-    getSentencesFromTokens(tokenArray: any[], trimSentences?: boolean): string[];
+    getSentencesFromTokens(tokenArray: Object[], trimSentences?: boolean): string[];
 }
-//# sourceMappingURL=SentenceTokenizer.d.ts.map

@@ -8,4 +8,3 @@ export default getProminentWordsForInsights;
  * @returns {WordCombination[]} Prominent words for this paper, filtered and sorted.
  */
 declare function getProminentWordsForInsights(paper: Paper, researcher: Researcher): WordCombination[];
-//# sourceMappingURL=getProminentWordsForInsights.d.ts.map
