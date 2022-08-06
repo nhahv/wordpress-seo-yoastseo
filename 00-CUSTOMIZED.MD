@@ -19,3 +19,36 @@ Then run this comand to get the `.json` files:
 ```bash
 node_modules/.bin/grunt po2json
 ```
+
+
+### TYPESCRIPT
+https://www.typescriptlang.org/docs/handbook/declaration-files/dts-from-js.html
+```json
+{
+  // Change this to match your project
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    // Tells TypeScript to read JS files, as
+    // normally they are ignored as source files
+    "allowJs": true,
+        "checkJs": true,
+            "strict": false,
+    "moduleResolution": "node",
+    "target": "es5",
+    "module": "esnext",
+
+    // Generate d.ts files
+    "declaration": true,
+    // This compiler run should
+    // only output d.ts files
+    "emitDeclarationOnly": true,
+    // Types should go into this directory.
+    // Removing this would place the .d.ts files
+    // next to the .js files
+    "outDir": "dist",
+    // go to js file when using IDE functions like
+    // "Go to Definition" in VSCode
+    "declarationMap": true
+  }
+}
+```
