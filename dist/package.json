@@ -22,7 +22,8 @@
     "start": "npm start --prefix examples/webpack",
     "build": "grunt publish",
     "lint": "grunt check",
-    "pretest": "yarn install-ci",
+    "translate": "grunt build:translations",
+    "po2json": "grunt po2json",
     "test": "jest --runInBand",
     "install-ci": "grunt get-premium-configuration",
     "prepublishOnly": "grunt publish"

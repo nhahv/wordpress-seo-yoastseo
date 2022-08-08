@@ -1,3 +1,4 @@
+import type { Configuration } from "./index";
 export default AnalysisWorkerWrapper;
 /**
  * Analysis worker is an API around the Web Worker.
@@ -17,12 +18,12 @@ declare class AnalysisWorkerWrapper {
     /**
      * Initializes the worker with a configuration.
      *
-     * @param {Object} configuration The configuration to initialize the worker
+     * @param {Configuration} configuration The configuration to initialize the worker
      *                               with.
      *
      * @returns {Promise} The promise of initialization.
      */
-    initialize(configuration: Object): Promise<any>;
+    initialize(configuration: Configuration): Promise<any>;
     /**
      * Analyzes the paper.
      *

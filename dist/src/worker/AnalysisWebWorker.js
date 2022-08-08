@@ -130,6 +130,8 @@ var _wrapTryCatchAroundAction2 = _interopRequireDefault(_wrapTryCatchAroundActio
 
 var _scoreAggregators = require("../parsedPaper/assess/scoreAggregators");
 
+var _typescript = require("typescript");
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -486,6 +488,14 @@ class AnalysisWebWorker {
 		if (update.seo) {
 			this._seoAssessor = this.createSEOAssessor();
 			this._relatedKeywordAssessor = this.createRelatedKeywordsAssessor();
+		}
+		if ((0, _lodashEs.has)(configuration, "previouslyUsedKeywords")) {
+			debugger;
+			var previouslyUsedKeywordsPlugin = new bundledPlugins.usedKeywords(this, configuration.previouslyUsedKeywords);
+			this.registerMessageHandler("updateKeywordUsage", async data => {
+				previouslyUsedKeywordsPlugin.updateKeywordUsage(JSON.parse(data));
+			}, "previouslyUsedKeywords");
+			previouslyUsedKeywordsPlugin.registerPlugin();
 		}
 
 		this.clearCache();

@@ -43,7 +43,7 @@ class FunctionWordsInKeyphraseAssessment extends _assessment2.default {
 			assessmentResult.setScore(this._config.scores.onlyFunctionWords);
 			assessmentResult.setText(i18n.sprintf(i18n.dgettext("js-text-analysis", "%1$sFunction words in keyphrase%3$s: " + "Your keyphrase \"%4$s\" contains function words only. " + "%2$sLearn more about what makes a good keyphrase.%3$s"), this._config.urlTitle, this._config.urlCallToAction, "</a>", this._keyword));
 		} else {
-			assessmentResult.setText(i18n.sprintf(i18n.dgettext("js-text-analysis", "%1$sFunction words in keyphrase%3$s: Your keyphrase \"%4$s\" not contains function words only."), this._config.urlTitle, this._config.urlCallToAction, "</a>"));
+			assessmentResult.setText(i18n.sprintf(i18n.dgettext("js-text-analysis", "%1$sFunction words in keyphrase%3$s: Your keyphrase \"%4$s\" not contains function words only."), this._config.urlTitle, this._config.urlCallToAction, "</a>", this._keyword));
 		}
 
 		return assessmentResult;
