@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: yoastseo 1.91.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-05 15:29+0700\n"
-"PO-Revision-Date: 2022-08-05 15:48+0700\n"
+"POT-Creation-Date: 2022-08-08 15:32+0700\n"
+"PO-Revision-Date: 2022-08-10 12:11+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi_VN\n"
@@ -274,6 +274,15 @@ msgid ""
 msgstr ""
 "%1$sCác từ chức năng trong cụm từ khóa%3$s: Từ khóa \"%4$s\" chỉ chứa từ "
 "khóa chức năng. %2$sTìm hiểu thêm về các tạo cụm từ khóa tốt.%3$s"
+
+#: src/assessments/seo/FunctionWordsInKeyphraseAssessment.js:72
+#, javascript-format
+msgid ""
+"%1$sFunction words in keyphrase%3$s: Your keyphrase \"%4$s\" not contains "
+"function words only."
+msgstr ""
+"%1$sCác từ chức năng trong cụm từ khóa%3$s: Từ khóa \"%4$s\" không chỉ chứa "
+"từ chức năng"
 
 #. Translators: %1$s and %2$s expand to links on yoast.com, %3$s expands to the anchor end tag
 #: src/assessments/seo/InternalLinksAssessment.js:89
@@ -613,14 +622,19 @@ msgstr ""
 msgid "%1$sSEO title width%3$s: %2$sPlease create an SEO title%3$s."
 msgstr "%1$sĐộ rộng của tiêu đề SEO%3$s: %2$sHãy tạo một tiêu đề SEO%3$s."
 
-#: src/assessments/seo/SingleH1Assessment.js:96
+#: src/assessments/seo/SingleH1Assessment.js:53
+#, javascript-format
+msgid "%1$sSingle title%3$s: OK!"
+msgstr "%1$sTiêu đề duy nhất%3$s: OK!"
+
+#: src/assessments/seo/SingleH1Assessment.js:100
 #, javascript-format
 msgid ""
 "%1$sSingle title%3$s: H1s should only be used as your main title. Find all "
 "H1s in your text that aren't your main title and %2$schange them to a lower "
 "heading level%3$s!"
 msgstr ""
-"%1$sTiêu đề đơn lẻ%3$s: Các thẻ H1 chỉ nên được sử dụng làm tiêu đề chính. "
+"%1$sTiêu đề duy nhất%3$s: Các thẻ H1 chỉ nên được sử dụng làm tiêu đề chính. "
 "Tìm tất cả các thẻ H1 trong văn bản của bạn mà không phải tiêu đề chính và "
 "%2$schuyển chúng thành những thẻ tiêu đề thấp hơn%3$s!"
 
@@ -749,6 +763,14 @@ msgid ""
 msgstr ""
 "%1$sĐường dẫn từ khóa%3$s: Bạn đang liên kết tới trang khác với từ khóa mà "
 "bạn muốn trang này được xếp hạng. %2$sĐừng làm như vậy%3$s!"
+
+#: src/assessments/seo/TextCompetingLinksAssessment.js:107
+#, javascript-format
+msgid ""
+"%1$sLink keyphrase%3$s: You're not linking other page with the keyword. OK"
+msgstr ""
+"%1$sĐường dẫn từ khóa%3$s: Bạn không liên kết tới trang khác với từ khóa "
+"chính. OK"
 
 #: src/assessments/seo/TextImagesAssessment.js:133
 #, javascript-format
