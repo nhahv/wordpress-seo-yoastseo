@@ -18,7 +18,7 @@ class TextCompetingLinksAssessment extends Assessment {
 	 *
 	 * @returns {void}
 	 */
-	constructor( config = {} ) {
+	constructor(config = {}) {
 		super();
 
 		const defaultConfig = {
@@ -28,12 +28,12 @@ class TextCompetingLinksAssessment extends Assessment {
 			scores: {
 				bad: 2,
 			},
-			urlTitle: createAnchorOpeningTag( "https://yoa.st/34l" ),
-			urlCallToAction: createAnchorOpeningTag( "https://yoa.st/34m" ),
+			urlTitle: createAnchorOpeningTag("https://yoa.st/34l"),
+			urlCallToAction: createAnchorOpeningTag("https://yoa.st/34m"),
 		};
 
 		this.identifier = "textCompetingLinks";
-		this._config = merge( defaultConfig, config );
+		this._config = merge(defaultConfig, config);
 	}
 
 	/**
@@ -45,20 +45,20 @@ class TextCompetingLinksAssessment extends Assessment {
 	 *
 	 * @returns {Object} The AssessmentResult.
 	 */
-	getResult( paper, researcher, i18n ) {
+	getResult(paper, researcher, i18n) {
 		const assessmentResult = new AssessmentResult();
 
-		this.linkCount = researcher.getResearch( "getLinkStatistics" );
+		this.linkCount = researcher.getResearch("getLinkStatistics");
 
-		const calculatedResult = this.calculateResult( i18n );
+		const calculatedResult = this.calculateResult(i18n);
 
-		if ( isUndefined( calculatedResult ) ) {
+		if (isUndefined(calculatedResult)) {
 			return assessmentResult;
 		}
 
-		assessmentResult.setScore( calculatedResult.score );
-		assessmentResult.setText( calculatedResult.resultText );
-		assessmentResult.setHasMarks( false );
+		assessmentResult.setScore(calculatedResult.score);
+		assessmentResult.setText(calculatedResult.resultText);
+		assessmentResult.setHasMarks(false);
 
 		return assessmentResult;
 	}
@@ -70,7 +70,7 @@ class TextCompetingLinksAssessment extends Assessment {
 	 *
 	 * @returns {boolean} Whether the paper has text and a keyword
 	 */
-	isApplicable( paper ) {
+	isApplicable(paper) {
 		return paper.hasText() && paper.hasKeyword();
 	}
 
@@ -81,8 +81,8 @@ class TextCompetingLinksAssessment extends Assessment {
 	 *
 	 * @returns {Object} ResultObject with score and text.
 	 */
-	calculateResult( i18n ) {
-		if ( this.linkCount.keyword.totalKeyword > this._config.parameters.recommendedMaximum ) {
+	calculateResult(i18n) {
+		if (this.linkCount.keyword.totalKeyword > this._config.parameters.recommendedMaximum) {
 			return {
 				score: this._config.scores.bad,
 				resultText: i18n.sprintf(
@@ -92,6 +92,19 @@ class TextCompetingLinksAssessment extends Assessment {
 						"%1$sLink keyphrase%3$s: " +
 						"You're linking to another page with the words you want this page to rank for. " +
 						"%2$sDon't do that%3$s!"
+					),
+					this._config.urlTitle,
+					this._config.urlCallToAction,
+					"</a>"
+				),
+			};
+		} else {
+			return {
+				resultText: i18n.sprintf(
+					/* Translators:  %1$s and %2$s expand to links on yoast.com, %3$s expands to the anchor end tag */
+					i18n.dgettext(
+						"js-text-analysis",
+						"%1$sLink keyphrase%3$s: You're not linking other page with the keyword. OK"
 					),
 					this._config.urlTitle,
 					this._config.urlCallToAction,

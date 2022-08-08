@@ -46,6 +46,7 @@ class singleH1Assessment extends _assessment2.default {
 		this._h1s = researcher.getResearch("h1s");
 
 		const assessmentResult = new _AssessmentResult2.default();
+		assessmentResult.setText(i18n.dgettext("js-text-analysis", "%1$sSingle title%3$s: OK!"));
 
 		const calculatedResult = this.calculateResult(i18n);
 

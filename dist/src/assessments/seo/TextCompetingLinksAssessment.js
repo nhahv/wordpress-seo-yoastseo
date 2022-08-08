@@ -65,6 +65,10 @@ class TextCompetingLinksAssessment extends _assessment2.default {
 				score: this._config.scores.bad,
 				resultText: i18n.sprintf(i18n.dgettext("js-text-analysis", "%1$sLink keyphrase%3$s: " + "You're linking to another page with the words you want this page to rank for. " + "%2$sDon't do that%3$s!"), this._config.urlTitle, this._config.urlCallToAction, "</a>")
 			};
+		} else {
+			return {
+				resultText: i18n.sprintf(i18n.dgettext("js-text-analysis", "%1$sLink keyphrase%3$s: You're not linking other page with the keyword. OK"), this._config.urlTitle, this._config.urlCallToAction, "</a>")
+			};
 		}
 	}
 }
