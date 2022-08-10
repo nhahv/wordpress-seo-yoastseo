@@ -72,7 +72,8 @@ class FunctionWordsInKeyphraseAssessment extends Assessment {
 					"%1$sFunction words in keyphrase%3$s: Your keyphrase \"%4$s\" not contains function words only."),
 				this._config.urlTitle,
 				this._config.urlCallToAction,
-				"</a>"
+				"</a>",
+				this._keyword,
 			))
 		}
 

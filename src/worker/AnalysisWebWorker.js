@@ -63,11 +63,12 @@ import wrapTryCatchAroundAction from "./wrapTryCatchAroundAction";
 
 // Tree assessor functionality.
 import { ReadabilityScoreAggregator, SEOScoreAggregator } from "../parsedPaper/assess/scoreAggregators";
+import { collapseTextChangeRangesAcrossMultipleVersions } from "typescript";
 
 const keyphraseDistribution = new assessments.seo.KeyphraseDistributionAssessment();
 
-const logger = getLogger( "yoast-analysis-worker" );
-logger.setDefaultLevel( "error" );
+const logger = getLogger("yoast-analysis-worker");
+logger.setDefaultLevel("error");
 
 /**
  * Analysis Web Worker.
@@ -82,7 +83,7 @@ export default class AnalysisWebWorker {
 	 * @param {Object} scope The scope for the messaging. Expected to have the
 	 *                       `onmessage` event and the `postMessage` function.
 	 */
-	constructor( scope ) {
+	constructor(scope) {
 		this._scope = scope;
 
 		this._configuration = {
@@ -101,7 +102,7 @@ export default class AnalysisWebWorker {
 		this._relatedKeywords = {};
 
 		this._i18n = AnalysisWebWorker.createI18n();
-		this._researcher = new Researcher( this._paper );
+		this._researcher = new Researcher(this._paper);
 
 		this._contentAssessor = null;
 		this._seoAssessor = null;
@@ -141,27 +142,27 @@ export default class AnalysisWebWorker {
 
 		this.bindActions();
 
-		this.assessRelatedKeywords = this.assessRelatedKeywords.bind( this );
+		this.assessRelatedKeywords = this.assessRelatedKeywords.bind(this);
 
 		// Bind register functions to this scope.
-		this.registerAssessment = this.registerAssessment.bind( this );
-		this.registerMessageHandler = this.registerMessageHandler.bind( this );
-		this.refreshAssessment = this.refreshAssessment.bind( this );
+		this.registerAssessment = this.registerAssessment.bind(this);
+		this.registerMessageHandler = this.registerMessageHandler.bind(this);
+		this.refreshAssessment = this.refreshAssessment.bind(this);
 
 		// Bind event handlers to this scope.
-		this.handleMessage = this.handleMessage.bind( this );
+		this.handleMessage = this.handleMessage.bind(this);
 
 		// Wrap try/catch around actions.
-		this.analyzeRelatedKeywords = wrapTryCatchAroundAction( logger, this.analyze,
-			"An error occurred while running the related keywords analysis." );
+		this.analyzeRelatedKeywords = wrapTryCatchAroundAction(logger, this.analyze,
+			"An error occurred while running the related keywords analysis.");
 		/*
 		 * Overwrite this.analyze after we use it in this.analyzeRelatedKeywords so that this.analyzeRelatedKeywords
 		 * doesn't use the overwritten version. Therefore, this order shouldn't be changed.
 		 */
-		this.analyze = wrapTryCatchAroundAction( logger, this.analyze,
-			"An error occurred while running the analysis." );
-		this.runResearch = wrapTryCatchAroundAction( logger, this.runResearch,
-			"An error occurred after running the '%%name%%' research." );
+		this.analyze = wrapTryCatchAroundAction(logger, this.analyze,
+			"An error occurred while running the analysis.");
+		this.runResearch = wrapTryCatchAroundAction(logger, this.runResearch,
+			"An error occurred after running the '%%name%%' research.");
 	}
 
 	/**
@@ -171,16 +172,16 @@ export default class AnalysisWebWorker {
 	 */
 	bindActions() {
 		// Bind actions to this scope.
-		this.analyze = this.analyze.bind( this );
-		this.analyzeDone = this.analyzeDone.bind( this );
-		this.analyzeRelatedKeywordsDone = this.analyzeRelatedKeywordsDone.bind( this );
-		this.loadScript = this.loadScript.bind( this );
-		this.loadScriptDone = this.loadScriptDone.bind( this );
-		this.customMessage = this.customMessage.bind( this );
-		this.customMessageDone = this.customMessageDone.bind( this );
-		this.clearCache = this.clearCache.bind( this );
-		this.runResearch = this.runResearch.bind( this );
-		this.runResearchDone = this.runResearchDone.bind( this );
+		this.analyze = this.analyze.bind(this);
+		this.analyzeDone = this.analyzeDone.bind(this);
+		this.analyzeRelatedKeywordsDone = this.analyzeRelatedKeywordsDone.bind(this);
+		this.loadScript = this.loadScript.bind(this);
+		this.loadScriptDone = this.loadScriptDone.bind(this);
+		this.customMessage = this.customMessage.bind(this);
+		this.customMessageDone = this.customMessageDone.bind(this);
+		this.clearCache = this.clearCache.bind(this);
+		this.runResearch = this.runResearch.bind(this);
+		this.runResearchDone = this.runResearchDone.bind(this);
 	}
 
 	/**
@@ -245,68 +246,68 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {void}
 	 */
-	handleMessage( { data: { type, id, payload } } ) {
-		payload = Transporter.parse( payload );
+	handleMessage({ data: { type, id, payload } }) {
+		payload = Transporter.parse(payload);
 
-		logger.debug( "AnalysisWebWorker incoming:", type, id, payload );
+		logger.debug("AnalysisWebWorker incoming:", type, id, payload);
 
-		switch ( type ) {
+		switch (type) {
 			case "initialize":
-				this.initialize( id, payload );
+				this.initialize(id, payload);
 				this._scheduler.startPolling();
 				break;
 			case "analyze":
-				this._scheduler.schedule( {
+				this._scheduler.schedule({
 					id,
 					execute: this.analyze,
 					done: this.analyzeDone,
 					data: payload,
 					type: type,
-				} );
+				});
 				break;
 			case "analyzeRelatedKeywords":
-				this._scheduler.schedule( {
+				this._scheduler.schedule({
 					id,
 					execute: this.analyzeRelatedKeywords,
 					done: this.analyzeRelatedKeywordsDone,
 					data: payload,
 					type: type,
-				} );
+				});
 				break;
 			case "loadScript":
-				this._scheduler.schedule( {
+				this._scheduler.schedule({
 					id,
 					execute: this.loadScript,
 					done: this.loadScriptDone,
 					data: payload,
 					type: type,
-				} );
+				});
 				break;
 			case "runResearch":
-				this._scheduler.schedule( {
+				this._scheduler.schedule({
 					id,
 					execute: this.runResearch,
 					done: this.runResearchDone,
 					data: payload,
-				} );
+				});
 				break;
 			case "customMessage": {
 				const name = payload.name;
-				if ( name && this._registeredMessageHandlers[ name ] ) {
-					this._scheduler.schedule( {
+				if (name && this._registeredMessageHandlers[name]) {
+					this._scheduler.schedule({
 						id,
 						execute: this.customMessage,
 						done: this.customMessageDone,
 						data: payload,
 						type: type,
-					} );
+					});
 					break;
 				}
-				this.customMessageDone( id, { error: new Error( "No message handler registered for messages with name: " + name ) } );
+				this.customMessageDone(id, { error: new Error("No message handler registered for messages with name: " + name) });
 				break;
 			}
 			default:
-				console.warn( "AnalysisWebWorker unrecognized action:", type );
+				console.warn("AnalysisWebWorker unrecognized action:", type);
 		}
 	}
 
@@ -318,7 +319,7 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {Jed} Jed instance.
 	 */
-	static createI18n( translations ) {
+	static createI18n(translations) {
 		// Use default object to prevent Jed from erroring out.
 		translations = translations || {
 			domain: "js-text-analysis",
@@ -330,7 +331,7 @@ export default class AnalysisWebWorker {
 			},
 		};
 
-		return new Jed( translations );
+		return new Jed(translations);
 	}
 
 	/**
@@ -347,13 +348,13 @@ export default class AnalysisWebWorker {
 			locale,
 		} = this._configuration;
 
-		if ( contentAnalysisActive === false ) {
+		if (contentAnalysisActive === false) {
 			return null;
 		}
 
 		const assessor = useCornerstone === true
-			? new CornerstoneContentAssessor( this._i18n, { locale } )
-			: new ContentAssessor( this._i18n, { locale } );
+			? new CornerstoneContentAssessor(this._i18n, { locale })
+			: new ContentAssessor(this._i18n, { locale });
 
 		return assessor;
 	}
@@ -374,30 +375,30 @@ export default class AnalysisWebWorker {
 			locale,
 		} = this._configuration;
 
-		if ( keywordAnalysisActive === false ) {
+		if (keywordAnalysisActive === false) {
 			return null;
 		}
 
 		let assessor;
 
-		if ( useTaxonomy === true ) {
-			assessor = new TaxonomyAssessor( this._i18n, { locale: locale, researcher: this._researcher } );
+		if (useTaxonomy === true) {
+			assessor = new TaxonomyAssessor(this._i18n, { locale: locale, researcher: this._researcher });
 		} else {
 			assessor = useCornerstone === true
-				? new CornerstoneSEOAssessor( this._i18n, { locale: locale, researcher: this._researcher } )
-				: new SEOAssessor( this._i18n, { locale: locale, researcher: this._researcher } );
+				? new CornerstoneSEOAssessor(this._i18n, { locale: locale, researcher: this._researcher })
+				: new SEOAssessor(this._i18n, { locale: locale, researcher: this._researcher });
 		}
 
 
-		if ( useKeywordDistribution && isUndefined( assessor.getAssessment( "keyphraseDistribution" ) ) ) {
-			assessor.addAssessment( "keyphraseDistribution", keyphraseDistribution );
+		if (useKeywordDistribution && isUndefined(assessor.getAssessment("keyphraseDistribution"))) {
+			assessor.addAssessment("keyphraseDistribution", keyphraseDistribution);
 		}
 
-		this._registeredAssessments.forEach( ( { name, assessment } ) => {
-			if ( isUndefined( assessor.getAssessment( name ) ) ) {
-				assessor.addAssessment( name, assessment );
+		this._registeredAssessments.forEach(({ name, assessment }) => {
+			if (isUndefined(assessor.getAssessment(name))) {
+				assessor.addAssessment(name, assessment);
 			}
-		} );
+		});
 
 		return assessor;
 	}
@@ -417,25 +418,25 @@ export default class AnalysisWebWorker {
 			locale,
 		} = this._configuration;
 
-		if ( keywordAnalysisActive === false ) {
+		if (keywordAnalysisActive === false) {
 			return null;
 		}
 
 		let assessor;
 
-		if ( useTaxonomy === true ) {
-			assessor = new RelatedKeywordTaxonomyAssessor( this._i18n, { locale: locale, researcher: this._researcher } );
+		if (useTaxonomy === true) {
+			assessor = new RelatedKeywordTaxonomyAssessor(this._i18n, { locale: locale, researcher: this._researcher });
 		} else {
 			assessor = useCornerstone === true
-				? new CornerstoneRelatedKeywordAssessor( this._i18n, { locale: locale, researcher: this._researcher } )
-				: new RelatedKeywordAssessor( this._i18n, { locale: locale, researcher: this._researcher } );
+				? new CornerstoneRelatedKeywordAssessor(this._i18n, { locale: locale, researcher: this._researcher })
+				: new RelatedKeywordAssessor(this._i18n, { locale: locale, researcher: this._researcher });
 		}
 
-		this._registeredAssessments.forEach( ( { name, assessment } ) => {
-			if ( isUndefined( assessor.getAssessment( name ) ) ) {
-				assessor.addAssessment( name, assessment );
+		this._registeredAssessments.forEach(({ name, assessment }) => {
+			if (isUndefined(assessor.getAssessment(name))) {
+				assessor.addAssessment(name, assessment);
 			}
-		} );
+		});
 
 		return assessor;
 	}
@@ -466,16 +467,16 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {void}
 	 */
-	send( type, id, payload = {} ) {
-		logger.debug( "AnalysisWebWorker outgoing:", type, id, payload );
+	send(type, id, payload = {}) {
+		logger.debug("AnalysisWebWorker outgoing:", type, id, payload);
 
-		payload = Transporter.serialize( payload );
+		payload = Transporter.serialize(payload);
 
-		this._scope.postMessage( {
+		this._scope.postMessage({
 			type,
 			id,
 			payload,
-		} );
+		});
 	}
 
 	/**
@@ -487,14 +488,14 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {Object} Containing seo and readability with true or false.
 	 */
-	static shouldAssessorsUpdate( configuration, contentAssessor = null, seoAssessor = null ) {
-		const readability = [ "contentAnalysisActive", "useCornerstone", "locale", "translations" ];
-		const seo = [ "keywordAnalysisActive", "useCornerstone", "useTaxonomy", "useKeywordDistribution", "locale", "translations", "researchData" ];
-		const configurationKeys = Object.keys( configuration );
+	static shouldAssessorsUpdate(configuration, contentAssessor = null, seoAssessor = null) {
+		const readability = ["contentAnalysisActive", "useCornerstone", "locale", "translations"];
+		const seo = ["keywordAnalysisActive", "useCornerstone", "useTaxonomy", "useKeywordDistribution", "locale", "translations", "researchData"];
+		const configurationKeys = Object.keys(configuration);
 
 		return {
-			readability: isNull( contentAssessor ) || includesAny( configurationKeys, readability ),
-			seo: isNull( seoAssessor ) || includesAny( configurationKeys, seo ),
+			readability: isNull(contentAssessor) || includesAny(configurationKeys, readability),
+			seo: isNull(seoAssessor) || includesAny(configurationKeys, seo),
 		};
 	}
 
@@ -517,40 +518,40 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {void}
 	 */
-	initialize( id, configuration ) {
-		const update = AnalysisWebWorker.shouldAssessorsUpdate( configuration, this._contentAssessor, this._seoAssessor );
+	initialize(id, configuration) {
+		const update = AnalysisWebWorker.shouldAssessorsUpdate(configuration, this._contentAssessor, this._seoAssessor);
 
-		if ( has( configuration, "translations" ) ) {
-			this._i18n = AnalysisWebWorker.createI18n( configuration.translations );
+		if (has(configuration, "translations")) {
+			this._i18n = AnalysisWebWorker.createI18n(configuration.translations);
 			delete configuration.translations;
 		}
 
-		if ( has( configuration, "researchData" ) ) {
-			forEach( configuration.researchData, ( data, research ) => {
-				this._researcher.addResearchData( research, data );
-			} );
+		if (has(configuration, "researchData")) {
+			forEach(configuration.researchData, (data, research) => {
+				this._researcher.addResearchData(research, data);
+			});
 			delete configuration.researchData;
 		}
 
-		if ( has( configuration, "defaultQueryParams" ) ) {
-			configureShortlinker( { params: configuration.defaultQueryParams } );
+		if (has(configuration, "defaultQueryParams")) {
+			configureShortlinker({ params: configuration.defaultQueryParams });
 			delete configuration.defaultQueryParams;
 		}
 
-		if ( has( configuration, "logLevel" ) ) {
-			logger.setLevel( configuration.logLevel, false );
+		if (has(configuration, "logLevel")) {
+			logger.setLevel(configuration.logLevel, false);
 			delete configuration.logLevel;
 		}
 
-		if ( has( configuration, "enabledFeatures" ) ) {
+		if (has(configuration, "enabledFeatures")) {
 			// Make feature flags available inside of the web worker.
-			enableFeatures( configuration.enabledFeatures );
-			delete  configuration.enabledFeatures;
+			enableFeatures(configuration.enabledFeatures);
+			delete configuration.enabledFeatures;
 		}
 
-		this._configuration = merge( this._configuration, configuration );
+		this._configuration = merge(this._configuration, configuration);
 
-		if ( update.readability ) {
+		if (update.readability) {
 			this._contentAssessor = this.createContentAssessor();
 			/*
 			 * Disabled code:
@@ -558,7 +559,7 @@ export default class AnalysisWebWorker {
 			 */
 			this._contentTreeAssessor = null;
 		}
-		if ( update.seo ) {
+		if (update.seo) {
 			this._seoAssessor = this.createSEOAssessor();
 			this._relatedKeywordAssessor = this.createRelatedKeywordsAssessor();
 			// Tree assessors
@@ -573,11 +574,21 @@ export default class AnalysisWebWorker {
 			 * } );
 			 */
 		}
+		if (has(configuration, "previouslyUsedKeywords")) {
+			debugger;
+			var previouslyUsedKeywordsPlugin = new bundledPlugins.usedKeywords(
+				this, configuration.previouslyUsedKeywords
+			);
+			this.registerMessageHandler("updateKeywordUsage", async (data) => {
+				previouslyUsedKeywordsPlugin.updateKeywordUsage(JSON.parse(data));
+			}, "previouslyUsedKeywords");
+			previouslyUsedKeywordsPlugin.registerPlugin();
+		}
 
 		// Reset the paper in order to not use the cached results on analyze.
 		this.clearCache();
 
-		this.send( "initialize:done", id );
+		this.send("initialize:done", id);
 	}
 
 	/**
@@ -589,30 +600,30 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {boolean} Whether registering the assessment was successful.
 	 */
-	registerAssessment( name, assessment, pluginName ) {
-		if ( ! isString( name ) ) {
-			throw new InvalidTypeError( "Failed to register assessment for plugin " + pluginName + ". Expected parameter `name` to be a string." );
+	registerAssessment(name, assessment, pluginName) {
+		if (!isString(name)) {
+			throw new InvalidTypeError("Failed to register assessment for plugin " + pluginName + ". Expected parameter `name` to be a string.");
 		}
 
-		if ( ! isObject( assessment ) ) {
-			throw new InvalidTypeError( "Failed to register assessment for plugin " + pluginName +
-				". Expected parameter `assessment` to be a function." );
+		if (!isObject(assessment)) {
+			throw new InvalidTypeError("Failed to register assessment for plugin " + pluginName +
+				". Expected parameter `assessment` to be a function.");
 		}
 
-		if ( ! isString( pluginName ) ) {
-			throw new InvalidTypeError( "Failed to register assessment for plugin " + pluginName +
-				". Expected parameter `pluginName` to be a string." );
+		if (!isString(pluginName)) {
+			throw new InvalidTypeError("Failed to register assessment for plugin " + pluginName +
+				". Expected parameter `pluginName` to be a string.");
 		}
 
 		// Prefix the name with the pluginName so the test name is always unique.
 		const combinedName = pluginName + "-" + name;
 
-		if ( this._seoAssessor !== null ) {
-			this._seoAssessor.addAssessment( combinedName, assessment );
+		if (this._seoAssessor !== null) {
+			this._seoAssessor.addAssessment(combinedName, assessment);
 		}
-		this._registeredAssessments.push( { combinedName, assessment } );
+		this._registeredAssessments.push({ combinedName, assessment });
 
-		this.refreshAssessment( name, pluginName );
+		this.refreshAssessment(name, pluginName);
 
 		return true;
 	}
@@ -626,25 +637,25 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {boolean} Whether registering the message handler was successful.
 	 */
-	registerMessageHandler( name, handler, pluginName ) {
-		if ( ! isString( name ) ) {
-			throw new InvalidTypeError( "Failed to register handler for plugin " + pluginName + ". Expected parameter `name` to be a string." );
+	registerMessageHandler(name, handler, pluginName) {
+		if (!isString(name)) {
+			throw new InvalidTypeError("Failed to register handler for plugin " + pluginName + ". Expected parameter `name` to be a string.");
 		}
 
-		if ( ! isObject( handler ) ) {
-			throw new InvalidTypeError( "Failed to register handler for plugin " + pluginName +
-				". Expected parameter `handler` to be a function." );
+		if (!isObject(handler)) {
+			throw new InvalidTypeError("Failed to register handler for plugin " + pluginName +
+				". Expected parameter `handler` to be a function.");
 		}
 
-		if ( ! isString( pluginName ) ) {
-			throw new InvalidTypeError( "Failed to register handler for plugin " + pluginName +
-				". Expected parameter `pluginName` to be a string." );
+		if (!isString(pluginName)) {
+			throw new InvalidTypeError("Failed to register handler for plugin " + pluginName +
+				". Expected parameter `pluginName` to be a string.");
 		}
 
 		// Prefix the name with the pluginName so the test name is always unique.
 		name = pluginName + "-" + name;
 
-		this._registeredMessageHandlers[ name ] = handler;
+		this._registeredMessageHandlers[name] = handler;
 	}
 
 	/**
@@ -658,14 +669,14 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {boolean} Whether refreshing the assessment was successful.
 	 */
-	refreshAssessment( name, pluginName ) {
-		if ( ! isString( name ) ) {
-			throw new InvalidTypeError( "Failed to refresh assessment for plugin " + pluginName + ". Expected parameter `name` to be a string." );
+	refreshAssessment(name, pluginName) {
+		if (!isString(name)) {
+			throw new InvalidTypeError("Failed to refresh assessment for plugin " + pluginName + ". Expected parameter `name` to be a string.");
 		}
 
-		if ( ! isString( pluginName ) ) {
-			throw new InvalidTypeError( "Failed to refresh assessment for plugin " + pluginName +
-				". Expected parameter `pluginName` to be a string." );
+		if (!isString(pluginName)) {
+			throw new InvalidTypeError("Failed to refresh assessment for plugin " + pluginName +
+				". Expected parameter `pluginName` to be a string.");
 		}
 
 		this.clearCache();
@@ -681,15 +692,15 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {void}
 	 */
-	registerParser( parser ) {
-		if ( typeof parser.isApplicable !== "function" ) {
-			throw new InvalidTypeError( "Failed to register the custom parser. Expected parameter 'parser' to have a method 'isApplicable'." );
+	registerParser(parser) {
+		if (typeof parser.isApplicable !== "function") {
+			throw new InvalidTypeError("Failed to register the custom parser. Expected parameter 'parser' to have a method 'isApplicable'.");
 		}
-		if ( typeof parser.parse !== "function" ) {
-			throw new InvalidTypeError( "Failed to register the custom parser. Expected parameter 'parser' to have a method 'parse'." );
+		if (typeof parser.parse !== "function") {
+			throw new InvalidTypeError("Failed to register the custom parser. Expected parameter 'parser' to have a method 'parse'.");
 		}
 
-		this._registeredParsers.push( parser );
+		this._registeredParsers.push(parser);
 	}
 
 	/**
@@ -712,8 +723,8 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {void}
 	 */
-	setLocale( locale ) {
-		if ( this._configuration.locale === locale ) {
+	setLocale(locale) {
+		if (this._configuration.locale === locale) {
 			return;
 		}
 		this._configuration.locale = locale;
@@ -727,12 +738,12 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {boolean} True if there are changes detected.
 	 */
-	shouldReadabilityUpdate( paper ) {
-		if ( this._paper === null ) {
+	shouldReadabilityUpdate(paper) {
+		if (this._paper === null) {
 			return true;
 		}
 
-		if ( this._paper.getText() !== paper.getText() ) {
+		if (this._paper.getText() !== paper.getText()) {
 			return true;
 		}
 
@@ -749,16 +760,16 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {boolean} True if there are changes detected.
 	 */
-	shouldSeoUpdate( key, { keyword, synonyms } ) {
-		if ( isUndefined( this._relatedKeywords[ key ] ) ) {
+	shouldSeoUpdate(key, { keyword, synonyms }) {
+		if (isUndefined(this._relatedKeywords[key])) {
 			return true;
 		}
 
-		if ( this._relatedKeywords[ key ].keyword !== keyword ) {
+		if (this._relatedKeywords[key].keyword !== keyword) {
 			return true;
 		}
 
-		return this._relatedKeywords[ key ].synonyms !== synonyms;
+		return this._relatedKeywords[key].synonyms !== synonyms;
 	}
 
 	/**
@@ -776,17 +787,17 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {Object} The result, may not contain readability or seo.
 	 */
-	async analyze( id, { paper, relatedKeywords = {} } ) {
+	async analyze(id, { paper, relatedKeywords = {} }) {
 		// Automatically add paragraph tags, like Wordpress does, on blocks padded by double newlines or html elements.
-		paper._text = autop( paper._text );
-		paper._text = string.removeHtmlBlocks( paper._text );
-		const paperHasChanges = this._paper === null || ! this._paper.equals( paper );
-		const shouldReadabilityUpdate = this.shouldReadabilityUpdate( paper );
+		paper._text = autop(paper._text);
+		paper._text = string.removeHtmlBlocks(paper._text);
+		const paperHasChanges = this._paper === null || !this._paper.equals(paper);
+		const shouldReadabilityUpdate = this.shouldReadabilityUpdate(paper);
 
 		// Only set the paper and build the tree if the paper has any changes.
-		if ( paperHasChanges ) {
+		if (paperHasChanges) {
 			this._paper = paper;
-			this._researcher.setPaper( this._paper );
+			this._researcher.setPaper(this._paper);
 
 			// Try to build the tree, for analysis using the tree assessors.
 			try {
@@ -795,58 +806,58 @@ export default class AnalysisWebWorker {
 				 * Please not that text here should be the `paper._text` before processing (e.g. autop and more).
 				 * this._tree = this._treeBuilder.build( text );
 				 */
-			} catch ( exception ) {
-				logger.debug( "Yoast SEO and readability analysis: " +
-					"An error occurred during the building of the tree structure used for some assessments.\n\n", exception );
+			} catch (exception) {
+				logger.debug("Yoast SEO and readability analysis: " +
+					"An error occurred during the building of the tree structure used for some assessments.\n\n", exception);
 				this._tree = null;
 			}
 
 			// Update the configuration locale to the paper locale.
-			this.setLocale( this._paper.getLocale() );
+			this.setLocale(this._paper.getLocale());
 		}
 
-		if ( this._configuration.keywordAnalysisActive && this._seoAssessor ) {
+		if (this._configuration.keywordAnalysisActive && this._seoAssessor) {
 			// Only assess the focus keyphrase if the paper has any changes.
-			if ( paperHasChanges ) {
+			if (paperHasChanges) {
 				// Assess the SEO of the content regarding the main keyphrase.
-				this._results.seo[ "" ] = await this.assess( this._paper, this._tree, {
+				this._results.seo[""] = await this.assess(this._paper, this._tree, {
 					oldAssessor: this._seoAssessor,
 					treeAssessor: this._seoTreeAssessor,
 					scoreAggregator: this._seoScoreAggregator,
-				} );
+				});
 			}
 
 			// Only assess the related keyphrases when they have been given.
-			if ( ! isEmpty( relatedKeywords ) ) {
+			if (!isEmpty(relatedKeywords)) {
 				// Get the related keyphrase keys (one for each keyphrase).
-				const requestedRelatedKeywordKeys = Object.keys( relatedKeywords );
+				const requestedRelatedKeywordKeys = Object.keys(relatedKeywords);
 
 				// Analyze the SEO for each related keyphrase and wait for the results.
-				const relatedKeyphraseResults = await this.assessRelatedKeywords( paper, this._tree, relatedKeywords );
+				const relatedKeyphraseResults = await this.assessRelatedKeywords(paper, this._tree, relatedKeywords);
 
 				// Put the related keyphrase results on the SEO results, under the right key.
-				relatedKeyphraseResults.forEach( result => {
-					this._results.seo[ result.key ] = result.results;
-				} );
+				relatedKeyphraseResults.forEach(result => {
+					this._results.seo[result.key] = result.results;
+				});
 
 				// Clear the unrequested results, but only if there are requested related keywords.
-				if ( requestedRelatedKeywordKeys.length > 1 ) {
-					this._results.seo = pickBy( this._results.seo,
-						( relatedKeyword, key ) => includes( requestedRelatedKeywordKeys, key )
+				if (requestedRelatedKeywordKeys.length > 1) {
+					this._results.seo = pickBy(this._results.seo,
+						(relatedKeyword, key) => includes(requestedRelatedKeywordKeys, key)
 					);
 				}
 			}
 		}
 
-		if ( this._configuration.contentAnalysisActive && this._contentAssessor && shouldReadabilityUpdate ) {
+		if (this._configuration.contentAnalysisActive && this._contentAssessor && shouldReadabilityUpdate) {
 			const analysisCombination = {
 				oldAssessor: this._contentAssessor,
 				treeAssessor: this._contentTreeAssessor,
 				scoreAggregator: this._contentScoreAggregator,
 			};
 			// Set the locale (we are more lenient for languages that have full analysis support).
-			analysisCombination.scoreAggregator.setLocale( this._configuration.locale );
-			this._results.readability = await this.assess( this._paper, this._tree, analysisCombination );
+			analysisCombination.scoreAggregator.setLocale(this._configuration.locale);
+			this._results.readability = await this.assess(this._paper, this._tree, analysisCombination);
 		}
 
 		return this._results;
@@ -869,14 +880,14 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {Promise<{score: number, results: AssessmentResult[]}>} The analysis results.
 	 */
-	async assess( paper, tree, analysisCombination ) {
+	async assess(paper, tree, analysisCombination) {
 		// Disabled code: The variable `treeAssessor` is removed from here.
 		const { oldAssessor, scoreAggregator } = analysisCombination;
 		/*
 		 * Assess the paper and the tree
 		 * using the original assessor and the tree assessor.
 		 */
-		oldAssessor.assess( paper );
+		oldAssessor.assess(paper);
 		const oldAssessmentResults = oldAssessor.results;
 
 		const treeAssessmentResults = [];
@@ -895,10 +906,10 @@ export default class AnalysisWebWorker {
 		 */
 
 		// Combine the results of the tree assessor and old assessor.
-		const results = [ ...treeAssessmentResults, ... oldAssessmentResults ];
+		const results = [...treeAssessmentResults, ...oldAssessmentResults];
 
 		// Aggregate the results.
-		const score = scoreAggregator.aggregate( results );
+		const score = scoreAggregator.aggregate(results);
 
 		return {
 			results: results,
@@ -913,15 +924,15 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {AssessmentResult} The generated assessment result.
 	 */
-	generateAssessmentError( assessment ) {
+	generateAssessmentError(assessment) {
 		const result = new AssessmentResult();
 
-		result.setScore( -1 );
-		result.setText( this._i18n.sprintf(
+		result.setScore(-1);
+		result.setText(this._i18n.sprintf(
 			/* Translators: %1$s expands to the name of the assessment. */
-			this._i18n.dgettext( "js-text-analysis", "An error occurred in the '%1$s' assessment" ),
+			this._i18n.dgettext("js-text-analysis", "An error occurred in the '%1$s' assessment"),
 			assessment.name,
-		) );
+		));
 
 		return result;
 	}
@@ -937,16 +948,16 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {Promise<[{results: {score: number, results: AssessmentResult[]}, key: string}]>} The results, one for each keyphrase.
 	 */
-	async assessRelatedKeywords( paper, tree, relatedKeywords ) {
-		const keywordKeys = Object.keys( relatedKeywords );
-		return await Promise.all( keywordKeys.map( key => {
-			this._relatedKeywords[ key ] = relatedKeywords[ key ];
+	async assessRelatedKeywords(paper, tree, relatedKeywords) {
+		const keywordKeys = Object.keys(relatedKeywords);
+		return await Promise.all(keywordKeys.map(key => {
+			this._relatedKeywords[key] = relatedKeywords[key];
 
-			const relatedPaper = Paper.parse( {
+			const relatedPaper = Paper.parse({
 				...paper.serialize(),
-				keyword: this._relatedKeywords[ key ].keyword,
-				synonyms: this._relatedKeywords[ key ].synonyms,
-			} );
+				keyword: this._relatedKeywords[key].keyword,
+				synonyms: this._relatedKeywords[key].synonyms,
+			});
 
 			// Which combination of (tree) assessors and score aggregator to use.
 			const analysisCombination = {
@@ -956,10 +967,10 @@ export default class AnalysisWebWorker {
 			};
 
 			// We need to remember the key, since the SEO results are stored in an object, not an array.
-			return this.assess( relatedPaper, tree, analysisCombination ).then(
-				results => ( { key: key, results: results } )
+			return this.assess(relatedPaper, tree, analysisCombination).then(
+				results => ({ key: key, results: results })
 			);
-		} ) );
+		}));
 	}
 
 	/**
@@ -970,14 +981,14 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {Object} An object containing whether or not the url was loaded, the url and possibly an error message.
 	 */
-	loadScript( id, { url } ) {
-		if ( isUndefined( url ) ) {
+	loadScript(id, { url }) {
+		if (isUndefined(url)) {
 			return { loaded: false, url, message: "Load Script was called without an URL." };
 		}
 
 		try {
-			this._scope.importScripts( url );
-		} catch ( error ) {
+			this._scope.importScripts(url);
+		} catch (error) {
 			return { loaded: false, url, message: error.message };
 		}
 
@@ -992,13 +1003,13 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {void}
 	 */
-	loadScriptDone( id, result ) {
-		if ( ! result.loaded ) {
-			this.send( "loadScript:failed", id, result );
+	loadScriptDone(id, result) {
+		if (!result.loaded) {
+			this.send("loadScript:failed", id, result);
 			return;
 		}
 
-		this.send( "loadScript:done", id, result );
+		this.send("loadScript:done", id, result);
 	}
 
 	/**
@@ -1009,12 +1020,12 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {void}
 	 */
-	analyzeDone( id, result ) {
-		if ( result.error ) {
-			this.send( "analyze:failed", id, result );
+	analyzeDone(id, result) {
+		if (result.error) {
+			this.send("analyze:failed", id, result);
 			return;
 		}
-		this.send( "analyze:done", id, result );
+		this.send("analyze:done", id, result);
 	}
 
 	/**
@@ -1025,12 +1036,12 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {void}
 	 */
-	analyzeRelatedKeywordsDone( id, result ) {
-		if ( result.error ) {
-			this.send( "analyzeRelatedKeywords:failed", id, result );
+	analyzeRelatedKeywordsDone(id, result) {
+		if (result.error) {
+			this.send("analyzeRelatedKeywords:failed", id, result);
 			return;
 		}
-		this.send( "analyzeRelatedKeywords:done", id, result );
+		this.send("analyzeRelatedKeywords:done", id, result);
 	}
 
 	/**
@@ -1042,13 +1053,13 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {Object} An object containing either success and data or an error.
 	 */
-	customMessage( id, { name, data } ) {
+	customMessage(id, { name, data }) {
 		try {
 			return {
 				success: true,
-				data: this._registeredMessageHandlers[ name ]( data ),
+				data: this._registeredMessageHandlers[name](data),
 			};
-		} catch ( error ) {
+		} catch (error) {
 			return { error };
 		}
 	}
@@ -1061,12 +1072,12 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {void}
 	 */
-	customMessageDone( id, result ) {
-		if ( result.success ) {
-			this.send( "customMessage:done", id, result.data );
+	customMessageDone(id, result) {
+		if (result.success) {
+			this.send("customMessage:done", id, result.data);
 			return;
 		}
-		this.send( "customMessage:failed", result.error );
+		this.send("customMessage:failed", result.error);
 	}
 
 	/**
@@ -1079,18 +1090,18 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {Object} The result of the research.
 	 */
-	runResearch( id, { name, paper = null } ) {
+	runResearch(id, { name, paper = null }) {
 		// Save morphology data if it is available in the current researcher.
-		const morphologyData = this._researcher.getData( "morphology" );
+		const morphologyData = this._researcher.getData("morphology");
 
 		let researcher = this._researcher;
 		// When a specific paper is passed we create a temporary new researcher.
-		if ( paper !== null ) {
-			researcher = new Researcher( paper );
-			researcher.addResearchData( "morphology", morphologyData );
+		if (paper !== null) {
+			researcher = new Researcher(paper);
+			researcher.addResearchData("morphology", morphologyData);
 		}
 
-		return researcher.getResearch( name );
+		return researcher.getResearch(name);
 	}
 
 	/**
@@ -1101,11 +1112,11 @@ export default class AnalysisWebWorker {
 	 *
 	 * @returns {void}
 	 */
-	runResearchDone( id, result ) {
-		if ( result.error ) {
-			this.send( "runResearch:failed", id, result );
+	runResearchDone(id, result) {
+		if (result.error) {
+			this.send("runResearch:failed", id, result);
 			return;
 		}
-		this.send( "runResearch:done", id, result );
+		this.send("runResearch:done", id, result);
 	}
 }

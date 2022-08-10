@@ -48,9 +48,15 @@ class singleH1Assessment extends Assessment {
 		this._h1s = researcher.getResearch("h1s");
 
 		const assessmentResult = new AssessmentResult();
-		assessmentResult.setText(i18n.dgettext(
-			"js-text-analysis",
-			"%1$sSingle title%3$s: OK!"
+		assessmentResult.setText(i18n.sprintf(
+			/* Translators: %1$s and %2$s expand to links on yoast.com, %3$s expands to the anchor end tag */
+			i18n.dgettext(
+				"js-text-analysis",
+				"%1$sSingle title%3$s: OK!"
+			),
+			this._config.urlTitle,
+			this._config.urlCallToAction,
+			"</a>"
 		))
 
 		const calculatedResult = this.calculateResult(i18n);
