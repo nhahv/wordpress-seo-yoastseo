@@ -17,11 +17,6 @@ var _TextContainer2 = _interopRequireDefault(_TextContainer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * The collection of elements used in constructing the tree structure.
- *
- * @module parsedPaper/structure
- */
 exports.Heading = _nodes.Heading;
 exports.LeafNode = _nodes.LeafNode;
 exports.List = _nodes.List;
@@ -33,4 +28,3 @@ exports.Paragraph = _nodes.Paragraph;
 exports.StructuredNode = _nodes.StructuredNode;
 exports.TextContainer = _TextContainer2.default;
 exports.FormattingElement = _FormattingElement2.default;
-//# sourceMappingURL=index.js.map

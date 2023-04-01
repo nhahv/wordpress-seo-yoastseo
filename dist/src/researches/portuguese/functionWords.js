@@ -6,22 +6,16 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = function () {
 	return {
-		// These word categories are filtered at the beginning of word combinations.
 		filteredAtBeginning: generalAdjectivesAdverbs,
 
-		// These word categories are filtered at the ending of word combinations.
 		filteredAtEnding: [].concat(ordinalNumerals, otherAuxiliariesInfinitive, copulaInfinitive, delexicalizedVerbsInfinitive, generalAdjectivesPreceding),
 
-		// These word categories are filtered at the beginning and ending of word combinations.
 		filteredAtBeginningAndEnding: [].concat(articles, prepositions, coordinatingConjunctions, demonstrativePronouns, intensifiers, quantifiers, possessivePronouns),
 
-		// These word categories are filtered everywhere within word combinations.
 		filteredAnywhere: [].concat(transitionWords, cardinalNumerals, personalPronounsNominative, personalPronounsAccusative, personalPronounsPrepositional, personalPronounsComitative, reflexivePronouns, indefinitePronouns, interrogativePronouns, interrogativeProAdverbs, locativeAdverbs, otherAuxiliaries, copula, subordinatingConjunctions, interviewVerbs, additionalTransitionWords, delexicalizedVerbs, interjections, recipeWords, timeWords, vagueNouns, miscellaneous, titles),
 
-		// These word categories cannot directly precede a passive participle.
 		cannotDirectlyPrecedePassiveParticiple: [].concat(articles, prepositions, personalPronounsAccusative, possessivePronouns, indefinitePronouns, interrogativeProAdverbs, cardinalNumerals, ordinalNumerals, delexicalizedVerbs, delexicalizedVerbsInfinitive, interviewVerbs),
 
-		// This export contains all of the above words.
 		all: [].concat(articles, cardinalNumerals, ordinalNumerals, personalPronounsNominative, personalPronounsAccusative, personalPronounsPrepositional, personalPronounsComitative, reflexivePronouns, demonstrativePronouns, possessivePronouns, quantifiers, indefinitePronouns, interrogativePronouns, interrogativeProAdverbs, locativeAdverbs, otherAuxiliaries, otherAuxiliariesInfinitive, copula, copulaInfinitive, prepositions, coordinatingConjunctions, subordinatingConjunctions, interviewVerbs, additionalTransitionWords, intensifiers, delexicalizedVerbs, delexicalizedVerbsInfinitive, generalAdjectivesAdverbs, generalAdjectivesPreceding, interjections, recipeWords, timeWords, vagueNouns, miscellaneous, titles)
 	};
 };
@@ -34,22 +28,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const transitionWords = (0, _transitionWords2.default)().singleWords;
 
-/**
- * Returns an array with exceptions for the prominent words researcher.
- *
- * @returns {Array} The array filled with exceptions.
- */
-
 const articles = ["o", "a", "os", "as", "um", "uns", "uma", "umas"];
 
-// "um" is already included in the articles.
 const cardinalNumerals = ["uma", "duas", "dois", "três", "cuatro", "cinco", "seis", "sete", "oito", "nove", "dez", "onze", "doze", "treze", "quatorze", "catorze", "quinze", "dezesseis", "dezessete", "dezasseis", "dezassete", "dezoito", "dezenove", "dezanove", "vinte", "cem", "cento", "mil", "milhão", "milhões", "bilhão", "bilhões"];
 
 const ordinalNumerals = ["primeiro", "primeiros", "primeira", "primeiras", "segundo", "segunda", "segundos", "segundas", "terceiro", "terceira", "terceiros", "terceiras", "quarto", "quartos", "quarta", "quartas", "quinto", "quintos", "quinta", "quintas", "sexto", "sextos", "sexta", "sextas", "sétimo", "sétimos", "sétima", "sétimas", "oitavo", "oitavos", "oitava", "oitavas", "nono", "nonos", "nona", "nonas", "décimo", "décimos", "décima", "décimas", "vigésimo", "vigésimos", "vigésima", "vigésimas"];
 
 const personalPronounsNominative = ["eu", "tu", "ele", "ela", "nós", "vós", "você", "vocês", "eles", "elas"];
 
-// "o", "a", "os", "as" are already included in the articles.
 const personalPronounsAccusative = ["me", "te", "lhe", "nos", "vos", "lhes"];
 
 const personalPronounsPrepositional = ["dele", "dela", "deles", "delas", "nele", "nela", "neles", "nelas", "mim", "ti", "si"];
@@ -86,34 +72,24 @@ const coordinatingConjunctions = ["também", "e", "ou", "nem"];
 
 const subordinatingConjunctions = ["agora", "conforme", "conquanto", "contanto", "embora", "enquanto", "então", "entretanto", "malgrado", "mas", "pois", "porém", "porquanto", "porque", "senão", "contudo"];
 
-// These verbs are frequently used in interviews to indicate questions and answers.
 const interviewVerbs = ["diz", "dizem", "disse", "disseram", "dizia", "diziam", "reivindica", "reivindicam", "reivindicou", "reivindicaram", "reivindicava", "reivindicavam", "requer", "requerem", "requereu", "requereram", "requeria", "requeriam", "afirma", "afirmam", "afirmou", "afirmaram", "afirmava", "afirmavam", "reivindica", "reivindicam", "reivindicou", "reivindicaram", "reivindicava", "reivindicavam", "perguntam", "perguntou", "perguntaram", "perguntava", "perguntavam", "explica", "explicam", "explicou", "explicaram", "explicava", "explicavam", "relata", "relatam", "relatou", "relataram"];
 
-// These transition words were not included in the list for the transition word assessment for various reasons.
 const additionalTransitionWords = ["provavelmente", "imediatamente", "ocasionalmente", "indubitavelmente", "para", "possivelmente", "logo", "simultaneamente", "exceto", "inquestionavelmente"];
 
 const intensifiers = ["extremamente", "bem", "completamente", "totalmente", "grandemente", "seriamente", "absolutamente", "bastante", "sobremodo", "sobremaneira", "tão"];
 
-// These verbs convey little meaning.
 const delexicalizedVerbs = ["dou", "dás", "dá", "damos", "dais", "dão", "dei", "deu", "demos", "deram", "dava", "davas", "dávamos", "dáveis", "davam", "dera", "deras", "déramos", "déreis", "deram", "darei", "darás", "dará", "daremos", "dareis", "darão", "daria", "darias", "daríamos", "daríeis", "dariam", "dê", "dês", "dêmos", "deis", "deem", "déssemos", "désseis", "dessem", "der", "deres", "dermos", "derdes", "derem", "dai", "deis", "dares", "darmos", "dardes", "darem", "fazendo", "faço", "fazes", "faz", "fazemos", "fazeis", "fazem", "fiz", "fizeste", "fez", "fizemos", "fizestes", "fizeram", "fazia", "fazias", "fazíamos", "fazíeis", "faziam", "fizera", "fizeras", "fizéramos", "fizéreis", "farei", "farás", "fará", "faremos", "fareis", "faria", "farias", "faríamos", "faríeis", "fariam", "faça", "faças", "façamos", "façais", "façam", "fizesse", "fizesses", "fizéssemos", "fizésseis", "fizessem", "fizer", "fizeres", "fizermos", "fizerdes", "fizerem", "fazei", "fazeres", "fazermos", "fazerdes", "fazerem"];
 
 const delexicalizedVerbsInfinitive = ["dar", "fazer"];
 
-/*
- * These adjectives and adverbs are so general, they should never be suggested as a (single) keyword.
- * Keyword combinations containing these adjectives/adverbs are fine.
- */
 const generalAdjectivesAdverbs = ["devagar", "rapidamente", "grande", "grandes", "depressa", "claramente", "effectivamente", "realmente", "exclusivamente", "simplesemente", "somente", "unicamente", "lentamente", "raramente", "certamente", "talvez", "actualmente", "dificilmente", "principalmente", "gerlamente", "enorme", "enormes", "pequeno", "pequena", "pequenos", "pequenas", "minúsculo", "minúsculos", "minúscula", "minúsculas", "velho", "velhos", "velha", "velhas", "lindo", "linda", "lindos", "lindas", "alto", "alta", "altos", "altas", "baixo", "baixa", "baixos", "baixas", "longo", "longa", "longos", "longas", "curto", "curta", "curtos", "curtas", "fácil", "fáceis", "difícil", "difíceis", "simples", "mesmo", "mesma", "mesmos", "mesmas", "mêsmo", "mêsmos", "mêsma", "mêsmas", "cedo", "tarde", "importante", "importantes", "capaz", "capazes", "certo", "certa", "certos", "certas", "usual", "usuals", "ultimamente", "possível", "possíveis", "comum", "comuns", "freqüentemente", "constantemente", "continuamente", "diretamente", "levemente", "algures", "semelhante", "semelhantes", "similar", "similares", "sempre", "ainda", "já", "atrás", "depois"];
 
-// "grande", "velho" and "pequeno" can appear both before and after nouns and are therefore on both lists.
 const generalAdjectivesPreceding = ["pior", "melhor", "melhores", "bom", "boa", "bons", "boas", "bonito", "bonita", "bonitos", "bonitas", "grande", "grandes", "pequeno", "pequena", "pequenos", "pequenas", "velho", "velhos", "velha", "velhas", "mau", "má", "maus", "más"];
 
 const interjections = ["ai", "ah", "ih", "alô", "oi", "olá", "ui", "uf", "psiu", "mau", "olha", "viva", "uau", "wow", "oh", "shi"];
 
-// These words and abbreviations are frequently used in recipes in lists of ingredients.
 const recipeWords = ["kg", "mg", "gr", "g", "km", "m", "l", "ml", "cl"];
 
-// "segundo" is already included in cardinal numbers.
 const timeWords = ["segundos", "minuto", "minutos", "hora", "horas", "dia", "dias", "semana", "semanas", "mes", "meses", "ano", "anos", "hoje", "amanhã", "ontem"];
 
 const vagueNouns = ["caso", "casos", "coisa", "coisas", "detalhe", "detalhes", "forma", "formas", "jeito", "jeitos", "maneira", "maneiras", "modo", "modos", "suijeto", "sujeitos", "tópico", "tópicos", "vez", "vezes"];
@@ -121,10 +97,3 @@ const vagueNouns = ["caso", "casos", "coisa", "coisas", "detalhe", "detalhes", "
 const miscellaneous = ["sim", "não", "ok", "amém", "etc", "euro", "euros", "adeus", "jeitos"];
 
 const titles = ["sr", "sra", "sras", "dr", "dra", "prof"];
-
-/**
- * Returns the Portuguese function words.
- *
- * @returns {Object} Portuguese function words.
- */
-//# sourceMappingURL=functionWords.js.map

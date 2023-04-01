@@ -32,4 +32,3 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.measureTextWidth = _createMeasurementElement.measureTextWidth;
 exports.scoreToRating = _scoreToRating2.default;
 exports.getLanguagesWithWordFormSupport = _getLanguagesWithWordFormSupport2.default;
-//# sourceMappingURL=index.js.map

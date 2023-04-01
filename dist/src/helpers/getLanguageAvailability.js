@@ -16,4 +16,3 @@ var _getLanguage = require("./getLanguage.js");
 var _getLanguage2 = _interopRequireDefault(_getLanguage);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-//# sourceMappingURL=getLanguageAvailability.js.map

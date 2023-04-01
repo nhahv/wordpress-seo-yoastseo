@@ -3,12 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-/**
- * Creates a try catch for a web worker around a script.
- *
- * @param {string} originalScript The script to put a try-catch around.
- * @returns {string} The new script including a try-catch.
- */
+
 function createExceptionHandler(originalScript) {
 	return `
 		try {
@@ -20,12 +15,6 @@ function createExceptionHandler(originalScript) {
 	`;
 }
 
-/**
- * Creates the script to run inside the fallback web worker.
- *
- * @param {string} url The URL for which to create a script.
- * @returns {string} A script that can be run inside a worker as a blob.
- */
 function createBlobScript(url) {
 	return `
 		self.yoastOriginalUrl = '${url}';
@@ -33,14 +22,6 @@ function createBlobScript(url) {
 	`;
 }
 
-/**
- * Determines whether or not two URLs have the same origin.
- *
- * @param {string} urlA First URL to test.
- * @param {string} urlB Second URL to test.
- *
- * @returns {boolean} Whether the URLs have the same origin.
- */
 function isSameOrigin(urlA, urlB) {
 	urlA = new URL(urlA, window.location.origin);
 	urlB = new URL(urlB, window.location.origin);
@@ -48,12 +29,6 @@ function isSameOrigin(urlA, urlB) {
 	return urlA.hostname === urlB.hostname && urlA.port === urlB.port && urlA.protocol === urlB.protocol;
 }
 
-/**
- * Creates an URL to a blob. This blob imports a script for use in a web worker (using `importScripts`).
- *
- * @param {string} url The URL to the script that has to be loaded.
- * @returns {string} the URL to the blob.
- */
 function createBlobURL(url) {
 	const URL = window.URL || window.webkitURL;
 	const BlobBuilder = window.BlobBuilder || window.WebKitBlobBuilder || window.MozBlobBuilder;
@@ -71,27 +46,13 @@ function createBlobURL(url) {
 	return URL.createObjectURL(blob);
 }
 
-/**
- * Creates a worker fallback using the blob URL method.
- *
- * @param {string} url The URL to create a worker for.
- * @returns {Worker} The web worker.
- */
 function createWorkerFallback(url) {
 	const blobUrl = createBlobURL(url);
 
 	return new Worker(blobUrl);
 }
 
-/**
- * Creates a WebWorker using the given url.
- *
- * @param {string} url The url of the worker.
- *
- * @returns {Worker} The worker.
- */
 function createWorker(url) {
-	// If we are not on the same domain, we require a fallback worker.
 	if (!isSameOrigin(window.location, url)) {
 		return createWorkerFallback(url);
 	}
@@ -110,4 +71,3 @@ function createWorker(url) {
 }
 
 exports.default = createWorker;
-//# sourceMappingURL=createWorker.js.map

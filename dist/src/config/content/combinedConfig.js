@@ -67,12 +67,3 @@ const configurations = {
 	he: _he2.default,
 	tr: _tr2.default
 };
-
-/**
- * Returns a combined config for YoastSEO.js
- *
- * @param {string} locale The locale to retrieve the config for.
- *
- * @returns {Object} The configuration object.
- */
-//# sourceMappingURL=combinedConfig.js.map

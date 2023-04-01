@@ -17,12 +17,6 @@ exports.default = function (paper, researcher) {
 		sentencesWithKeywords: []
 	};
 
-	/*
-  * Count the amount of key phrase occurrences in the sentences.
-  * An occurrence is counted when all keywords of the key phrase are contained within the sentence.
-  * Each sentence can contain multiple key phrases
-  * (e.g. "The apple potato is an apple and a potato." has two occurrences of the key phrase "apple potato").
-  */
 	sentences.forEach(sentence => {
 		const matchesInSentence = topicForms.keyphraseForms.map(keywordForms => (0, _matchTextWithArray2.default)(sentence, keywordForms, locale));
 		const hasAllKeywords = matchesInSentence.every(keywordForm => keywordForm.count > 0);
@@ -59,4 +53,3 @@ var _getSentences2 = _interopRequireDefault(_getSentences);
 var _markWordsInSentences = require("../stringProcessing/markWordsInSentences");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-//# sourceMappingURL=keywordCount.js.map

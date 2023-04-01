@@ -38,13 +38,6 @@ var _lodashEs = require("lodash-es");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Compares the first word of each sentence with the first word of the following sentence.
- *
- * @param {string} currentSentenceBeginning The first word of the current sentence.
- * @param {string} nextSentenceBeginning The first word of the next sentence.
- * @returns {boolean} Returns true if sentence beginnings match.
- */
 const startsWithSameWord = function startsWithSameWord(currentSentenceBeginning, nextSentenceBeginning) {
 	if (!(0, _lodashEs.isEmpty)(currentSentenceBeginning) && currentSentenceBeginning === nextSentenceBeginning) {
 		return true;
@@ -53,13 +46,6 @@ const startsWithSameWord = function startsWithSameWord(currentSentenceBeginning,
 	return false;
 };
 
-/**
- * Counts the number of similar sentence beginnings.
- *
- * @param {Array} sentenceBeginnings The array containing the first word of each sentence.
- * @param {Array} sentences The array containing all sentences.
- * @returns {Array} The array containing the objects containing the first words and the corresponding counts.
- */
 const compareFirstWords = function compareFirstWords(sentenceBeginnings, sentences) {
 	const consecutiveFirstWords = [];
 	let foundSentences = [];
@@ -82,13 +68,6 @@ const compareFirstWords = function compareFirstWords(sentenceBeginnings, sentenc
 	return consecutiveFirstWords;
 };
 
-/**
- * Retrieves the first word from the sentence.
- *
- * @param {string} sentence The sentence to retrieve the first word from.
- * @param {Array} firstWordExceptions Exceptions to match against.
- * @returns {string} The first word of the sentence.
- */
 function getSentenceBeginning(sentence, firstWordExceptions) {
 	const words = (0, _getWords2.default)((0, _stripHTMLTags.stripFullTags)((0, _stripSpaces2.default)(sentence)));
 
@@ -104,12 +83,3 @@ function getSentenceBeginning(sentence, firstWordExceptions) {
 
 	return firstWord;
 }
-
-/**
- * Gets the first word of each sentence from the text, and returns an object containing the first word of each sentence and the corresponding counts.
- *
- * @param {Paper} paper The Paper object to get the text from.
- * @param {Researcher} researcher The researcher this research is a part of.
- * @returns {Object} The object containing the first word of each sentence and the corresponding counts.
- */
-//# sourceMappingURL=getSentenceBeginnings.js.map

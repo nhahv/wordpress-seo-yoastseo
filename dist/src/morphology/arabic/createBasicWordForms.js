@@ -4,31 +4,15 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 exports.createBasicWordForms = createBasicWordForms;
-/**
- * Creates basic word forms for a given Arabic word.
- *
- * @param {string} word     The word for which to create basic word forms.
- *
- * @returns {Array}        Prefixed and de-prefixed variations of a word.
- */
 function createBasicWordForms(word) {
 	const prefixes = ["ل", "ب", "ك", "و", "ف", "س", "أ", "ال", "وب", "ول", "لل", "فس", "فب", "فل", "وس", "وال", "بال", "فال", "كال", "ولل", "وبال"];
 
 	const forms = [];
 
-	/*
-  * Add prefixes to the input word. We always do this, since some words
-  * beginning with a prefix-like letter might be exceptions where this is the
-  * actual first letter of the word.
-  */
 	forms.push(...prefixes.map(prefix => prefix + word));
 
 	let stemmedWord = "";
 
-	/*
-  * If a word starts with one of the prefixes, we strip it and create all possible
-  * prefixed forms based on this stem.
-  */
 	for (const prefix of prefixes) {
 		if (word.startsWith(prefix)) {
 			stemmedWord = word.slice(prefix.length);
@@ -42,4 +26,3 @@ function createBasicWordForms(word) {
 
 	return forms;
 }
-//# sourceMappingURL=createBasicWordForms.js.map

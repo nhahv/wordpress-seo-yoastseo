@@ -13,4 +13,3 @@ var _stopWordsInText = require("./stopWordsInText.js");
 var _stopWordsInText2 = _interopRequireDefault(_stopWordsInText);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-//# sourceMappingURL=stopWordsInUrl.js.map

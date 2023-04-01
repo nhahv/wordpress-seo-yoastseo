@@ -6,16 +6,12 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = function () {
 	return {
-		// These word categories are filtered at the ending of word combinations.
 		filteredAtEnding: [].concat(ordinalNumerals, generalAdjectives, generalAdverbs, auxiliariesInfinitive, delexicalizedVerbsInfinitive, copulaInfinitive, interviewVerbsInfinitive),
 
-		// These word categories are filtered at the beginning and ending of word combinations.
 		filteredAtBeginningAndEnding: [].concat(articles, prepositions, coordinatingConjunctions, demonstrativePronouns, intensifiers, quantifiers, possessivePronouns),
 
-		// These word categories are filtered everywhere within word combinations.
 		filteredAnywhere: [].concat(transitionWords, personalPronounsNominative, personalPronounsObjective, reflexivePronouns, relativePronouns, interjections, cardinalNumerals, copula, auxiliaries, interviewVerbs, delexicalizedVerbs, indefinitePronouns, otherPronouns, subordinatingConjunctions, interrogativePronouns, interrogativeProAdverbs, miscellaneous, pronominalAdverbs, recipeWords, timeWords, titles, vagueNouns),
 
-		// This export contains all of the above words.
 		all: [].concat(articles, cardinalNumerals, ordinalNumerals, personalPronounsNominative, personalPronounsObjective, reflexivePronouns, possessivePronouns, demonstrativePronouns, relativePronouns, interrogativePronouns, interrogativeProAdverbs, indefinitePronouns, otherPronouns, quantifiers, pronominalAdverbs, auxiliaries, auxiliariesInfinitive, copula, copulaInfinitive, delexicalizedVerbs, delexicalizedVerbsInfinitive, interviewVerbs, interviewVerbsInfinitive, generalAdjectives, generalAdverbs, vagueNouns, prepositions, intensifiers, coordinatingConjunctions, subordinatingConjunctions, timeWords, titles, interjections, recipeWords, miscellaneous)
 	};
 };
@@ -27,11 +23,6 @@ var _transitionWords2 = _interopRequireDefault(_transitionWords);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const transitionWords = (0, _transitionWords2.default)().singleWords;
-
-/**
- * Returns an object with exceptions for the prominent words researcher
- * @returns {Object} The object filled with exception arrays.
- */
 
 const articles = ["en", "ett", "det", "den", "de"];
 
@@ -102,10 +93,3 @@ const interjections = ["å", "aj", "aja", "fy", "grattis", "hej", "hu", "jaså",
 const recipeWords = ["c", "cl", "cm", "dl", "g", "kg", "km", "krm", "l", "m", "mg", "ml", "mm", "msk", "pkt", "st", "tsk"];
 
 const miscellaneous = ["förlåt", "ja", "jo", "ju", "m.m", "nej", "ok", "okej", "tack"];
-
-/**
- * Returns function words for Swedish.
- *
- * @returns {Object} Swedish function words.
- */
-//# sourceMappingURL=functionWords.js.map

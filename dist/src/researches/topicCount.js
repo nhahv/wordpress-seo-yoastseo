@@ -95,4 +95,3 @@ var _Mark = require("../values/Mark.js");
 var _Mark2 = _interopRequireDefault(_Mark);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-//# sourceMappingURL=topicCount.js.map

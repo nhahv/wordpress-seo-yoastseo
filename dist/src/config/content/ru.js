@@ -18,4 +18,3 @@ exports.default = {
 		}
 	}
 };
-//# sourceMappingURL=ru.js.map

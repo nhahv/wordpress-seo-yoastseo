@@ -11,13 +11,6 @@ var _SentenceTokenizer2 = _interopRequireDefault(_SentenceTokenizer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Parses a text into sentences.
- *
- * @param {string} text The text to parse.
- *
- * @returns {string[]} An array of sentence objects.
- */
 const parseTextIntoSentences = function parseTextIntoSentences(text) {
   const sentenceTokenizer = new _SentenceTokenizer2.default();
 
@@ -32,4 +25,3 @@ const parseTextIntoSentences = function parseTextIntoSentences(text) {
 };
 
 exports.parseTextIntoSentences = parseTextIntoSentences;
-//# sourceMappingURL=parseText.js.map

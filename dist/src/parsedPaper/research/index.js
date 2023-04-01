@@ -11,13 +11,4 @@ var _TreeResearcher2 = _interopRequireDefault(_TreeResearcher);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Module for applying researches to text, represented as a tree structure.
- *
- * @see module:parsedPaper/structure
- *
- * @module parsedPaper/research
- */
-
 exports.TreeResearcher = _TreeResearcher2.default;
-//# sourceMappingURL=index.js.map

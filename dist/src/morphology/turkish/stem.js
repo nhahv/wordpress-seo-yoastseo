@@ -11,14 +11,6 @@ var _turkishStemmer2 = _interopRequireDefault(_turkishStemmer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Stems Turkish words.
- *
- * @param {string} word            The word to stem.
- * @param {Object} morphologyData  The Turkish morphology data.
- *
- * @returns {string} The stemmed word.
- */
 function stem(word, morphologyData) {
   word = word.toLowerCase();
 
@@ -28,4 +20,3 @@ function stem(word, morphologyData) {
 
   return stemmer.getCurrent();
 }
-//# sourceMappingURL=stem.js.map

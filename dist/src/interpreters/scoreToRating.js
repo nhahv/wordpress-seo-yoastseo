@@ -3,12 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-/**
- * Interpreters a score and gives it a particular rating.
- *
- * @param {Number} score The score to interpreter.
- * @returns {string} The rating, given based on the score.
- */
+
 const ScoreToRating = function ScoreToRating(score) {
 	if (score === -1) {
 		return "error";
@@ -34,4 +29,3 @@ const ScoreToRating = function ScoreToRating(score) {
 };
 
 exports.default = ScoreToRating;
-//# sourceMappingURL=scoreToRating.js.map

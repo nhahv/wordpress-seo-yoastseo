@@ -12,4 +12,3 @@ var _scoreToRating2 = _interopRequireDefault(_scoreToRating);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.scoreToRating = _scoreToRating2.default;
-//# sourceMappingURL=index.js.map

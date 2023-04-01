@@ -20,15 +20,6 @@ var _sanitizeString2 = _interopRequireDefault(_sanitizeString);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Creates a regex from a string so it can be matched everywhere in the same way.
- *
- * @param {string} string The string to make a regex from.
- * @param {string} [extraBoundary=""] A string that is used as extra boundary for the regex.
- * @param {boolean} [doReplaceDiacritics=true] If set to false, it doesn't replace diacritics. Defaults to true.
- * @returns {RegExp} regex The regex made from the keyword
- */
-/** @module stringProcessing/stringToRegex */
 exports.default = (0, _lodashEs.memoize)(function (string, extraBoundary, doReplaceDiacritics) {
 	if ((0, _lodashEs.isUndefined)(extraBoundary)) {
 		extraBoundary = "";
@@ -43,4 +34,3 @@ exports.default = (0, _lodashEs.memoize)(function (string, extraBoundary, doRepl
 	string = (0, _addWordboundary2.default)(string, false, extraBoundary);
 	return new RegExp(string, "ig");
 });
-//# sourceMappingURL=createWordRegex.js.map

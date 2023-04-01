@@ -28,11 +28,3 @@ var _createWordRegex2 = _interopRequireDefault(_createWordRegex);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const stopwords = (0, _stopwords2.default)();
-
-/**
- * Checks a text to see if there are any stopwords, that are defined in the stopwords config.
- *
- * @param {string} text The input text to match stopwords.
- * @returns {Array} An array with all stopwords found in the text.
- */
-//# sourceMappingURL=stopWordsInText.js.map

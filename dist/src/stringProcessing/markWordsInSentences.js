@@ -23,16 +23,6 @@ var _Mark2 = _interopRequireDefault(_Mark);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Adds marks to a sentence and merges marks if those are only separated by a space
- * (e.g., if highlighting words "ballet" and "shoes" in a sentence "I have a lot of ballet shoes and other paraphernalia."
- * the marks will be put around "ballet shoes" together, not "`ballet` `shoes`".)
- *
- * @param {string}    sentence               The sentence to mark words in.
- * @param {[string]}  topicFoundInSentence   The words to mark in the sentence.
- *
- * @returns {string} The sentence with marks.
- */
 const collectMarkingsInSentence = function collectMarkingsInSentence(sentence, topicFoundInSentence) {
   const markup = sentence.replace((0, _createRegexFromArray2.default)(topicFoundInSentence), function (x) {
     return (0, _addMarkSingleWord2.default)(x);
@@ -41,15 +31,6 @@ const collectMarkingsInSentence = function collectMarkingsInSentence(sentence, t
   return markup.replace(new RegExp("</yoastmark> <yoastmark class='yoast-text-mark'>", "ig"), " ");
 };
 
-/**
- * Adds marks to an array of sentences.
- *
- * @param {[string]}    wordsToMark The words to mark.
- * @param {[string]}    sentences   The sentences in which to mark these words.
- * @param {string}      locale      The locale.
- *
- * @returns {[string]} The sentences with marks.
- */
 function markWordsInSentences(wordsToMark, sentences, locale) {
   let topicFoundInSentence = [];
   let markings = [];
@@ -67,4 +48,3 @@ function markWordsInSentences(wordsToMark, sentences, locale) {
 
   return markings;
 }
-//# sourceMappingURL=markWordsInSentences.js.map

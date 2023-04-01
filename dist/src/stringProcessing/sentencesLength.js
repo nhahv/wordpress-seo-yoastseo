@@ -7,7 +7,6 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = function (sentences) {
 	var sentencesWordCount = [];
 	(0, _lodashEs.forEach)(sentences, function (sentence) {
-		// For counting words we want to omit the HTMLtags.
 		var strippedSentence = (0, _stripHTMLTags.stripFullTags)(sentence);
 		var length = (0, _countWords2.default)(strippedSentence);
 
@@ -32,4 +31,3 @@ var _lodashEs = require("lodash-es");
 var _stripHTMLTags = require("./stripHTMLTags.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-//# sourceMappingURL=sentencesLength.js.map

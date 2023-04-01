@@ -7,4 +7,3 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = function (slug) {
   return slug.replace(/[-_]/ig, " ");
 };
-//# sourceMappingURL=parseSlug.js.map

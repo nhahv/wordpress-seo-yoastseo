@@ -52,13 +52,6 @@ const PARSE_CLASSES = {
 	ProminentWord: _ProminentWord2.default
 };
 
-/**
- * Parses a data structure that has previously been serialized.
- *
- * @param {*} thing The data structure to parse.
- *
- * @returns {*} The parsed data structure.
- */
 function parse(thing) {
 	if ((0, _lodashEs.isArray)(thing)) {
 		return thing.map(parse);
@@ -76,4 +69,3 @@ function parse(thing) {
 
 	return thing;
 }
-//# sourceMappingURL=parse.js.map

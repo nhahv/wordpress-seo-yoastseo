@@ -19,4 +19,3 @@ exports.default = function (url, topicForms, locale = "en_EN") {
 };
 
 var _findKeywordFormsInString = require("../researches/findKeywordFormsInString.js");
-//# sourceMappingURL=findKeywordInUrl.js.map

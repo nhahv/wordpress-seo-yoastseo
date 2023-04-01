@@ -23,12 +23,10 @@ exports.default = function (locale) {
 		tr: _firstWordExceptions30.default
 	};
 
-	// If available, return the language-specific first word exceptions.
 	if (Object.keys(firstWordExceptions).includes((0, _getLanguage2.default)(locale))) {
 		return firstWordExceptions[(0, _getLanguage2.default)(locale)];
 	}
 
-	// Return the English first word exceptions as a default.
 	return _firstWordExceptions2.default;
 };
 
@@ -97,4 +95,3 @@ var _getLanguage = require("./getLanguage.js");
 var _getLanguage2 = _interopRequireDefault(_getLanguage);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-//# sourceMappingURL=getFirstWordExceptions.js.map

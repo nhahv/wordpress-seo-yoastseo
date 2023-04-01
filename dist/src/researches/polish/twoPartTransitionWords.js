@@ -7,4 +7,3 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = function () {
   return [["albo", "albo"], ["ani", "ani"], ["czy", "czy"], ["im", "tym"], ["tak", "jak"]];
 };
-//# sourceMappingURL=twoPartTransitionWords.js.map

@@ -5,12 +5,5 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function () {
-	return [
-	// Demonstrative pronouns:
-	"bunlar", "şunlar", "onlar”, “burası", "orası", "şurası", "burayı", "orayı", "şurayı”, “buraya", "oraya", "şuraya”, “burada", "orada", "şurada”, “buradan", "oradan", "şuradan",
-	// Demonstrative adjectives:
-	"bu", "şu", "o",
-	// Numbers:
-	"bir", "íki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz", "on"];
+	return ["bunlar", "şunlar", "onlar”, “burası", "orası", "şurası", "burayı", "orayı", "şurayı”, “buraya", "oraya", "şuraya”, “burada", "orada", "şurada”, “buradan", "oradan", "şuradan", "bu", "şu", "o", "bir", "íki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz", "on"];
 };
-//# sourceMappingURL=firstWordExceptions.js.map

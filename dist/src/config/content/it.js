@@ -8,4 +8,3 @@ exports.default = {
 		recommendedWordCount: 25
 	}
 };
-//# sourceMappingURL=it.js.map

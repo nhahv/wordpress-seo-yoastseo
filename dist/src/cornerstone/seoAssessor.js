@@ -80,15 +80,6 @@ var _SingleH1Assessment2 = _interopRequireDefault(_SingleH1Assessment);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Creates the Assessor
- *
- * @param {Object} i18n The i18n object used for translations.
- * @param {Object} options The options for this assessor.
- * @param {Object} options.marker The marker to pass the list of marks to.
- *
- * @constructor
- */
 const CornerstoneSEOAssessor = function CornerstoneSEOAssessor(i18n, options) {
 	_assessor2.default.call(this, i18n, options);
 	this.type = "CornerstoneSEOAssessor";
@@ -135,4 +126,3 @@ const CornerstoneSEOAssessor = function CornerstoneSEOAssessor(i18n, options) {
 (0, _util.inherits)(CornerstoneSEOAssessor, _seoAssessor2.default);
 
 exports.default = CornerstoneSEOAssessor;
-//# sourceMappingURL=seoAssessor.js.map

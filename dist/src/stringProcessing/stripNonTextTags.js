@@ -15,4 +15,3 @@ var _stripSpaces = require("../stringProcessing/stripSpaces.js");
 var _stripSpaces2 = _interopRequireDefault(_stripSpaces);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-//# sourceMappingURL=stripNonTextTags.js.map

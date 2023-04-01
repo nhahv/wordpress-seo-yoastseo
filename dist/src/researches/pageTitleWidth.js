@@ -10,4 +10,3 @@ exports.default = function (paper) {
   }
   return 0;
 };
-//# sourceMappingURL=pageTitleWidth.js.map

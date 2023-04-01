@@ -14,4 +14,3 @@ exports.default = function (text, regexString) {
 
   return matches;
 };
-//# sourceMappingURL=matchStringWithRegex.js.map

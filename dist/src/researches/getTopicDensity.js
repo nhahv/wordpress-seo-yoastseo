@@ -22,4 +22,3 @@ var _topicCount = require("./topicCount.js");
 var _topicCount2 = _interopRequireDefault(_topicCount);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-//# sourceMappingURL=getTopicDensity.js.map

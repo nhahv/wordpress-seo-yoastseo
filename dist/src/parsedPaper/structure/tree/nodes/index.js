@@ -52,4 +52,3 @@ exports.MetadataMiscellaneous = _MetadataMiscellaneous2.default;
 exports.Node = _Node2.default;
 exports.Paragraph = _Paragraph2.default;
 exports.StructuredNode = _StructuredNode2.default;
-//# sourceMappingURL=index.js.map

@@ -55,4 +55,3 @@ exports.removeHtmlBlocks = _htmlParser2.default;
 exports.wordBoundaries = _wordBoundaries2.default;
 exports.createRegexFromArray = _createRegexFromArray2.default;
 exports.__createWordRegex = _createWordRegex2.default;
-//# sourceMappingURL=index.js.map

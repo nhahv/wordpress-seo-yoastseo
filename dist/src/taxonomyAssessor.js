@@ -59,13 +59,7 @@ var _shortlinker = require("./helpers/shortlinker");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Returns the text length assessment to use.
- *
- * @returns {TextLengthAssessment} The text length assessment (with taxonomy configuration) to use.
- */
 const getTextLengthAssessment = exports.getTextLengthAssessment = function getTextLengthAssessment() {
-	// Export so it can be used in tests.
 	return new _TextLengthAssessment2.default({
 		recommendedMinimum: 250,
 		slightlyBelowMinimum: 200,
@@ -76,13 +70,6 @@ const getTextLengthAssessment = exports.getTextLengthAssessment = function getTe
 	});
 };
 
-/**
- * Creates the Assessor used for taxonomy pages.
- *
- * @param {object} i18n The i18n object used for translations.
- * @param {Object} options The options for this assessor.
- * @constructor
- */
 const TaxonomyAssessor = function TaxonomyAssessor(i18n, options) {
 	_assessor2.default.call(this, i18n, options);
 	this.type = "TaxonomyAssessor";
@@ -93,4 +80,3 @@ const TaxonomyAssessor = function TaxonomyAssessor(i18n, options) {
 (0, _util.inherits)(TaxonomyAssessor, _assessor2.default);
 
 exports.default = TaxonomyAssessor;
-//# sourceMappingURL=taxonomyAssessor.js.map

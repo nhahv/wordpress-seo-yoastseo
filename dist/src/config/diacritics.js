@@ -62,11 +62,4 @@ exports.default = function () {
 	}];
 };
 
-; /** @module config/diacritics */
-
-/**
- * Returns the diacritics map
- *
- * @returns {array} diacritics map
- */
-//# sourceMappingURL=diacritics.js.map
+;

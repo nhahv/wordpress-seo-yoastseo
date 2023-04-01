@@ -44,27 +44,11 @@ var _lodashEs = require("lodash-es");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Checks whether the link is pointing at itself.
- * @param {string} anchor The link anchor.
- * @param {string} permalink The permalink of the paper.
- *
- * @returns {boolean} Whether the anchor is pointing at itself.
- */
 const linkToSelf = function linkToSelf(anchor, permalink) {
 	const anchorLink = _urlUtils2.default.getFromAnchorTag(anchor);
 
 	return _urlUtils2.default.areEqual(anchorLink, permalink);
 };
-
-/**
- * Filters anchors that are not pointing at itself.
- * @param {Array} anchors An array with all anchors from the paper
- * @param {string} permalink The permalink of the paper.
- *
- * @returns {Array} The array of all anchors that are not pointing at the paper itself.
- */
-/** @module analyses/getLinkStatistics */
 
 const filterAnchorsLinkingToSelf = function filterAnchorsLinkingToSelf(anchors, permalink) {
 	const anchorsLinkingToSelf = anchors.map(function (anchor) {
@@ -78,14 +62,6 @@ const filterAnchorsLinkingToSelf = function filterAnchorsLinkingToSelf(anchors, 
 	return anchors;
 };
 
-/**
- * Filters anchors that contain keyphrase or synonyms.
- * @param {Array} anchors An array with all anchors from the paper
- * @param {Object} topicForms The object with topicForms.
- * @param {string} locale The locale of the paper
- *
- * @returns {Array} The array of all anchors that contain keyphrase or synonyms.
- */
 const filterAnchorsContainingTopic = function filterAnchorsContainingTopic(anchors, topicForms, locale) {
 	const anchorsContainingKeyphraseOrSynonyms = anchors.map(function (anchor) {
 		return (0, _findKeywordInUrl2.default)(anchor, topicForms, locale);
@@ -97,16 +73,7 @@ const filterAnchorsContainingTopic = function filterAnchorsContainingTopic(ancho
 	return anchors;
 };
 
-/**
- * Filters anchors that are contained within keyphrase or synonyms.
- * @param {Array}  anchors    An array with all anchors from the paper.
- * @param {Object} topicForms An object containing word forms of words included in the keyphrase or a synonym.
- * @param {string} locale     The locale of the paper.
- *
- * @returns {Array} The array of all anchors contained in the keyphrase or synonyms.
- */
 const filterAnchorsContainedInTopic = function filterAnchorsContainedInTopic(anchors, topicForms, locale) {
-	// Prepare keyphrase and synonym forms for comparison with anchors.
 	const keyphraseAndSynonymsWords = [(0, _lodashEs.flatten)(topicForms.keyphraseForms)];
 	const synonymsForms = topicForms.synonymsForms;
 	for (let i = 0; i < synonymsForms.length; i++) {
@@ -117,13 +84,10 @@ const filterAnchorsContainedInTopic = function filterAnchorsContainedInTopic(anc
 	const anchorsContainedInTopic = [];
 
 	anchors.forEach(function (currentAnchor) {
-		// Get single words from the anchor.
 		let anchorWords = (0, _lodashEs.uniq)((0, _getWords2.default)(currentAnchor));
 
-		// Filter function words out of the anchor text.
 		anchorWords = (0, _filterFunctionWordsFromArray2.default)(anchorWords, language);
 
-		// Check if anchorWords are contained in the topic phrase words
 		for (let i = 0; i < keyphraseAndSynonymsWords.length; i++) {
 			if (anchorWords.every(anchorWord => (0, _matchTextWithArray2.default)(anchorWord, keyphraseAndSynonymsWords[i], locale).count > 0)) {
 				anchorsContainedInTopic.push(true);
@@ -139,26 +103,15 @@ const filterAnchorsContainedInTopic = function filterAnchorsContainedInTopic(anc
 	return anchors;
 };
 
-/**
- * Checks whether or not an anchor contains the passed keyword.
- * @param {Paper} paper The paper to research.
- * @param {Researcher} researcher The researcher to use.
- * @param {Array} anchors The array of anchors of the links found in the paper.
- * @param {string} permalink The string with a permalink of the paper.
- *
- * @returns {Object} How many anchors contained the keyphrase or synonyms, what are these anchors
- */
 const keywordInAnchor = function keywordInAnchor(paper, researcher, anchors, permalink) {
 	const result = { totalKeyword: 0, matchedAnchors: [] };
 
 	const keyword = paper.getKeyword();
 
-	// If no keyword is set, return empty result.
 	if (keyword === "") {
 		return result;
 	}
 
-	// Filter out anchors that point at the paper itself.
 	anchors = filterAnchorsLinkingToSelf(anchors, permalink);
 	if (anchors.length === 0) {
 		return result;
@@ -167,13 +120,11 @@ const keywordInAnchor = function keywordInAnchor(paper, researcher, anchors, per
 	const locale = paper.getLocale();
 	const topicForms = researcher.getResearch("morphology");
 
-	// Check if any anchors contain keyphrase or synonyms in them.
 	anchors = filterAnchorsContainingTopic(anchors, topicForms, locale);
 	if (anchors.length === 0) {
 		return result;
 	}
 
-	// Check if content words from the anchors are all within the keyphrase or the synonyms.
 	anchors = filterAnchorsContainedInTopic(anchors, topicForms, locale);
 	result.totalKeyword = anchors.length;
 	result.matchedAnchors = anchors;
@@ -181,28 +132,6 @@ const keywordInAnchor = function keywordInAnchor(paper, researcher, anchors, per
 	return result;
 };
 
-/**
- * Counts the links found in the text.
- *
- * @param {Paper} paper The paper object containing text, keyword and url.
- * @param {Researcher} researcher The researcher to use for the paper.
- *
- * @returns {object} The object containing all linktypes.
- * total: the total number of links found.
- * totalNaKeyword: the total number of links if keyword is not available.
- * keyword: Object containing all the keyword related counts and matches.
- * keyword.totalKeyword: the total number of links with the keyword.
- * keyword.matchedAnchors: Array with the anchors that contain the keyword.
- * internalTotal: the total number of links that are internal.
- * internalDofollow: the internal links without a nofollow attribute.
- * internalNofollow: the internal links with a nofollow attribute.
- * externalTotal: the total number of links that are external.
- * externalDofollow: the external links without a nofollow attribute.
- * externalNofollow: the internal links with a dofollow attribute.
- * otherTotal: all links that are not HTTP or HTTPS.
- * otherDofollow: other links without a nofollow attribute.
- * otherNofollow: other links with a nofollow attribute.
- */
 const countLinkTypes = function countLinkTypes(paper, researcher) {
 	const anchors = (0, _getAnchorsFromText2.default)(paper.getText());
 	const permalink = paper.getPermalink();
@@ -243,4 +172,3 @@ const countLinkTypes = function countLinkTypes(paper, researcher) {
 };
 
 exports.default = countLinkTypes;
-//# sourceMappingURL=getLinkStatistics.js.map

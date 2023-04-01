@@ -5,14 +5,5 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function () {
-	return [
-	// Indefinite articles:
-	"ett",
-	// Definite articles:
-	"det", "den", "de",
-	// Numbers 1-10:
-	"en", "två", "tre", "fyra", "fem", "sex", "sju", "åtta", "nio", "tio",
-	// Demonstrative pronouns:
-	"denne", "denna", "detta", "dessa"];
+	return ["ett", "det", "den", "de", "en", "två", "tre", "fyra", "fem", "sex", "sju", "åtta", "nio", "tio", "denne", "denna", "detta", "dessa"];
 };
-//# sourceMappingURL=firstWordExceptions.js.map

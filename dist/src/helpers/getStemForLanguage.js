@@ -84,4 +84,3 @@ var _stem25 = require("../morphology/turkish/stem");
 var _stem26 = _interopRequireDefault(_stem25);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-//# sourceMappingURL=getStemForLanguage.js.map

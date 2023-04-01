@@ -50,23 +50,6 @@ var _combinedConfig2 = _interopRequireDefault(_combinedConfig);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/*
- Temporarily disabled:
-
- var wordComplexity = require( "./assessments/readability/wordComplexityAssessment.js" );
- var sentenceLengthInDescription = require( "./assessments/readability/sentenceLengthInDescriptionAssessment.js" );
- */
-
-/**
- * Creates the Assessor
- *
- * @param {object} i18n The i18n object used for translations.
- * @param {Object} options The options for this assessor.
- * @param {Object} options.marker The marker to pass the list of marks to.
- * @param {string} options.locale The locale.
- *
- * @constructor
- */
 const CornerStoneContentAssessor = function CornerStoneContentAssessor(i18n, options = {}) {
 	_assessor2.default.call(this, i18n, options);
 	this.type = "CornerstoneContentAssessor";
@@ -88,4 +71,3 @@ const CornerStoneContentAssessor = function CornerStoneContentAssessor(i18n, opt
 require("util").inherits(CornerStoneContentAssessor, _contentAssessor2.default);
 
 exports.default = CornerStoneContentAssessor;
-//# sourceMappingURL=contentAssessor.js.map

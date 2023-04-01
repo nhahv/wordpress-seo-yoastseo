@@ -18,4 +18,3 @@ var _determineSentencePartIsPassive = require("./determineSentencePartIsPassive.
 var _determineSentencePartIsPassive2 = _interopRequireDefault(_determineSentencePartIsPassive);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-//# sourceMappingURL=determinePassives.js.map

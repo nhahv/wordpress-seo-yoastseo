@@ -15,4 +15,3 @@ exports.default = function (paper) {
 	}
 	return false;
 };
-//# sourceMappingURL=urlIsTooLong.js.map

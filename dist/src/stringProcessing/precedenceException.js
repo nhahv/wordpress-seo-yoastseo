@@ -63,16 +63,3 @@ const cannotBeBetweenAuxiliaryAndParticipleEnglish = (0, _functionWords4.default
 const cannotBeBetweenAuxiliaryAndParticipleSpanish = (0, _functionWords6.default)().cannotBeBetweenPassiveAuxiliaryAndParticiple;
 
 const cannotBeBetweenAuxiliaryAndParticipleItalian = (0, _functionWords8.default)().cannotBeBetweenPassiveAuxiliaryAndParticiple;
-
-/**
- * Checks whether a word from the precedence exception list occurs anywhere in the sentence part before the participle.
- * If this is the case, the sentence part is not passive.
- *
- * @param {string} sentencePart The sentence part that contains the participle.
- * @param {number} participleIndex The index of the participle.
- * @param {string} language The language of the participle.
- *
- * @returns {boolean} Returns true if a word from the precedence exception list occurs anywhere in the
- * sentence part before the participle, otherwise returns false.
- */
-//# sourceMappingURL=precedenceException.js.map

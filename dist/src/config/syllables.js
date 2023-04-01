@@ -11,7 +11,6 @@ exports.default = function (locale = "en_US") {
 		return languages[language];
 	}
 
-	// If an unknown locale is used, default to English.
 	return languages["en"];
 };
 
@@ -55,9 +54,6 @@ var _pt2 = _interopRequireDefault(_pt);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/** @module config/syllables */
-
 let languages = { de: _de2.default, nl: _nl2.default, en: _en2.default, it: _it2.default, ru: _ru2.default, fr: _fr2.default, es: _es2.default, pt: _pt2.default };
 
 ;
-//# sourceMappingURL=syllables.js.map

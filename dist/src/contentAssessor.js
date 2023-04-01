@@ -52,16 +52,6 @@ var _lodashEs = require("lodash-es");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Creates the Assessor
- *
- * @param {object} i18n The i18n object used for translations.
- * @param {Object} options The options for this assessor.
- * @param {Object} options.marker The marker to pass the list of marks to.
- * @param {string} options.locale The locale.
- *
- * @constructor
- */
 const ContentAssessor = function ContentAssessor(i18n, options = {}) {
 	_assessor2.default.call(this, i18n, options);
 	this.type = "ContentAssessor";
@@ -70,21 +60,8 @@ const ContentAssessor = function ContentAssessor(i18n, options = {}) {
 	this._assessments = [new _fleschReadingEaseAssessment2.default((0, _combinedConfig2.default)(locale).fleschReading), new _subheadingDistributionTooLongAssessment2.default(), _paragraphTooLongAssessment2.default, new _sentenceLengthInTextAssessment2.default((0, _combinedConfig2.default)(locale).sentenceLength), _transitionWordsAssessment2.default, _passiveVoiceAssessment2.default, _textPresenceAssessment2.default, _sentenceBeginningsAssessment2.default];
 };
 
-/*
-	Temporarily disabled:
-
-	var wordComplexity = require( "./assessments/wordComplexityAssessment.js" );
-	var sentenceLengthInDescription = require( "./assessments/sentenceLengthInDescriptionAssessment.js" );
- */
-
 require("util").inherits(ContentAssessor, _assessor2.default);
 
-/**
- * Calculates the weighted rating for languages that have all assessments based on a given rating.
- *
- * @param {number} rating The rating to be weighted.
- * @returns {number} The weighted rating.
- */
 ContentAssessor.prototype.calculatePenaltyPointsFullSupport = function (rating) {
 	switch (rating) {
 		case "bad":
@@ -97,12 +74,6 @@ ContentAssessor.prototype.calculatePenaltyPointsFullSupport = function (rating) 
 	}
 };
 
-/**
- * Calculates the weighted rating for languages that don't have all assessments based on a given rating.
- *
- * @param {number} rating The rating to be weighted.
- * @returns {number} The weighted rating.
- */
 ContentAssessor.prototype.calculatePenaltyPointsPartialSupport = function (rating) {
 	switch (rating) {
 		case "bad":
@@ -115,23 +86,12 @@ ContentAssessor.prototype.calculatePenaltyPointsPartialSupport = function (ratin
 	}
 };
 
-/**
- * Determines whether a language is fully supported. If a language supports 8 content assessments
- * it is fully supported
- *
- * @returns {boolean} True if fully supported.
- */
 ContentAssessor.prototype._allAssessmentsSupported = function () {
 	const numberOfAssessments = 8;
 	const applicableAssessments = this.getApplicableAssessments();
 	return applicableAssessments.length === numberOfAssessments;
 };
 
-/**
- * Calculates the penalty points based on the assessment results.
- *
- * @returns {number} The total penalty points for the results.
- */
 ContentAssessor.prototype.calculatePenaltyPoints = function () {
 	const results = this.getValidResults();
 
@@ -148,55 +108,35 @@ ContentAssessor.prototype.calculatePenaltyPoints = function () {
 	return (0, _lodashEs.sum)(penaltyPoints);
 };
 
-/**
- * Rates the penalty points
- *
- * @param {number} totalPenaltyPoints The amount of penalty points.
- * @returns {number} The score based on the amount of penalty points.
- *
- * @private
- */
 ContentAssessor.prototype._ratePenaltyPoints = function (totalPenaltyPoints) {
 	if (this.getValidResults().length === 1) {
-		// If we have only 1 result, we only have a "no content" result
 		return 30;
 	}
 
 	if (this._allAssessmentsSupported()) {
-		// Determine the total score based on the total penalty points.
 		if (totalPenaltyPoints > 6) {
-			// A red indicator.
 			return 30;
 		}
 
 		if (totalPenaltyPoints > 4) {
-			// An orange indicator.
 			return 60;
 		}
 	} else {
 		if (totalPenaltyPoints > 4) {
-			// A red indicator.
 			return 30;
 		}
 
 		if (totalPenaltyPoints > 2) {
-			// An orange indicator.
 			return 60;
 		}
 	}
-	// A green indicator.
+
 	return 90;
 };
 
-/**
- * Calculates the overall score based on the assessment results.
- *
- * @returns {number} The overall score.
- */
 ContentAssessor.prototype.calculateOverallScore = function () {
 	const results = this.getValidResults();
 
-	// If you have no content, you have a red indicator.
 	if (results.length === 0) {
 		return 30;
 	}
@@ -207,4 +147,3 @@ ContentAssessor.prototype.calculateOverallScore = function () {
 };
 
 exports.default = ContentAssessor;
-//# sourceMappingURL=contentAssessor.js.map

@@ -5,26 +5,16 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (sentencePart, participle, language) {
-	// Break the sentence part up into words and convert to lower case.
 	const wordsInSentencePart = (0, _getWords2.default)(sentencePart).map(word => word.toLowerCase());
 
-	// Search the participle in the word list.
 	const participleIndex = wordsInSentencePart.indexOf(participle.toLowerCase());
 
-	/*
-  * There can be no exception in the following situations:
-  *
-  * -1 The participle is not found.
-  *  0 There is no word before the participle.
-  */
 	if (participleIndex < 1) {
 		return false;
 	}
 
-	// Get the exceptions word list.
 	const precedenceExceptions = (0, _lodashEs.get)(cannotBeBetweenPassiveAuxiliaryAndParticiple, language, []);
 
-	// Check if the words preceding the participle are in the exceptions list.
 	for (let i = 0; i < participleIndex; i++) {
 		if ((0, _lodashEs.includes)(precedenceExceptions, wordsInSentencePart[i])) {
 			return true;
@@ -64,16 +54,3 @@ const cannotBeBetweenPassiveAuxiliaryAndParticiple = {
 	it: (0, _functionWords6.default)().cannotBeBetweenPassiveAuxiliaryAndParticiple,
 	es: (0, _functionWords8.default)().cannotBeBetweenPassiveAuxiliaryAndParticiple
 };
-
-/**
- * Checks whether a word from the precedence exception list occurs anywhere in the sentence part before the participle.
- * If this is the case, the sentence part is not passive.
- *
- * @param {string} sentencePart The sentence part that contains the participle.
- * @param {string} participle   The participle.
- * @param {string} language     The language of the participle.
- *
- * @returns {boolean} Returns true if a word from the precedence exception list occurs anywhere in the
- *                    sentence part before the participle, otherwise returns false.
- */
-//# sourceMappingURL=precedenceExceptionWithoutRegex.js.map

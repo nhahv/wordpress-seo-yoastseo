@@ -15,4 +15,3 @@ var _getLinks = require("./getLinks");
 var _getLinks2 = _interopRequireDefault(_getLinks);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-//# sourceMappingURL=countLinks.js.map

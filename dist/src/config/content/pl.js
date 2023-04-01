@@ -9,4 +9,3 @@ exports.default = {
 		farTooMany: 20
 	}
 };
-//# sourceMappingURL=pl.js.map

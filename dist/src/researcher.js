@@ -172,15 +172,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const keyphraseDistribution = _keyphraseDistribution.keyphraseDistributionResearcher;
 
-// Researches
-
-
-/**
- * This contains all possible, default researches.
- * @param {Paper} paper The Paper object that is needed within the researches.
- * @constructor
- * @throws {InvalidTypeError} Parameter needs to be an instance of the Paper object.
- */
 var Researcher = function Researcher(paper) {
 	this.setPaper(paper);
 
@@ -231,24 +222,10 @@ var Researcher = function Researcher(paper) {
 	this.customResearches = {};
 };
 
-/**
- * Set the Paper associated with the Researcher.
- * @param {Paper} paper The Paper to use within the Researcher
- * @throws {InvalidTypeError} Parameter needs to be an instance of the Paper object.
- * @returns {void}
- */
 Researcher.prototype.setPaper = function (paper) {
 	this.paper = paper;
 };
 
-/**
- * Add a custom research that will be available within the Researcher.
- * @param {string} name A name to reference the research by.
- * @param {function} research The function to be added to the Researcher.
- * @throws {MissingArgument} Research name cannot be empty.
- * @throws {InvalidTypeError} The research requires a valid Function callback.
- * @returns {void}
- */
 Researcher.prototype.addResearch = function (name, research) {
 	if ((0, _lodashEs.isUndefined)(name) || (0, _lodashEs.isEmpty)(name)) {
 		throw new _missingArgument2.default("Research name cannot be empty");
@@ -261,32 +238,16 @@ Researcher.prototype.addResearch = function (name, research) {
 	this.customResearches[name] = research;
 };
 
-/**
- * Check whether or not the research is known by the Researcher.
- * @param {string} name The name to reference the research by.
- * @returns {boolean} Whether or not the research is known by the Researcher
- */
 Researcher.prototype.hasResearch = function (name) {
 	return Object.keys(this.getAvailableResearches()).filter(function (research) {
 		return research === name;
 	}).length > 0;
 };
 
-/**
- * Return all available researches.
- * @returns {Object} An object containing all available researches.
- */
 Researcher.prototype.getAvailableResearches = function () {
 	return (0, _lodashEs.merge)(this.defaultResearches, this.customResearches);
 };
 
-/**
- * Return the Research by name.
- * @param {string} name The name to reference the research by.
- *
- * @returns {*} Returns the result of the research or false if research does not exist.
- * @throws {MissingArgument} Research name cannot be empty.
- */
 Researcher.prototype.getResearch = function (name) {
 	if ((0, _lodashEs.isUndefined)(name) || (0, _lodashEs.isEmpty)(name)) {
 		throw new _missingArgument2.default("Research name cannot be empty");
@@ -299,25 +260,10 @@ Researcher.prototype.getResearch = function (name) {
 	return this.getAvailableResearches()[name](this.paper, this);
 };
 
-/**
- * Add research data to the researcher by the research name.
- *
- * @param {string} research The identifier of the research.
- * @param {Object} data     The data object.
- *
- * @returns {void}.
- */
 Researcher.prototype.addResearchData = function (research, data) {
 	this._data[research] = data;
 };
 
-/**
- * Return the research data from a research data provider by research name.
- *
- * @param {string} research The identifier of the research.
- *
- * @returns {*} The data provided by the provider, false if the data do not exist
- */
 Researcher.prototype.getData = function (research) {
 	if (this._data.hasOwnProperty(research)) {
 		return this._data[research];
@@ -327,4 +273,3 @@ Researcher.prototype.getData = function (research) {
 };
 
 exports.default = Researcher;
-//# sourceMappingURL=researcher.js.map

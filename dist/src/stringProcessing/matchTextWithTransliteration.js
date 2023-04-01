@@ -56,24 +56,7 @@ var _specialCharacterMappings = require("./specialCharacterMappings");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Creates a regex from the keyword with included wordboundaries.
- *
- * @param {string} keyword  The keyword to create a regex from.
- * @param {string} locale   The locale.
- *
- * @returns {RegExp} Regular expression of the keyword with word boundaries.
- */
 var toRegex = function toRegex(keyword, locale) {
 	keyword = (0, _addWordboundary2.default)(keyword, false, "", locale);
 	return new RegExp(keyword, "ig");
 };
-
-/**
- * Matches a string with and without transliteration.
- * @param {string} text The text to match.
- * @param {string} keyword The keyword to match in the text.
- * @param {string} locale The locale used for transliteration.
- * @returns {Array} All matches from the original as the transliterated text and keyword.
- */
-//# sourceMappingURL=matchTextWithTransliteration.js.map

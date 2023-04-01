@@ -43,16 +43,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const functionWordLanguages = (0, _getFunctionWordsLanguages2.default)();
 
-/**
- * Computes the amount of subheadings reflecting the topic.
- *
- * @param {Object}      topicForms      The main key phrase and its synonyms to check.
- * @param {string[]}    subheadings     The subheadings to check.
- * @param {boolean}     useSynonyms     Whether to match synonyms or only main keyphrase.
- * @param {string}      locale          The current locale.
- *
- * @returns {number} The amount of subheadings reflecting the topic.
- */
 const numberOfSubheadingsReflectingTopic = function numberOfSubheadingsReflectingTopic(topicForms, subheadings, useSynonyms, locale) {
 	const isFunctionWordLanguage = (0, _lodashEs.includes)(functionWordLanguages, (0, _getLanguage2.default)(locale));
 
@@ -65,16 +55,3 @@ const numberOfSubheadingsReflectingTopic = function numberOfSubheadingsReflectin
 		return matchedTopicForms.percentWordMatches > 50;
 	}).length;
 };
-
-/**
- * Checks if there are any subheadings like h2 in the text
- * and if they have the key phrase and the keywords' respective morphological forms in them.
- *
- * Also checks for synonyms.
- *
- * @param {Object}      paper       The paper object containing the text and keyword.
- * @param {Researcher}  researcher  The researcher object.
- *
- * @returns {Object} The result object.
- */
-//# sourceMappingURL=matchKeywordInSubheadings.js.map

@@ -7,4 +7,3 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = function (locale) {
   return locale.split("_")[0];
 };
-//# sourceMappingURL=getLanguage.js.map

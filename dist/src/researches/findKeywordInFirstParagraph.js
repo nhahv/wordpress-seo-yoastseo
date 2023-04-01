@@ -19,7 +19,7 @@ exports.default = function (paper, researcher) {
 	};
 
 	const sentences = (0, _getSentences2.default)(paragraphs);
-	// Use both keyphrase and synonyms to match topic words in the first paragraph.
+
 	const useSynonyms = true;
 
 	if (!(0, _lodashEs.isEmpty)(sentences)) {
@@ -74,13 +74,6 @@ var _lodashEs = require("lodash-es");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Removes links from text.
- *
- * @param {string} text The text string to analyze.
- *
- * @returns {string} The text with links stripped away.
- */
 function removeLinksFromText(text) {
 	const anchors = (0, _getAnchorsFromText2.default)(text);
 	if (anchors.length > 0) {
@@ -91,15 +84,6 @@ function removeLinksFromText(text) {
 
 	return text;
 }
-
-/**
- * Removes images from text.
- *
- * @param {string} text The text string to analyze.
- *
- * @returns {string} The text with images stripped away.
- */
-/** @module analyses/findKeywordInFirstParagraph */
 
 function removeImagesFromText(text) {
 	const images = (0, _imageInText2.default)(text);
@@ -118,15 +102,7 @@ function removeImagesFromText(text) {
 	return text;
 }
 
-/**
- * Checks if the paragraph has no text.
- *
- * @param {string} text The text string to analyze.
- *
- * @returns {boolean} True if the paragraph has no text, false otherwise.
- */
 function paragraphHasNoText(text) {
-	// Strip links and check if paragraph consists of links only
 	text = removeLinksFromText(text);
 	if (text === "") {
 		return true;
@@ -137,7 +113,6 @@ function paragraphHasNoText(text) {
 		return true;
 	}
 
-	// Remove empty divisions from the text
 	const emptyDivisions = (0, _findEmptyDivisions2.default)(text);
 	if (emptyDivisions.length < 1) {
 		return false;
@@ -149,24 +124,3 @@ function paragraphHasNoText(text) {
 
 	return text === "";
 }
-
-/**
- * Checks if the introductory paragraph contains keyphrase or synonyms.
- * First splits the first paragraph by sentences. Finds the first paragraph which contains sentences e.g., not an image).
- * (1) Tries to find all (content) words from the keyphrase or a synonym phrase within one sentence.
- * If found all words within one sentence, returns an object with foundInOneSentence = true and keyphraseOrSynonym = "keyphrase"
- * or "synonym".
- * If it did not find all words within one sentence, goes ahead with matching the keyphrase with the entire first paragraph.
- * (2) Tries to find all (content) words from the keyphrase or a synonym phrase within the paragraph.
- * If found all words within the paragraph, returns an object with foundInOneSentence = false, foundInParagraph = true,
- * and keyphraseOrSynonym = "keyphrase" or "synonym".
- * If found not all words within the paragraph of nothing at all, returns an object with foundInOneSentence = false,
- * foundInParagraph = false, and keyphraseOrSynonym = "".
- *
- * @param {Paper} paper The text to check for paragraphs.
- * @param {Researcher} researcher The researcher to use for analysis.
- *
- * @returns {Object} Whether the keyphrase words were found in one sentence, whether the keyphrase words were found in
- * the paragraph, whether a keyphrase or a synonym phrase was matched.
- */
-//# sourceMappingURL=findKeywordInFirstParagraph.js.map

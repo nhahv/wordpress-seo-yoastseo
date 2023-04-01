@@ -5,15 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.removeSuffixesFromFullForm = removeSuffixesFromFullForm;
 exports.removeSuffixFromFullForm = removeSuffixFromFullForm;
-/**
- * Checks whether the word is started with one of the words in a given list of exceptions
- * and ends in one of the suffixes in a given suffixes list. If so, deletes the suffix.
- *
- * @param {string[]}    exceptions  The exception list.
- * @param {string[]}    suffixes      The suffixes that needs to be deleted.
- * @param {string}      word        The word to check.
- * @returns {string}	The stemmed word.
- */
 function removeSuffixesFromFullForm(exceptions, suffixes, word) {
   for (let i = 0; i < exceptions.length; i++) {
     if (word.startsWith(exceptions[i])) {
@@ -27,15 +18,6 @@ function removeSuffixesFromFullForm(exceptions, suffixes, word) {
   }
 }
 
-/**
- * Checks whether the word is in a given list of exceptions and if so, deletes a given suffix.
- *
- * @param {string[]}    exceptions  The exception list.
- * @param {string}      suffix      The suffix that needs to be deleted.
- * @param {string}      word        The word to check.
- *
- * @returns {string} The stemmed word.
- */
 function removeSuffixFromFullForm(exceptions, suffix, word) {
   for (let i = 0; i < exceptions.length; i++) {
     if (word.endsWith(exceptions[i])) {
@@ -43,4 +25,3 @@ function removeSuffixFromFullForm(exceptions, suffix, word) {
     }
   }
 }
-//# sourceMappingURL=stemHelpers.js.map

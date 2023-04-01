@@ -23,4 +23,3 @@ var _getWords = require("./getWords.js");
 var _getWords2 = _interopRequireDefault(_getWords);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-//# sourceMappingURL=countWordOccurrences.js.map

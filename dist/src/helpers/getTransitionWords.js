@@ -255,12 +255,3 @@ const transitionWordsHebrew = (0, _transitionWords28.default)().allWords;
 const transitionWordsArabic = (0, _transitionWords30.default)().allWords;
 
 const transitionWordsTurkish = (0, _transitionWords32.default)().allWords;
-
-/**
- * Returns transition words for a specific locale.
- *
- * @param {string} locale The locale to return function words for.
- *
- * @returns {Object} The function words for a locale.
- */
-//# sourceMappingURL=getTransitionWords.js.map

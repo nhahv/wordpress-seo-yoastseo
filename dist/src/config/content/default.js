@@ -30,4 +30,3 @@ exports.default = {
 		}
 	}
 };
-//# sourceMappingURL=default.js.map

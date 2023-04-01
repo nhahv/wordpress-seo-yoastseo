@@ -17,7 +17,6 @@ exports.default = function (precedingWords, participleIndex) {
 
 	var matches = [];
 	(0, _lodashEs.forEach)(precedingWordsIndices, function (precedingWordsIndex) {
-		// + 1 because the beginning word boundary is not included in the passive participle match
 		if (precedingWordsIndex + 1 < participleIndex) {
 			matches.push(precedingWordsIndex);
 		}
@@ -30,4 +29,3 @@ exports.default = function (precedingWords, participleIndex) {
 };
 
 var _lodashEs = require("lodash-es");
-//# sourceMappingURL=precedesIndex.js.map

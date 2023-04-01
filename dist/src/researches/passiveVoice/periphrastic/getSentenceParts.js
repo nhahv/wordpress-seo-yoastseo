@@ -102,16 +102,12 @@ const getIndicesOfList = _indices2.default.getIndicesByWordList;
 const filterIndices = _indices2.default.filterIndices;
 const sortIndices = _indices2.default.sortIndices;
 
-// English-specific variables and imports.
-
 const auxiliariesEnglish = (0, _auxiliaries2.default)().all;
 
 const stopwordsEnglish = (0, _stopwords2.default)();
 const stopCharacterRegexEnglish = /([:,]|('ll)|('ve))(?=[ \n\r\t'"+\-»«‹›<>])/ig;
 const verbEndingInIngRegex = /\w+ing(?=$|[ \n\r\t.,'()"+\-;!?:/»«‹›<>])/ig;
 const ingExclusionArray = ["king", "cling", "ring", "being", "thing", "something", "anything"];
-
-// French-specific variables and imports.
 
 const auxiliariesFrench = (0, _auxiliaries4.default)();
 
@@ -123,21 +119,15 @@ const directPrecedenceExceptionRegexFrench = (0, _createRegexFromArray2.default)
 const elisionAuxiliaryExceptionWords = ["c'", "s'", "peut-"];
 const elisionAuxiliaryExceptionRegex = (0, _createRegexFromArray2.default)(elisionAuxiliaryExceptionWords, true);
 
-// Spanish-specific variables and imports.
-
 const auxiliariesSpanish = (0, _auxiliaries6.default)();
 
 const stopwordsSpanish = (0, _stopwords6.default)();
 const followingAuxiliaryExceptionWordsSpanish = ["el", "la", "los", "las", "una"];
 
-// Portuguese-specific variables and imports.
-
 const auxiliariesPortuguese = (0, _auxiliaries8.default)();
 
 const stopwordsPortuguese = (0, _stopwords8.default)();
 const followingAuxiliaryExceptionWordsPortuguese = ["o", "a", "os", "as", "um", "ums", "uma", "umas"];
-
-// Italian-specific variables and imports.
 
 const auxiliariesItalian = (0, _auxiliaries10.default)();
 
@@ -146,13 +136,8 @@ const followingAuxiliaryExceptionWordsItalian = ["il", "i", "la", "le", "lo", "g
 const reflexivePronounsItalian = ["mi", "ti", "si", "ci", "vi"];
 const directPrecedenceExceptionRegexItalian = (0, _createRegexFromArray2.default)(reflexivePronounsItalian);
 
-/*
- * Variables applying to multiple languages
- * This regex applies to Spanish, Italian and  Portuguese.
- */
 const stopCharacterRegexOthers = /([:,])(?=[ \n\r\t'"+\-»«‹›<>])/ig;
 
-// The language-specific variables used to split sentences into sentence parts.
 const languageVariables = {
 	en: {
 		stopwords: stopwordsEnglish,
@@ -197,30 +182,14 @@ const languageVariables = {
 	}
 };
 
-/**
- * Gets active verbs (ending in ing) to determine sentence breakers in English.
- *
- * @param {string} sentence             The sentence to get the active verbs from.
- *
- * @returns {Array}                     The array with valid matches.
- */
 const getVerbsEndingInIng = function getVerbsEndingInIng(sentence) {
-	// Matches the sentences with words ending in ing.
 	const matches = sentence.match(verbEndingInIngRegex) || [];
-	// Filters out words ending in -ing that aren't verbs.
+
 	return (0, _lodashEs.filter)(matches, function (match) {
 		return !(0, _lodashEs.includes)(ingExclusionArray, (0, _stripSpaces2.default)(match));
 	});
 };
 
-/**
- * Gets stop characters to determine sentence breakers.
- *
- * @param {string} sentence             The sentence to get the stop characters from.
- * @param {string} language             The language for which to get the stop characters.
- *
- * @returns {Array}                     The array with stop characters.
- */
 const getStopCharacters = function getStopCharacters(sentence, language) {
 	const stopCharacterRegex = languageVariables[language].stopCharacterRegex;
 	let match;
@@ -237,15 +206,6 @@ const getStopCharacters = function getStopCharacters(sentence, language) {
 	return matches;
 };
 
-/**
- * Filters auxiliaries preceded by a reflexive pronoun.
- *
- * @param {string} text                      The text part in which to check.
- * @param {Array} auxiliaryMatches           The auxiliary matches for which to check.
- * @param {string} language                  The language for which to check auxiliary precedence exceptions.
- *
- * @returns {Array}                          The filtered list of auxiliary indices.
- */
 const auxiliaryPrecedenceExceptionFilter = function auxiliaryPrecedenceExceptionFilter(text, auxiliaryMatches, language) {
 	const directPrecedenceExceptionMatches = (0, _getIndicesWithRegex2.default)(text, languageVariables[language].directPrecedenceExceptionRegex);
 
@@ -260,15 +220,6 @@ const auxiliaryPrecedenceExceptionFilter = function auxiliaryPrecedenceException
 	return auxiliaryMatches;
 };
 
-/**
- * Filters auxiliaries followed by a word on the followingAuxiliaryExceptionWords list.
- *
- * @param {string} text                       The text part in which to check.
- * @param {Array} auxiliaryMatches            The auxiliary matches for which to check.
- * @param {string} language                   The language for which to filter the auxiliaries.
- *
- * @returns {Array}                           The filtered list of auxiliary indices.
- */
 const followingAuxiliaryExceptionFilter = function followingAuxiliaryExceptionFilter(text, auxiliaryMatches, language) {
 	const followingAuxiliaryExceptionRegex = languageVariables[language].followingAuxiliaryExceptionRegex;
 	const followingAuxiliaryExceptionMatches = (0, _getIndicesWithRegex2.default)(text, followingAuxiliaryExceptionRegex);
@@ -284,14 +235,6 @@ const followingAuxiliaryExceptionFilter = function followingAuxiliaryExceptionFi
 	return auxiliaryMatches;
 };
 
-/**
- * Filters auxiliaries preceded by an elided word (e.g., s') on the elisionAuxiliaryExceptionWords list.
- *
- * @param {string} text                         The text part in which to check.
- * @param {Array} auxiliaryMatches              The auxiliary matches for which to check.
- *
- * @returns {Array}                             The filtered list of auxiliary indices.
- */
 const elisionAuxiliaryExceptionFilter = function elisionAuxiliaryExceptionFilter(text, auxiliaryMatches) {
 	const elisionAuxiliaryExceptionMatches = (0, _getIndicesWithRegex2.default)(text, elisionAuxiliaryExceptionRegex);
 
@@ -306,17 +249,6 @@ const elisionAuxiliaryExceptionFilter = function elisionAuxiliaryExceptionFilter
 	return auxiliaryMatches;
 };
 
-/**
- * Gets the indexes of sentence breakers (auxiliaries, stopwords and stop characters;
- * in English also active verbs) to determine sentence parts.
- * Indices are filtered because there could be duplicate matches, like "even though" and "though".
- * In addition, 'having' will be matched both as a -ing verb as well as an auxiliary.
- *
- * @param {string} sentence                       The sentence to check for indices of sentence breakers.
- * @param {string} language                       The language for which to match the sentence breakers.
- *
- * @returns {Array}                               The array with valid indices to use for determining sentence parts.
- */
 const getSentenceBreakers = function getSentenceBreakers(sentence, language) {
 	sentence = sentence.toLocaleLowerCase();
 	const stopwords = languageVariables[language].stopwords;
@@ -326,12 +258,10 @@ const getSentenceBreakers = function getSentenceBreakers(sentence, language) {
 	const stopCharacterIndices = getStopCharacters(sentence, language);
 	let indices;
 
-	// Concat all indices arrays, filter them and sort them.
 	switch (language) {
 		case "fr":
-			// Filters auxiliaries matched in the sentence based on a precedence exception filter.
 			auxiliaryIndices = auxiliaryPrecedenceExceptionFilter(sentence, auxiliaryIndices, "fr");
-			// Filters auxiliaries matched in the sentence based on a elision exception filter.
+
 			auxiliaryIndices = elisionAuxiliaryExceptionFilter(sentence, auxiliaryIndices);
 
 			indices = [].concat(auxiliaryIndices, stopwordIndices, stopCharacterIndices);
@@ -343,7 +273,6 @@ const getSentenceBreakers = function getSentenceBreakers(sentence, language) {
 			indices = [].concat(auxiliaryIndices, stopwordIndices, stopCharacterIndices);
 			break;
 		case "it":
-			// Filters auxiliaries matched in the sentence based on a precedence exception filter.
 			auxiliaryIndices = auxiliaryPrecedenceExceptionFilter(sentence, auxiliaryIndices, "it");
 			indices = [].concat(auxiliaryIndices, stopwordIndices, stopCharacterIndices);
 			break;
@@ -358,14 +287,6 @@ const getSentenceBreakers = function getSentenceBreakers(sentence, language) {
 	return sortIndices(indices);
 };
 
-/**
- * Gets the auxiliaries from a sentence.
- *
- * @param {string} sentencePart                The part of the sentence to match for auxiliaries.
- * @param {string} language                    The language for which to match the auxiliaries.
- *
- * @returns {Array}                            All formatted matches from the sentence part.
- */
 const getAuxiliaryMatches = function getAuxiliaryMatches(sentencePart, language) {
 	const auxiliaryRegex = languageVariables[language].auxiliaryRegex;
 	const auxiliaryMatches = sentencePart.match(auxiliaryRegex) || [];
@@ -375,17 +296,14 @@ const getAuxiliaryMatches = function getAuxiliaryMatches(sentencePart, language)
 		case "es":
 		case "pt":
 		case "it":
-			// An array with the matched auxiliaries and their indices.
 			var auxiliaryMatchIndices = getIndicesOfList(auxiliaryMatches, sentencePart);
 
 			if (language === "fr" || language === "it") {
-				// Filters auxiliaries matched in the sentence part based on a precedence exception filter.
 				auxiliaryMatchIndices = auxiliaryPrecedenceExceptionFilter(sentencePart, auxiliaryMatchIndices, language);
 			}
-			// Filters auxiliaries matched in the sentence part based on a exception filter for words following the auxiliary.
+
 			auxiliaryMatchIndices = followingAuxiliaryExceptionFilter(sentencePart, auxiliaryMatchIndices, language);
 
-			// An array with the matched auxiliary verbs (without indices).
 			var auxiliaryMatchWords = [];
 
 			(0, _lodashEs.forEach)(auxiliaryMatchIndices, function (auxiliaryMatchIndex) {
@@ -403,14 +321,6 @@ const getAuxiliaryMatches = function getAuxiliaryMatches(sentencePart, language)
 	}
 };
 
-/**
- * Gets the sentence parts from a sentence by determining sentence breakers.
- *
- * @param {string} sentence                 The sentence to split up in sentence parts.
- * @param {string} language                 The language for which to get the sentence parts.
- *
- * @returns {Array}                         The array with all parts of a sentence that have an auxiliary.
- */
 const getSentenceParts = function getSentenceParts(sentence, language) {
 	const sentenceParts = [];
 	const auxiliaryRegex = languageVariables[language].auxiliaryRegex;
@@ -418,37 +328,25 @@ const getSentenceParts = function getSentenceParts(sentence, language) {
 
 	sentence = (0, _quotes.normalizeSingle)(sentence);
 
-	// First check if there is an auxiliary in the sentence.
 	if (sentence.match(auxiliaryRegex) === null) {
 		return sentenceParts;
 	}
 
 	const indices = getSentenceBreakers(sentence, language);
-	// Get the words after the found auxiliary.
+
 	for (let i = 0; i < indices.length; i++) {
 		let endIndex = sentence.length;
 		if (!(0, _lodashEs.isUndefined)(indices[i + 1])) {
 			endIndex = indices[i + 1].index;
 		}
 
-		// Cut the sentence from the current index to the endIndex (start of next breaker, of end of sentence).
 		const sentencePart = (0, _stripSpaces2.default)(sentence.substr(indices[i].index, endIndex - indices[i].index));
 
 		const auxiliaryMatches = getAuxiliaryMatches(sentencePart, language);
-		// If a sentence part doesn't have an auxiliary, we don't need it, so it can be filtered out.
+
 		if (auxiliaryMatches.length !== 0) {
 			sentenceParts.push(new SentencePart(sentencePart, auxiliaryMatches));
 		}
 	}
 	return sentenceParts;
 };
-
-/**
- * Split the sentence in sentence parts based on auxiliaries.
- *
- * @param {string} sentence             The sentence to split in parts.
- * @param {string} language             The language for which to get the sentence parts.
- *
- * @returns {Array}                     A list with sentence parts.
- */
-//# sourceMappingURL=getSentenceParts.js.map

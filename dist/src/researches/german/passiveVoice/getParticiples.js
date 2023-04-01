@@ -64,14 +64,3 @@ var verbsWithErVerEntBeZerHerUberInMiddle = regexFunction.verbsWithErVerEntBeZer
 var verbsEndingWithIert = regexFunction.verbsEndingWithIert;
 
 const irregularParticiples = (0, _irregulars2.default)();
-
-/**
- * Creates GermanParticiple Objects for the participles found in a sentence.
- *
- * @param {string} sentencePartText The sentence to finds participles in.
- * @param {Array} auxiliaries The list of auxiliaries from the sentence part.
- * @param {string} language The language.
- *
- * @returns {Array} The array with GermanParticiple Objects.
- */
-//# sourceMappingURL=getParticiples.js.map

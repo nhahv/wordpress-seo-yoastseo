@@ -7,4 +7,3 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = function () {
 	return ["word", "wordt", "worden", "werd", "werden", "wordend"];
 };
-//# sourceMappingURL=auxiliaries.js.map

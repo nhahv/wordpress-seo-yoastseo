@@ -38,4 +38,3 @@ var _sanitizeString = require("./sanitizeString");
 var _sanitizeString2 = _interopRequireDefault(_sanitizeString);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-//# sourceMappingURL=createRegexFromArray.js.map

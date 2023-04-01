@@ -15,4 +15,3 @@ exports.default = function (participles) {
 };
 
 var _lodashEs = require("lodash-es");
-//# sourceMappingURL=determineSentencePartIsPassive.js.map

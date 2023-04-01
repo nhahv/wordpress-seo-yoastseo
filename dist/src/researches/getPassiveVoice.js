@@ -71,13 +71,6 @@ const morphologicalLanguages = ["ru", "tr", "sv", "id", "ar", "he", "tr"];
 const periphrasticLanguages = ["en", "de", "nl", "fr", "es", "it", "pt", "cn", "pl"];
 const morphologicalAndPeriphrasticLanguages = ["hu"];
 
-/**
- * Looks for morphological passive voice.
- *
- * @param {Array} sentences Sentences extracted from the text.
- * @param {string} language Language of the text.
- * @returns {Object} The found passive sentences.
- */
 const getMorphologicalPassives = function getMorphologicalPassives(sentences, language) {
 	const passiveSentences = [];
 
@@ -94,20 +87,12 @@ const getMorphologicalPassives = function getMorphologicalPassives(sentences, la
 	return passiveSentences;
 };
 
-/**
- * Looks for periphrastic passive voice.
- *
- * @param {Array} sentences Sentences extracted from the text.
- * @param {string} language Language of the text.
- * @returns {Object} The found passive sentences.
- */
 const getPeriphrasticPassives = function getPeriphrasticPassives(sentences, language) {
 	const passiveSentences = [];
 
 	(0, _lodashEs.forEach)(sentences, function (sentence) {
 		const strippedSentence = (0, _stripHTMLTags.stripFullTags)(sentence.getSentenceText()).toLocaleLowerCase();
 
-		// The functionality based on sentencePart objects should be rewritten using array indices of stopwords and auxiliaries.
 		let sentenceParts = [];
 
 		if (language === "de" || language === "nl" || language === "pl" || language === "hu") {
@@ -129,25 +114,9 @@ const getPeriphrasticPassives = function getPeriphrasticPassives(sentences, lang
 	return passiveSentences;
 };
 
-/**
- * Looks for both morphological and periphrastic passive voice
- *
- * @param {Array} sentences Sentences extracted from the text.
- * @param {string} language Language of the text.
- *
- * @returns {Object} The found passive sentences.
- */
 const getMorphologicalAndPeriphrasticPassive = function getMorphologicalAndPeriphrasticPassive(sentences, language) {
 	const morphologicalSentences = getMorphologicalPassives(sentences, language);
 	const periphrasticSentences = getPeriphrasticPassives(sentences, language);
 
 	return morphologicalSentences.concat(periphrasticSentences);
 };
-
-/**
- * Determines the number of passive sentences in the text.
- *
- * @param {Paper} paper The paper object to get the text from.
- * @returns {Object} The total number of sentences in the text and the found passive sentences.
- */
-//# sourceMappingURL=getPassiveVoice.js.map

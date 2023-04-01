@@ -25,12 +25,3 @@ var _stripSpaces2 = _interopRequireDefault(_stripSpaces);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var regexAltTag = /alt=(['"])(.*?)\1/i;
-
-/**
- * Checks for an alttag in the image and returns its content
- *
- * @param {String} text Textstring to match alt
- * @returns {String} the contents of the alttag, empty if none is set.
- */
-/** @module stringProcessing/getAlttagContent */
-//# sourceMappingURL=getAlttagContent.js.map

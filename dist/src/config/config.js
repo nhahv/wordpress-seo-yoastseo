@@ -13,4 +13,3 @@ const analyzerConfig = {
 };
 
 exports.default = analyzerConfig;
-//# sourceMappingURL=config.js.map

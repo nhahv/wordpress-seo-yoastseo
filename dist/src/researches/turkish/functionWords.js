@@ -6,16 +6,10 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = function () {
 	return {
-		// This export contains all of the above words.
 		all: [].concat(articles, cardinalNumerals, ordinalNumerals, fractions, pronouns, interrogatives, quantifiers, reflexivePronouns, indefinitePronouns, prepositions, conjunctions, interviewVerbs, intensifiers, auxiliariesAndDelexicalizedVerbs, generalAdjectivesAdverbs, interjections, recipeWords, timeWords, vagueNouns, reflectionWords, titlesPrecedingOrFollowing)
 	};
 };
 
-/**
- * Returns an object with function words.
- *
- * @returns {Object} The object filled with various categories of function word arrays.
- */
 const articles = ["bir"];
 
 const cardinalNumerals = ["i̇ki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz", "on", "on bir", "on i̇ki", "on üç", "on dört", "on beş", "on altı", "on yedi", "on sekiz", "on dokuz", "yirmi", "yirmi bir", "yirmi i̇ki", "yirmi üç", "yirmi dört", "yirmi beş", "yirmi altı", "yirmi yedi", "yirmi sekiz", "yirmi dokuz", "otuz", "kırk", "elli", "altmış", "yetmiş", "seksen", "doksan", "yüz", "bin", "milyon", "milyar"];
@@ -24,15 +18,7 @@ const ordinalNumerals = ["birinci", "i̇kinci", "üçüncü", "dördüncü", "be
 
 const fractions = ["tam", "yarım", "çeyrek", "üçte biri", "üçte ikisi", "tamamı", "yarısı", "çeyreği", "üçte biri", "üçte ikisi"];
 
-const pronouns = [
-// Personal pronouns.
-"ben", "sen", "o", "biz", "siz", "onlar", "beni", "seni", "onu", "bizi", "sizi", "onları", "bizleri", "sizleri", "bana", "sana", "ona", "bize", "size", "onlara", "bizlere", "sizlere", "bende", "sende", "onda", "bizde", "sizde", "onlarda", "bizlerde", "sizlerde", "benden", "senden", "ondan", "bizden", "sizden", "onlardan", "bizlerden", "sizlerden",
-// Possessive pronouns.
-"benim", "senin", "onun", "bizim", "sizin", "onların", "bizlerin", "sizlerin",
-// Demonstrative pronouns.
-"bu", "şu", "o", "öteki", "beriki", "bura", "şura", "ora", "burası", "şurası", "orası", "böylesi", "şöylesi", "öylesi", "bunlar", "şunlar", "onlar", "ötekiler", "berikiler", "buralar", "şuralar", "oralar",
-// Reciprocal pronouns.
-"birbiri", "birbirimiz", "birbiriniz", "birbirleri", "birbirimizi", "birbirinizi", "birbirlerini", "birbirimize", "birbirinize", "birbirlerine", "birbirimizde", "birbirinizde", "birbirlerinde", "birbirimizden", "birbirinizden", "birbirlerinden", "birbirimizle", "birbirinizle", "birbirleriyle"];
+const pronouns = ["ben", "sen", "o", "biz", "siz", "onlar", "beni", "seni", "onu", "bizi", "sizi", "onları", "bizleri", "sizleri", "bana", "sana", "ona", "bize", "size", "onlara", "bizlere", "sizlere", "bende", "sende", "onda", "bizde", "sizde", "onlarda", "bizlerde", "sizlerde", "benden", "senden", "ondan", "bizden", "sizden", "onlardan", "bizlerden", "sizlerden", "benim", "senin", "onun", "bizim", "sizin", "onların", "bizlerin", "sizlerin", "bu", "şu", "o", "öteki", "beriki", "bura", "şura", "ora", "burası", "şurası", "orası", "böylesi", "şöylesi", "öylesi", "bunlar", "şunlar", "onlar", "ötekiler", "berikiler", "buralar", "şuralar", "oralar", "birbiri", "birbirimiz", "birbiriniz", "birbirleri", "birbirimizi", "birbirinizi", "birbirlerini", "birbirimize", "birbirinize", "birbirlerine", "birbirimizde", "birbirinizde", "birbirlerinde", "birbirimizden", "birbirinizden", "birbirlerinden", "birbirimizle", "birbirinizle", "birbirleriyle"];
 
 const interrogatives = ["kim", "kimi", "kime", "kimde", "kimden", "kimin", "kiminle", "ne", "neyi", "neyde", "neyden", "neyle", "ne için", "niçin", "niye", "ne diye", "nere", "nereyi", "nereye", "nerede", "nereden", "neresi", "neden", "hangi", "hangisi", "kaç", "kaçı", "kaçıncı", "kaçta", "nasıl", "ne kadar", "ne zaman", "mı", "hangi", "hangisi", "kimler", "kimleri", "kimlere", "kimlerde", "kimlerden", "neler", "neleri", "nelere", "nelerde", "nelerden", "hangiler", "hangileri", "hangilere"];
 
@@ -52,11 +38,7 @@ const intensifiers = ["en", "daha", "pek çok", "en çok", "fazla", "epey", "epe
 
 const auxiliariesAndDelexicalizedVerbs = ["etmek", "olmak", "yapmak", "kalmak", "gelmek", "kalmak", "bulunmak", "demek", "dilemek", "söylemek", "durmak", "eylemek", "yazmak", "durmak", "vermek", "kabul", "teşekkür", "memnun", "seyir", "zan", "bilmek"];
 
-const generalAdjectivesAdverbs = [
-// General adjective.
-"yeni", "eski", "önceki", "i̇yi", "büyük", "küçük", "kolay", "zor", "hızlı", "yavaş", "yüksek", "alçak", "kısa", "uzun", "i̇nce", "kalın", "gerçek", "yalan", "yanlış", "basit", "zor", "aynı", "farklı", "belli", "belirsiz", "modern", "geleneksel", "muhtemel", "yaygın", "genç", "yaşlı", "zamansız", "acı", "tatlı", "tuzlu", "sıcak", "soğuk", "kalabalık", "sakin", "yalnız", "dar", "geniş", "siyah", "beyaz", "mavi", "kırmızı", "sarı", "temiz", "kirli", "muhteşem", "nazik", "kibar", "akıllı", "zeki", "gizli", "açık", "kapalı", "dikkatli", "gürültülü", "sevinçli",
-// General adverbs.
-"eski", "önce", "i̇yi", "büyük", "küçük", "kolay", "zor", "hızlı", "yavaş", "yüksek", "alçak", "kısa", "uzun", "i̇nce", "kalın", "gerçek", "yanlış", "basit", "zor", "aynı", "farklı", "belli", "belirsiz", "modern", "geleneksel", "muhtemel", "yaygın", "nadir", "genç", "yaşlı", "zamansız", "acı", "tatlı", "tuzlu", "sıcak", "soğuk", "kalabalık", "sakin", "yalnız", "dar", "geniş", "siyah", "beyaz", "mavi", "kırmızı", "sarı", "temiz", "kirli", "muhteşem", "nazik", "kibar", "akıllı", "zeki", "gizli", "açık", "kapalı", "dikkatle", "gürültülü", "uzun", "sevinçle", "aşağı", "yukarı", "sağa", "sola", "i̇çeri dışarı", "bugün", "yarın", "haftaya", "seneye", "ne zaman", "nereye", "neden", "niye", "ne kadar", "nasıl", "ne"];
+const generalAdjectivesAdverbs = ["yeni", "eski", "önceki", "i̇yi", "büyük", "küçük", "kolay", "zor", "hızlı", "yavaş", "yüksek", "alçak", "kısa", "uzun", "i̇nce", "kalın", "gerçek", "yalan", "yanlış", "basit", "zor", "aynı", "farklı", "belli", "belirsiz", "modern", "geleneksel", "muhtemel", "yaygın", "genç", "yaşlı", "zamansız", "acı", "tatlı", "tuzlu", "sıcak", "soğuk", "kalabalık", "sakin", "yalnız", "dar", "geniş", "siyah", "beyaz", "mavi", "kırmızı", "sarı", "temiz", "kirli", "muhteşem", "nazik", "kibar", "akıllı", "zeki", "gizli", "açık", "kapalı", "dikkatli", "gürültülü", "sevinçli", "eski", "önce", "i̇yi", "büyük", "küçük", "kolay", "zor", "hızlı", "yavaş", "yüksek", "alçak", "kısa", "uzun", "i̇nce", "kalın", "gerçek", "yanlış", "basit", "zor", "aynı", "farklı", "belli", "belirsiz", "modern", "geleneksel", "muhtemel", "yaygın", "nadir", "genç", "yaşlı", "zamansız", "acı", "tatlı", "tuzlu", "sıcak", "soğuk", "kalabalık", "sakin", "yalnız", "dar", "geniş", "siyah", "beyaz", "mavi", "kırmızı", "sarı", "temiz", "kirli", "muhteşem", "nazik", "kibar", "akıllı", "zeki", "gizli", "açık", "kapalı", "dikkatle", "gürültülü", "uzun", "sevinçle", "aşağı", "yukarı", "sağa", "sola", "i̇çeri dışarı", "bugün", "yarın", "haftaya", "seneye", "ne zaman", "nereye", "neden", "niye", "ne kadar", "nasıl", "ne"];
 
 const interjections = ["ey", "hey", "bre", "hişt", "şşt", "ah", "ahh", "ee", "vay", "i̇mdat", "hah", "ay", "aa", "aaa", "hay allah", "aman", "aman dikkat", "vah", "ya", "yaa", "ooo", "of", "tüh", "peh", "aman", "haydi", "sakın", "yuh"];
 
@@ -69,10 +51,3 @@ const vagueNouns = ["şey", "şeyler", "olasılık", "çeşit", "kişi"];
 const reflectionWords = ["hapşu", "hapşırık", "hapşurmak", "horr", "horultu", "horlamak", "şırıl", "şırıltı", "şırıldamak", "hışır", "hışırtı", "hışırdamak", "gıcır", "gıcırtı", "gıcırdamak", "çatır", "çatırtı", "çatırdamak", "pat", "patlamak", "vın", "vınlamak", "zırr", "zırıltı", "zırlamak", "tık", "tıkırtı", "tıkırdamak", "çıt", "çıtırtı", "çıtırdamak", "fokur", "fokurtu", "fokurdamak", "kıt", "kıtırtı", "kıtırdamak", "patırtı"];
 
 const titlesPrecedingOrFollowing = ["bayan", "bay", "hanımefendi", "hanfendi", "hanım", "beyefendi", "beyfendi", "bey", "sayın", "profesör", "prof.", "doktor", "dr."];
-
-/**
- * Returns function words for Turkish.
- *
- * @returns {Object} Turkish function words.
- */
-//# sourceMappingURL=functionWords.js.map

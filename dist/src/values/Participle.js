@@ -8,22 +8,12 @@ var _lodashEs = require("lodash-es");
 
 var _types = require("./../helpers/types");
 
-/**
- * Default attributes to be used by the Participle if they are left undefined.
- * @type { { auxiliaries: array, type: string } }
- */
 var defaultAttributes = {
   auxiliaries: [],
   type: "",
   language: ""
 };
 
-/**
- * Validates the type of all attributes. Throws an error if the type is invalid.
- *
- * @param {object} attributes The object containing all attributes.
- * @returns {void}
- */
 var validateAttributes = function validateAttributes(attributes) {
   (0, _lodashEs.forEach)(attributes, function (attributeValue, attributeName) {
     var expectedType = (0, _types.getType)(defaultAttributes[attributeName]);
@@ -33,14 +23,6 @@ var validateAttributes = function validateAttributes(attributes) {
   });
 };
 
-/**
- * Construct the Participle object and set the participle, sentence part, auxiliary and type.
- *
- * @param {string} participle The participle.
- * @param {string} sentencePart The sentence part where the participle is from.
- * @param {object} attributes The object containing all attributes.
- * @constructor
- */
 var Participle = function Participle(participle, sentencePart, attributes) {
   this.setParticiple(participle);
   this.setSentencePart(sentencePart);
@@ -55,11 +37,6 @@ var Participle = function Participle(participle, sentencePart, attributes) {
   this._attributes = attributes;
 };
 
-/**
- * Sets the participle.
- * @param {string} participle The participle.
- * @returns {void}.
- */
 Participle.prototype.setParticiple = function (participle) {
   if (participle === "") {
     throw Error("The participle should not be empty.");
@@ -70,20 +47,10 @@ Participle.prototype.setParticiple = function (participle) {
   this._participle = participle;
 };
 
-/**
- * Returns the participle.
- * @returns {String} The participle.
- */
 Participle.prototype.getParticiple = function () {
   return this._participle;
 };
 
-/**
- * Sets the SentencePart.
- *
- * @param {string} sentencePart The sentence part.
- * @returns {void}.
- */
 Participle.prototype.setSentencePart = function (sentencePart) {
   if (sentencePart === "") {
     throw Error("The sentence part should not be empty.");
@@ -91,51 +58,26 @@ Participle.prototype.setSentencePart = function (sentencePart) {
   this._sentencePart = sentencePart;
 };
 
-/**
- * Returns the sentence part.
- * @returns {String} The sentence part.
- */
 Participle.prototype.getSentencePart = function () {
   return this._sentencePart;
 };
 
-/**
- * Returns the type.
- * @returns {String} The type.
- */
 Participle.prototype.getType = function () {
   return this._attributes.type;
 };
 
-/**
- * Returns the auxiliaries.
- * @returns {String} The auxiliaries.
- */
 Participle.prototype.getAuxiliaries = function () {
   return this._attributes.auxiliaries;
 };
 
-/**
- * Returns the language.
- * @returns {string} The language.
- */
 Participle.prototype.getLanguage = function () {
   return this._attributes.language;
 };
 
-/**
- * Returns if the participle is passive or not.
- * @returns {boolean} True if it is passive.
- */
 Participle.prototype.determinesSentencePartIsPassive = function () {
   return this._determinesSentencePartIsPassive;
 };
 
-/**
- * Determines if the sentence is passive or not.
- * @param {boolean} passive Whether the sentence part is passive.
- * @returns {void}
- */
 Participle.prototype.setSentencePartPassiveness = function (passive) {
   if (!(0, _types.isSameType)(passive, "boolean")) {
     throw Error("Passiveness had invalid type. Expected boolean, got " + (0, _types.getType)(passive) + ".");
@@ -143,11 +85,6 @@ Participle.prototype.setSentencePartPassiveness = function (passive) {
   this._determinesSentencePartIsPassive = passive;
 };
 
-/**
- * Serializes the Participle instance to an object.
- *
- * @returns {Object} The serialized Participle.
- */
 Participle.prototype.serialize = function () {
   return {
     _parseClass: "Participle",
@@ -158,13 +95,6 @@ Participle.prototype.serialize = function () {
   };
 };
 
-/**
- * Parses the object to a Participle.
- *
- * @param {Object} serialized The serialized object.
- *
- * @returns {Participle} The parsed Participle.
- */
 Participle.parse = function (serialized) {
   const participle = new Participle(serialized.participle, serialized.sentencePart, serialized.attributes);
   participle.setSentencePartPassiveness(serialized.determinesSentencePartIsPassive);
@@ -173,4 +103,3 @@ Participle.parse = function (serialized) {
 };
 
 exports.default = Participle;
-//# sourceMappingURL=Participle.js.map

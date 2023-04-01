@@ -17,4 +17,3 @@ var _transliterationsWPstyle = require("../config/transliterationsWPstyle.js");
 var _transliterationsWPstyle2 = _interopRequireDefault(_transliterationsWPstyle);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-//# sourceMappingURL=transliterateWPstyle.js.map

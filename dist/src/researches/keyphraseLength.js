@@ -9,4 +9,3 @@ exports.default = function (paper, researcher) {
 
   return topicForms.keyphraseForms.length;
 };
-//# sourceMappingURL=keyphraseLength.js.map

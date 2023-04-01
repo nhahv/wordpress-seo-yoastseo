@@ -40,15 +40,6 @@ var _FunctionWordsInKeyphraseAssessment2 = _interopRequireDefault(_FunctionWords
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Creates the Assessor
- *
- * @param {object} i18n The i18n object used for translations.
- * @param {Object} options The options for this assessor.
- * @param {Object} options.marker The marker to pass the list of marks to.
- *
- * @constructor
- */
 const relatedKeywordAssessor = function relatedKeywordAssessor(i18n, options) {
 	_assessor2.default.call(this, i18n, options);
 
@@ -58,4 +49,3 @@ const relatedKeywordAssessor = function relatedKeywordAssessor(i18n, options) {
 (0, _util.inherits)(relatedKeywordAssessor, _assessor2.default);
 
 exports.default = relatedKeywordAssessor;
-//# sourceMappingURL=relatedKeywordAssessor.js.map

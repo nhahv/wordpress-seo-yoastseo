@@ -33,4 +33,3 @@ exports.default = function (i18n) {
 		}
 	};
 };
-//# sourceMappingURL=presenter.js.map

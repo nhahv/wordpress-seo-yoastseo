@@ -18,20 +18,16 @@ exports.default = function (sentencePart, participle, auxiliaries, language) {
 			break;
 	}
 
-	// This exception is only applicable for passive constructions in which the auxiliary precedes the participle.
 	const matches = auxiliaryIndices.filter(auxiliaryIndex => auxiliaryIndex.index < participleIndex);
 
-	// If there are no auxiliaries before the participle, this exception is not applicable.
 	if (matches.length === 0) {
 		return false;
 	}
 
-	// We pick the auxiliary closest to the participle, since that is most likely the one belonging to the participle.
 	const participleAuxiliary = matches[matches.length - 1];
 
 	const precedenceExceptionIndices = (0, _getIndicesWithRegex2.default)(sentencePart, nonDirectParticiplePrecendenceExceptionRegex);
 
-	// Check whether there are any precendence words between the auxiliary and the participle.
 	const remaningPrecedenceExceptionIndices = precedenceExceptionIndices.filter(precedenceExceptionIndex => precedenceExceptionIndex.index > participleAuxiliary.index && precedenceExceptionIndex.index < participleIndex);
 
 	return remaningPrecedenceExceptionIndices.length > 0;
@@ -56,16 +52,3 @@ var _indices = require("../../../../stringProcessing/indices.js");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const cannotBeBetweenAuxiliaryAndParticiplePolish = (0, _functionWords2.default)().cannotBeBetweenPassiveAuxiliaryAndParticiple;
-
-/**
- * Checks whether there are any exception words in between the auxiliary and participle. If there are, it doesn't return a passive.
- *
- * @param {string} sentencePart The sentence part that contains the participle.
- * @param {string} participle The participle in the sentence part.
- * @param {string} auxiliaries One or more auxiliaries in the sentence part.
- * @param {string} language The language of the participle.
- *
- * @returns {boolean} Returns true if a word from the 'cannot be between passive auxiliary and participle' exception list
- * appears anywhere in between the last (closest to participle) auxiliary and the participle.
- */
-//# sourceMappingURL=nonDirectParticiplePrecedenceException.js.map

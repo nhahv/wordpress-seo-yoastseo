@@ -17,4 +17,3 @@ var _transliterations = require("../config/transliterations.js");
 var _transliterations2 = _interopRequireDefault(_transliterations);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-//# sourceMappingURL=transliterate.js.map

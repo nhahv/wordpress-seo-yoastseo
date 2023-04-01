@@ -96,10 +96,7 @@ var _functionWords34 = _interopRequireDefault(_functionWords33);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const germanFunctionWords = (0, _functionWords2.default)(); /*
-                                                             * The script collects all the lists of function words per language and returns this collection to a Researcher or a
-                                                             * stringProcessing script
-                                                             */
+const germanFunctionWords = (0, _functionWords2.default)();
 
 const englishFunctionWords = (0, _functionWords4.default)();
 
@@ -132,10 +129,3 @@ const hungarianFunctionWords = (0, _functionWords30.default)();
 const norwegianFunctionWords = (0, _functionWords32.default)();
 
 const turkishFunctionWords = (0, _functionWords34.default)();
-
-/**
- * Returns the function words for all languages.
- *
- * @returns {Object} Function words for all languages.
- */
-//# sourceMappingURL=getFunctionWords.js.map

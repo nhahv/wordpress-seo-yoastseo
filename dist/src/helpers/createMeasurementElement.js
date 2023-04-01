@@ -5,17 +5,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 const elementId = "yoast-measurement-element";
 
-/**
- * Creates an hidden element with the purpose to calculate the sizes of elements and adds these elements to the body.
- *
- * @returns {HTMLElement} The created hidden element.
- */
 const createMeasurementElement = function createMeasurementElement() {
 	const hiddenElement = document.createElement("div");
 
 	hiddenElement.id = elementId;
 
-	// Styles to prevent unintended scrolling in Gutenberg.
 	hiddenElement.style.position = "absolute";
 	hiddenElement.style.left = "-9999em";
 	hiddenElement.style.top = 0;
@@ -29,12 +23,6 @@ const createMeasurementElement = function createMeasurementElement() {
 	return hiddenElement;
 };
 
-/**
- * Measures the width of the text using a hidden element.
- *
- * @param {string} text The text to measure the width for.
- * @returns {number} The width in pixels.
- */
 const measureTextWidth = exports.measureTextWidth = function measureTextWidth(text) {
 	let element = document.getElementById(elementId);
 	if (!element) {
@@ -43,4 +31,3 @@ const measureTextWidth = exports.measureTextWidth = function measureTextWidth(te
 	element.innerHTML = text;
 	return element.offsetWidth;
 };
-//# sourceMappingURL=createMeasurementElement.js.map

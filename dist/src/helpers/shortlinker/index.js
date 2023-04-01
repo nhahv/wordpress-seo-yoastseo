@@ -15,4 +15,3 @@ Object.keys(_singleton).forEach(function (key) {
     }
   });
 });
-//# sourceMappingURL=index.js.map

@@ -18,9 +18,8 @@ var _Sentence2 = _interopRequireDefault(_Sentence);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// All characters that indicate a sentence delimiter.
 const fullStop = ".";
-// The \u2026 character is an ellipsis
+
 const sentenceDelimiters = "?!;\u2026";
 
 const fullStopRegex = new RegExp("^[" + fullStop + "]$");
@@ -33,73 +32,29 @@ const blockEndRegex = /^\s*[\])}]\s*$/;
 const whiteSpaceStartRegex = /^\s*/;
 const whiteSpaceEndRegex = /\s*$/;
 
-/**
- * Class for tokenizing a (html) text into sentences.
- */
 class SentenceTokenizer {
-	/**
-  * Returns whether or not a certain character is a number.
-  *
-  * @param {string} character The character to check.
-  * @returns {boolean} Whether or not the character is a capital letter.
-  */
 	isNumber(character) {
 		return !(0, _lodashEs.isNaN)(parseInt(character, 10));
 	}
 
-	/**
-  * Returns whether or not a given character is quotation mark.
-  *
-  * @param {string} character The character to check.
-  *
-  * @returns {boolean} Whether or not the given character is a quotation mark.
-  */
 	isQuotation(character) {
 		character = (0, _quotes.normalize)(character);
 
 		return "'" === character || "\"" === character;
 	}
 
-	/**
-  * Returns whether or not a given character is a punctuation mark that can be at the beginning
-  * of a sentence, like ¿ and ¡ used in Spanish.
-  *
-  * @param {string} character The character to check.
-  *
-  * @returns {boolean} Whether or not the given character is a punctuation mark.
-  */
 	isPunctuation(character) {
 		return "¿" === character || "¡" === character;
 	}
 
-	/**
-  * Removes duplicate whitespace from a given text.
-  *
-  * @param {string} text The text with duplicate whitespace.
-  * @returns {string} The text without duplicate whitespace.
-  */
 	removeDuplicateWhitespace(text) {
 		return text.replace(/\s+/, " ");
 	}
 
-	/**
-  * Returns whether or not a certain character is a capital letter.
-  *
-  * @param {string} character The character to check.
-  *
-  * @returns {boolean} Whether or not the character is a capital letter.
-  */
 	isCapitalLetter(character) {
 		return character !== character.toLocaleLowerCase();
 	}
 
-	/**
-  * Retrieves the next two characters from an array with the two next tokens.
-  *
-  * @param {Array} nextTokens The two next tokens. Might be undefined.
-  *
-  * @returns {string} The next two characters.
-  */
 	getNextTwoCharacters(nextTokens) {
 		let next = "";
 
@@ -116,33 +71,14 @@ class SentenceTokenizer {
 		return next;
 	}
 
-	/**
-  * Checks if the sentenceBeginning beginning is a valid beginning.
-  *
-  * @param {string} sentenceBeginning The beginning of the sentence to validate.
-  *
-  * @returns {boolean} Returns true if it is a valid beginning, false if it is not.
-  */
 	isValidSentenceBeginning(sentenceBeginning) {
 		return this.isCapitalLetter(sentenceBeginning) || this.isNumber(sentenceBeginning) || this.isQuotation(sentenceBeginning) || this.isPunctuation(sentenceBeginning);
 	}
 
-	/**
-  * Checks if the token is a valid sentence ending.
-  *
-  * @param {Object} token The token to validate.
-  *
-  * @returns {boolean} Returns true if the token is valid ending, false if it is not.
-  */
 	isSentenceStart(token) {
 		return !(0, _lodashEs.isUndefined)(token) && ("html-start" === token.type || "html-end" === token.type || "block-start" === token.type);
 	}
 
-	/**
-  * Creates a tokenizer.
-  *
-  * @returns {Object} The tokenizer and the tokens.
-  */
 	createTokenizer() {
 		const tokens = [];
 		const tokenizer = (0, _core2.default)(function (token) {
@@ -161,14 +97,6 @@ class SentenceTokenizer {
 		};
 	}
 
-	/**
-  * Tokenizes the given text using the given tokenizer.
-  *
-  * @param {Tokenizer} tokenizer The tokenizer to use.
-  * @param {string}    text      The text to tokenize.
-  *
-  * @returns {void}
-  */
 	tokenize(tokenizer, text) {
 		tokenizer.onText(text);
 
@@ -179,13 +107,6 @@ class SentenceTokenizer {
 		}
 	}
 
-	/**
-  * Determines the start and end indices of a set of sentences form a text.
-  *
-  * @param {Sentence[]} sentences A set of sentences for which to determine indices.
-  *
-  * @returns {void}
-  */
 	determineIndices(sentences) {
 		let currentIndex = 0;
 
@@ -198,40 +119,18 @@ class SentenceTokenizer {
 		}
 	}
 
-	/**
-  * Trims the white space from the beginning of a sentence and adjusts the sentence start index accordingly.
-  *
-  * @param {Sentence} sentence The sentence for which to trim the white space at the start.
-  *
-  * @returns {void}
-  */
 	trimWhiteSpaceAtStart(sentence) {
 		const whiteSpaceLength = sentence.text.match(whiteSpaceStartRegex)[0].length;
 		sentence.setText(sentence.getText().slice(whiteSpaceLength));
 		sentence.setStartIndex(sentence.getStartIndex() + whiteSpaceLength);
 	}
 
-	/**
-  * Trims the white space from the end of a sentence and adjusts the sentence end index accordingly.
-  *
-  * @param {Sentence} sentence The sentence for which to trim the white space at the end.
-  *
-  * @returns {void}
-  */
 	trimWhiteSpaceAtEnd(sentence) {
 		const whiteSpaceLength = sentence.text.match(whiteSpaceEndRegex)[0].length;
 		sentence.setText(sentence.getText().slice(0, sentence.getText().length - whiteSpaceLength));
 		sentence.setEndIndex(sentence.getEndIndex() - whiteSpaceLength);
 	}
 
-	/**
-  * Trims white space from the beginning and end of sentences and adjusts the indices
-  * of the sentence beginnings and ends accordingly.
-  *
-  * @param {Sentence[]} sentences The sentences for which to trim the whitespace.
-  *
-  * @returns {void}
-  */
 	trimWhiteSpaces(sentences) {
 		for (const sentence of sentences) {
 			this.trimWhiteSpaceAtStart(sentence);
@@ -239,13 +138,6 @@ class SentenceTokenizer {
 		}
 	}
 
-	/**
-  * Returns an array of sentence objects for a given array of tokens; assumes that the text has already been split into blocks.
-  *
-  * @param {Object[]} tokenArray The tokens from the sentence tokenizer.
-  *
-  * @returns {Sentence[]} An array of sentence objects.
-  */
 	getSentencesFromTokens(tokenArray) {
 		const tokenSentences = [];
 		let currentSentence = new _Sentence2.default("", 0, 0),
@@ -274,14 +166,13 @@ class SentenceTokenizer {
 
 					nextCharacters = this.getNextTwoCharacters([nextToken, secondToNextToken]);
 
-					// For a new sentence we need to check the next two characters.
 					hasNextSentence = nextCharacters.length >= 2;
 					nextSentenceStart = hasNextSentence ? nextCharacters[1] : "";
-					// If the next character is a number, never split. For example: IPv4-numbers.
+
 					if (hasNextSentence && this.isNumber(nextCharacters[0])) {
 						break;
 					}
-					// Only split on sentence delimiters when the next sentence looks like the start of a sentence.
+
 					if (hasNextSentence && this.isValidSentenceBeginning(nextSentenceStart) || this.isSentenceStart(nextToken)) {
 						tokenSentences.push(currentSentence);
 						currentSentence = new _Sentence2.default("");
@@ -296,10 +187,9 @@ class SentenceTokenizer {
 					currentSentence.appendText(token.src);
 					nextCharacters = this.getNextTwoCharacters([nextToken, secondToNextToken]);
 
-					// For a new sentence we need to check the next two characters.
 					hasNextSentence = nextCharacters.length >= 2;
 					nextSentenceStart = hasNextSentence ? nextCharacters[0] : "";
-					// If the next character is a number, never split. For example: IPv4-numbers.
+
 					if (hasNextSentence && this.isNumber(nextCharacters[0])) {
 						break;
 					}
@@ -324,4 +214,3 @@ class SentenceTokenizer {
 	}
 }
 exports.default = SentenceTokenizer;
-//# sourceMappingURL=SentenceTokenizer.js.map

@@ -3,14 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-/**
- * Gets all subheadings from the text and returns these in an array.
- *
- * @param {string} text The text to return the headings from.
- *
- * @returns {Array<string[]>} Matches of subheadings in the text, first key is everything including tags,
- *                            second is the heading level, third is the content of the subheading.
- */
+
 function getSubheadings(text) {
   const subheadings = [];
   const regex = /<h([1-6])(?:[^>]+)?>(.*?)<\/h\1>/ig;
@@ -23,14 +16,6 @@ function getSubheadings(text) {
   return subheadings;
 }
 
-/**
- * Gets all the level 2 and 3 subheadings from the text and returns these in an array.
- *
- * @param {string} text The text to return the headings from.
- *
- * @returns {Array<string[]>} Matches of subheadings in the text, first key is everything including tags,
- *                            second is the heading level, third is the content of the subheading.
- */
 function getSubheadingsTopLevel(text) {
   const subheadings = [];
   const regex = /<h([2-3])(?:[^>]+)?>(.*?)<\/h\1>/ig;
@@ -43,40 +28,18 @@ function getSubheadingsTopLevel(text) {
   return subheadings;
 }
 
-/**
- * Gets the content of subheadings in the text.
- *
- * @param {string} text The text to get the subheading contents from.
- *
- * @returns {string[]} A list of all the subheadings with their content.
- */
 function getSubheadingContents(text) {
   const subheadings = getSubheadings(text);
 
   return subheadings.map(subheading => subheading[0]);
 }
 
-/**
- * Gets the content of subheadings h2 and h3 in the text.
- *
- * @param {string} text The text to get the subheading contents from.
- *
- * @returns {string[]} A list of all the subheadings with their content.
- */
 function getSubheadingContentsTopLevel(text) {
   const subheadings = getSubheadingsTopLevel(text);
 
-  // Only return the entire string matched, not the rest of the outputs of the regex.exec function.
   return subheadings.map(subheading => subheading[0]);
 }
 
-/**
- * Removes all level 2 and 3 subheadings from the text.
- *
- * @param {string} text The text to remove the headings from.
- *
- * @returns {string} The text with removed subheadings.
- */
 function removeSubheadingsTopLevel(text) {
   const regex = /<h([2-3])(?:[^>]+)?>(.*?)<\/h\1>/ig;
 
@@ -95,4 +58,3 @@ exports.default = {
   getSubheadingContentsTopLevel: getSubheadingContentsTopLevel,
   removeSubheadingsTopLevel: removeSubheadingsTopLevel
 };
-//# sourceMappingURL=getSubheadings.js.map

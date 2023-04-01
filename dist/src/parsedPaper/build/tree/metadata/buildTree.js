@@ -12,23 +12,12 @@ var _nodes = require("../../../structure/tree/nodes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Parses the given paper attributes to a tree.
- *
- * @param {Paper} paper The Paper to parse.
- *
- * @memberOf module:parsedPaper/builder
- *
- * @returns {module:parsedPaper/structure.Node} The build tree.
- */
 const buildTree = function buildTree(paper) {
 	const metadata = new _nodes.StructuredNode("metadata", null);
 
-	// Add text types.
 	metadata.addChild(new _nodes.MetadataText("title", paper.getTitle()));
 	metadata.addChild(new _nodes.MetadataText("description", paper.getDescription()));
 
-	// Add miscellaneous types.
 	metadata.addChild(new _nodes.MetadataMiscellaneous("keyphrase", paper.getKeyword()));
 	metadata.addChild(new _nodes.MetadataMiscellaneous("synonyms", (0, _parseSynonyms2.default)(paper.getSynonyms())));
 	metadata.addChild(new _nodes.MetadataMiscellaneous("slug", paper.getUrl()));
@@ -40,4 +29,3 @@ const buildTree = function buildTree(paper) {
 };
 
 exports.default = buildTree;
-//# sourceMappingURL=buildTree.js.map

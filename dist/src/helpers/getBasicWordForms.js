@@ -17,4 +17,3 @@ var _createBasicWordForms = require("../morphology/hebrew/createBasicWordForms")
 var _createBasicWordForms2 = require("../morphology/arabic/createBasicWordForms");
 
 var _createBasicWordForms3 = require("../morphology/farsi/createBasicWordForms");
-//# sourceMappingURL=getBasicWordForms.js.map

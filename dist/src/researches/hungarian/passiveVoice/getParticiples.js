@@ -48,4 +48,3 @@ var _HungarianParticiple2 = _interopRequireDefault(_HungarianParticiple);
 var _lodashEs = require("lodash-es");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-//# sourceMappingURL=getParticiples.js.map

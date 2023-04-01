@@ -15,7 +15,6 @@ exports.default = function (text, wordToMatch, locale, extraBoundary) {
 		return (0, _stripSpaces2.default)((0, _removePunctuation2.default)(keyword));
 	});
 
-	// Create an array of positions of matches to determine where in the text the wordToMatch occurred first.
 	const positions = (0, _lodashEs.map)(matches, function (keyword) {
 		return text.indexOf(keyword);
 	});
@@ -50,4 +49,3 @@ var _quotes = require("../stringProcessing/quotes.js");
 var _lodashEs = require("lodash-es");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-//# sourceMappingURL=matchTextWithWord.js.map

@@ -13,4 +13,3 @@ var _getSentences = require("../stringProcessing/getSentences");
 var _getSentences2 = _interopRequireDefault(_getSentences);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-//# sourceMappingURL=sentences.js.map

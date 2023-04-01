@@ -13,48 +13,21 @@ var _regex = require("../../researches/german/passiveVoice/regex");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Detects whether a word is a regular participle without a prefix and if so, returns the stem.
- *
- * @param {Object}  morphologyDataVerbs The German morphology data for verbs.
- * @param {string}  word                The word (not stemmed) to check.
- *
- * @returns {string|null} The stem or null if no participle was matched.
- */
 const detectAndStemParticiplesWithoutPrefixes = function detectAndStemParticiplesWithoutPrefixes(morphologyDataVerbs, word) {
 	const geStemTParticipleRegex = new RegExp("^" + morphologyDataVerbs.participleStemmingClasses[1].regex);
 	const geStemEtParticipleRegex = new RegExp("^" + morphologyDataVerbs.participleStemmingClasses[0].regex);
 
-	/*
-  * Check if it's a ge + stem ending in d/t + et participle.
-  * As this is the more specific regex, it needs to be checked before the ge + stem + t regex.
-  */
 	if (geStemEtParticipleRegex.test(word)) {
-		// Remove the two-letter prefix and the two-letter suffix.
 		return word.slice(2, word.length - 2);
 	}
 
-	// Check if it's a ge + stem + t participle.
 	if (geStemTParticipleRegex.test(word)) {
-		// Remove the two-letter prefix and the one-letter suffix.
 		return word.slice(2, word.length - 1);
 	}
 
 	return null;
 };
 
-/**
- * Determines whether a given participle pattern combined with prefixes from a given class applies to a given word
- * and if so, returns the stem.
- *
- * @param {string}      word        The word (not stemmed) to check.
- * @param {string[]}    prefixes    The prefixes of a certain prefix class.
- * @param {string}      regexPart   The regex part for a given class (completed to a full regex within the function).
- * @param {number}      startStem   Where to start cutting off the de-prefixed word.
- * @param {number}      endStem     Where to end cutting off the de-prefixed word (from the end index).
- *
- * @returns {string|null} The stem or null if no prefixed participle was matched.
- */
 const detectAndStemParticiplePerPrefixClass = function detectAndStemParticiplePerPrefixClass(word, prefixes, regexPart, startStem, endStem) {
 	for (const currentPrefix of prefixes) {
 		const participleRegex = new RegExp("^" + currentPrefix + regexPart);
@@ -70,21 +43,9 @@ const detectAndStemParticiplePerPrefixClass = function detectAndStemParticiplePe
 	return null;
 };
 
-/**
- * Detects whether a word is a regular participle with a prefix and if so, returns the stem.
- *
- * @param {Object}  morphologyDataVerbs The German morphology data for verbs.
- * @param {string}  word                The word (not stemmed) to check.
- *
- * @returns {string|null} The stem or null if no participle with prefix was matched.
- */
 const detectAndStemParticiplesWithPrefixes = function detectAndStemParticiplesWithPrefixes(morphologyDataVerbs, word) {
 	const prefixesSeparableOrInseparable = morphologyDataVerbs.prefixes.separableOrInseparable;
 
-	/*
-  * It's important to preserve order here, since the ge + stem ending in d/t + et regex is more specific than
-  * the ge + stem + t regex, and therefore must be checked first.
-  */
 	for (const participleClass of morphologyDataVerbs.participleStemmingClasses) {
 		const regex = participleClass.regex;
 		const startStem = participleClass.startStem;
@@ -109,14 +70,6 @@ const detectAndStemParticiplesWithPrefixes = function detectAndStemParticiplesWi
 	return null;
 };
 
-/**
- * Detects whether a word is a regular participle and if so, returns the stem.
- *
- * @param {Object}  morphologyDataVerbs The German morphology data for verbs.
- * @param {string}  word                The word (not stemmed) to check.
- *
- * @returns {string} The participle stem or null if no regular participle was matched.
- */
 function detectAndStemRegularParticiple(morphologyDataVerbs, word) {
 	if ((0, _regex.exceptions)(word).length > 0 || (0, _exceptionsParticiplesActive2.default)().includes(word)) {
 		return "";
@@ -136,4 +89,3 @@ function detectAndStemRegularParticiple(morphologyDataVerbs, word) {
 
 	return null;
 }
-//# sourceMappingURL=detectAndStemRegularParticiple.js.map

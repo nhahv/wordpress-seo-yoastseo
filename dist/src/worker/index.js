@@ -22,4 +22,3 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.AnalysisWebWorker = _AnalysisWebWorker2.default;
 exports.AnalysisWorkerWrapper = _AnalysisWorkerWrapper2.default;
 exports.createWorker = _createWorker2.default;
-//# sourceMappingURL=index.js.map

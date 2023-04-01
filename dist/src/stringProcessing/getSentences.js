@@ -8,7 +8,6 @@ exports.default = function (text) {
 	text = (0, _unifyWhitespace.unifyNonBreakingSpace)(text);
 	let blocks = (0, _html.getBlocks)(text);
 
-	// Split each block on newlines.
 	blocks = (0, _lodashEs.flatMap)(blocks, function (block) {
 		return block.split(newLineRegex);
 	});
@@ -30,22 +29,10 @@ var _SentenceTokenizer2 = _interopRequireDefault(_SentenceTokenizer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// Character classes.
-// Lodash imports.
 const newLines = "\n\r|\n|\r";
 
-// Regular expressions.
-
-
-// Internal dependencies.
 const newLineRegex = new RegExp(newLines);
 
-/**
- * Returns the sentences from a certain block.
- *
- * @param {string} block The HTML inside a HTML block.
- * @returns {Array<string>} The list of sentences in the block.
- */
 function getSentencesFromBlock(block) {
 	const sentenceTokenizer = new _SentenceTokenizer2.default();
 
@@ -60,11 +47,3 @@ function getSentencesFromBlock(block) {
 }
 
 const getSentencesFromBlockCached = (0, _lodashEs.memoize)(getSentencesFromBlock);
-
-/**
- * Returns sentences in a string.
- *
- * @param {String} text The string to count sentences in.
- * @returns {Array} Sentences found in the text.
- */
-//# sourceMappingURL=getSentences.js.map

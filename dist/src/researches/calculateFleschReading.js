@@ -19,7 +19,6 @@ exports.default = function (paper) {
 
 	const numberOfWords = (0, _countWords2.default)(text);
 
-	// Prevent division by zero errors.
 	if (numberOfSentences === 0 || numberOfWords === 0) {
 		return 0;
 	}
@@ -89,23 +88,6 @@ var _getLanguage2 = _interopRequireDefault(_getLanguage);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Calculates an average from a total and an amount
- *
- * @param {number} total The total.
- * @param {number} amount The amount.
- * @returns {number} The average from the total and the amount.
- */
-/** @module analyses/calculateFleschReading */
-
 const getAverage = function getAverage(total, amount) {
 	return total / amount;
 };
-
-/**
- * This calculates the flesch reading score for a given text.
- *
- * @param {object} paper The paper containing the text
- * @returns {number} The score of the flesch reading test
- */
-//# sourceMappingURL=calculateFleschReading.js.map

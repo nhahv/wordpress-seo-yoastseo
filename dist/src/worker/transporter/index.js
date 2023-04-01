@@ -18,4 +18,3 @@ exports.default = {
 	parse: _parse2.default,
 	serialize: _serialize2.default
 };
-//# sourceMappingURL=index.js.map

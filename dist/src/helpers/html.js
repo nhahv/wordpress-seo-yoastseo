@@ -36,11 +36,6 @@ var commentRegex = /<!--(.|[\r\n])*?-->/g;
 var tokens = [];
 var htmlBlockTokenizer;
 
-/**
- * Creates a tokenizer to tokenize HTML into blocks.
- *
- * @returns {void}
- */
 function createTokenizer() {
 	tokens = [];
 
@@ -60,32 +55,14 @@ function createTokenizer() {
 	htmlBlockTokenizer.addRule(otherElementEndRegex, "other-element-end");
 }
 
-/**
- * Returns whether or not the given element name is a block element.
- *
- * @param {string} htmlElementName The name of the HTML element.
- * @returns {boolean} Whether or not it is a block element.
- */
 function isBlockElement(htmlElementName) {
 	return blockElementsRegex.test(htmlElementName);
 }
 
-/**
- * Returns whether or not the given element name is an inline element.
- *
- * @param {string} htmlElementName The name of the HTML element.
- * @returns {boolean} Whether or not it is an inline element.
- */
 function isInlineElement(htmlElementName) {
 	return inlineElementsRegex.test(htmlElementName);
 }
 
-/**
- * Splits a text into blocks based on HTML block elements.
- *
- * @param {string} text The text to split.
- * @returns {Array} A list of blocks based on HTML block elements.
- */
 function getBlocks(text) {
 	var blocks = [],
 	    depth = 0,
@@ -93,7 +70,6 @@ function getBlocks(text) {
 	    currentBlock = "",
 	    blockEndTag = "";
 
-	// Remove all comments because it is very hard to tokenize them.
 	text = text.replace(commentRegex, "");
 
 	createTokenizer();
@@ -141,10 +117,6 @@ function getBlocks(text) {
 				depth--;
 				blockEndTag = token.src;
 
-				/*
-     * We try to match the most deep blocks so discard any other blocks that have been started but not
-     * finished.
-     */
 				if ("" !== blockStartTag && "" !== blockEndTag) {
 					blocks.push(blockStartTag + currentBlock + blockEndTag);
 				} else if ("" !== currentBlock.trim()) {
@@ -156,7 +128,6 @@ function getBlocks(text) {
 				break;
 		}
 
-		// Handles HTML with too many closing tags.
 		if (depth < 0) {
 			depth = 0;
 		}
@@ -179,4 +150,3 @@ exports.default = {
 	isInlineElement: isInlineElement,
 	getBlocks: memoizedGetBlocks
 };
-//# sourceMappingURL=html.js.map

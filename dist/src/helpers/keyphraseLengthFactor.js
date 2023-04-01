@@ -7,4 +7,3 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = function (keyphraseLength) {
   return 0.7 + keyphraseLength / 3;
 };
-//# sourceMappingURL=keyphraseLengthFactor.js.map

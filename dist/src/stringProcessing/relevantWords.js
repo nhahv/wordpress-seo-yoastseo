@@ -39,17 +39,8 @@ const densityUpperLimit = 0.03;
 const relevantWordLimit = 100;
 const wordCountLowerLimit = 200;
 
-// First four characters: en dash, em dash, hyphen-minus, and copyright sign.
 const specialCharacters = ["–", "—", "-", "\u00a9", "#", "%", "/", "\\", "$", "€", "£", "*", "•", "|", "→", "←", "}", "{", "//", "||", "\u200b"];
 
-/**
- * Returns the word combinations for the given text based on the combination size.
- *
- * @param {string} text The text to retrieve combinations for.
- * @param {number} combinationSize The size of the combinations to retrieve.
- * @param {Function} functionWords The function containing the lists of function words.
- * @returns {WordCombination[]} All word combinations for the given text.
- */
 function getWordCombinations(text, combinationSize, functionWords) {
 	const sentences = (0, _getSentences2.default)(text);
 
@@ -61,7 +52,6 @@ function getWordCombinations(text, combinationSize, functionWords) {
 		words = (0, _getWords2.default)(sentence);
 
 		return (0, _lodashEs.filter)((0, _lodashEs.map)(words, function (word, i) {
-			// If there are still enough words in the sentence to slice of.
 			if (i + combinationSize - 1 < words.length) {
 				combination = words.slice(i, i + combinationSize);
 				return new _WordCombination2.default(combination, 0, functionWords);
@@ -72,12 +62,6 @@ function getWordCombinations(text, combinationSize, functionWords) {
 	});
 }
 
-/**
- * Calculates occurrences for a list of word combinations.
- *
- * @param {WordCombination[]} wordCombinations The word combinations to calculate occurrences for.
- * @returns {WordCombination[]} Word combinations with their respective occurrences.
- */
 function calculateOccurrences(wordCombinations) {
 	const occurrences = {};
 
@@ -94,13 +78,6 @@ function calculateOccurrences(wordCombinations) {
 	return (0, _lodashEs.values)(occurrences);
 }
 
-/**
- * Returns only the relevant combinations from a list of word combinations. Assumes
- * occurrences have already been calculated.
- *
- * @param {WordCombination[]} wordCombinations A list of word combinations.
- * @returns {WordCombination[]} Only relevant word combinations.
- */
 function getRelevantCombinations(wordCombinations) {
 	wordCombinations = wordCombinations.filter(function (combination) {
 		return combination.getOccurrences() !== 1 && combination.getRelevance() !== 0;
@@ -108,69 +85,36 @@ function getRelevantCombinations(wordCombinations) {
 	return wordCombinations;
 }
 
-/**
- * Sorts combinations based on their relevance and length.
- *
- * @param {WordCombination[]} wordCombinations The combinations to sort.
- * @returns {void}
- */
 function sortCombinations(wordCombinations) {
 	wordCombinations.sort(function (combinationA, combinationB) {
 		const difference = combinationB.getRelevance() - combinationA.getRelevance();
-		// The combination with the highest relevance comes first.
+
 		if (difference !== 0) {
 			return difference;
 		}
-		// In case of a tie on relevance, the longest combination comes first.
+
 		return combinationB.getLength() - combinationA.getLength();
 	});
 }
 
-/**
- * Filters word combinations that consist of a single one-character word.
- *
- * @param {WordCombination[]} wordCombinations The word combinations to filter.
- * @returns {WordCombination[]} Filtered word combinations.
- */
 function filterOneCharacterWordCombinations(wordCombinations) {
 	return wordCombinations.filter(function (combination) {
 		return !(combination.getLength() === 1 && combination.getWords()[0].length <= 1);
 	});
 }
 
-/**
- * Filters word combinations containing certain function words at any position.
- *
- * @param {WordCombination[]} wordCombinations The word combinations to filter.
- * @param {array} functionWords The list of function words.
- * @returns {WordCombination[]} Filtered word combinations.
- */
 function filterFunctionWordsAnywhere(wordCombinations, functionWords) {
 	return wordCombinations.filter(function (combination) {
 		return (0, _lodashEs.isEmpty)((0, _lodashEs.intersection)(functionWords, combination.getWords()));
 	});
 }
 
-/**
- * Filters word combinations beginning with certain function words.
- *
- * @param {WordCombination[]} wordCombinations The word combinations to filter.
- * @param {array} functionWords The list of function words.
- * @returns {WordCombination[]} Filtered word combinations.
- */
 function filterFunctionWordsAtBeginning(wordCombinations, functionWords) {
 	return wordCombinations.filter(function (combination) {
 		return !(0, _lodashEs.includes)(functionWords, combination.getWords()[0]);
 	});
 }
 
-/**
- * Filters word combinations ending with certain function words.
- *
- * @param {WordCombination[]} wordCombinations The word combinations to filter.
- * @param {array} functionWords The list of function words.
- * @returns {WordCombination[]} Filtered word combinations.
- */
 function filterFunctionWordsAtEnding(wordCombinations, functionWords) {
 	return wordCombinations.filter(function (combination) {
 		const words = combination.getWords();
@@ -179,42 +123,18 @@ function filterFunctionWordsAtEnding(wordCombinations, functionWords) {
 	});
 }
 
-/**
- * Filters word combinations beginning and ending with certain function words.
- *
- * @param {WordCombination[]} wordCombinations The word combinations to filter.
- * @param {Array} functionWords The list of function words.
- * @returns {WordCombination[]} Filtered word combinations.
- */
 function filterFunctionWordsAtBeginningAndEnding(wordCombinations, functionWords) {
 	wordCombinations = filterFunctionWordsAtBeginning(wordCombinations, functionWords);
 	wordCombinations = filterFunctionWordsAtEnding(wordCombinations, functionWords);
 	return wordCombinations;
 }
 
-/**
- * Filters word combinations based on keyword density if the word count is 200 or over.
- *
- * @param {WordCombination[]} wordCombinations The word combinations to filter.
- * @param {number} wordCount The number of words in the total text.
- * @param {number} lowerLimit The lower limit of keyword density.
- * @param {number} upperLimit The upper limit of keyword density.
- * @returns {WordCombination[]} Filtered word combinations.
- */
 function filterOnDensity(wordCombinations, wordCount, lowerLimit, upperLimit) {
 	return wordCombinations.filter(function (combination) {
 		return combination.getDensity(wordCount) >= lowerLimit && combination.getDensity(wordCount) < upperLimit;
 	});
 }
 
-/**
- * Filters combinations based on whether they end with a specified string or not.
- *
- * @param {WordCombination[]} wordCombinations The array of WordCombinations to filter.
- * @param {string} str The string the WordCombinations that need to be filtered out end with.
- * @param {string[]} exceptions The array of strings containing exceptions to not filter.
- * @returns {WordCombination[]} The filtered array of WordCombinations.
- */
 function filterEndingWith(wordCombinations, str, exceptions) {
 	wordCombinations = wordCombinations.filter(function (combination) {
 		const combinationstr = combination.getCombination();
@@ -228,14 +148,6 @@ function filterEndingWith(wordCombinations, str, exceptions) {
 	return wordCombinations;
 }
 
-/**
- * Filters the list of word combination objects based on the language-specific function word filters.
- * Word combinations with specific parts of speech are removed.
- *
- * @param {Array} combinations The list of word combination objects.
- * @param {Function} functionWords The function containing the lists of function words.
- * @returns {Array} The filtered list of word combination objects.
- */
 function filterFunctionWords(combinations, functionWords) {
 	combinations = filterFunctionWordsAnywhere(combinations, functionWords.filteredAnywhere);
 	combinations = filterFunctionWordsAtBeginningAndEnding(combinations, functionWords.filteredAtBeginningAndEnding);
@@ -244,15 +156,6 @@ function filterFunctionWords(combinations, functionWords) {
 	return combinations;
 }
 
-/**
- * Filters the list of word combination objects based on function word filters, a special character filter and
- * a one-character filter.
- *
- * @param {Array} combinations The list of word combination objects.
- * @param {Function} functionWords The function containing the lists of function words.
- * @param {string} language The language for which specific filters should be applied.
- * @returns {Array} The filtered list of word combination objects.
- */
 function filterCombinations(combinations, functionWords, language) {
 	combinations = filterFunctionWordsAnywhere(combinations, specialCharacters);
 	combinations = filterOneCharacterWordCombinations(combinations);
@@ -262,13 +165,7 @@ function filterCombinations(combinations, functionWords, language) {
 	}
 	return combinations;
 }
-/**
- * Returns the relevant words in a given text.
- *
- * @param {string} text The text to retrieve the relevant words of.
- * @param {string} locale The paper's locale.
- * @returns {WordCombination[]} All relevant words sorted and filtered for this text.
- */
+
 function getRelevantWords(text, locale) {
 	let language = (0, _getLanguage2.default)(locale);
 	if (!functionWordLists.hasOwnProperty(language)) {
@@ -340,4 +237,3 @@ exports.default = {
 	filterOneCharacterWordCombinations: filterOneCharacterWordCombinations,
 	filterEndingWith: filterEndingWith
 };
-//# sourceMappingURL=relevantWords.js.map

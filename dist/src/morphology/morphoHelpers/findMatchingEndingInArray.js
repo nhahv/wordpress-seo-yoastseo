@@ -4,13 +4,6 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 exports.findMatchingEndingInArray = findMatchingEndingInArray;
-/**
- * Loops through an array of word endings and returns the longest ending that was matched at the end of the string.
- *
- * @param {string}      string       The string to check.
- * @param {string[]}    endings    The word endings to check.
- * @returns {string}    The longest matched ending.
- */
 function findMatchingEndingInArray(string, endings) {
 	const matches = [];
 	for (const i in endings) {
@@ -28,4 +21,3 @@ function findMatchingEndingInArray(string, endings) {
 	}
 	return "";
 }
-//# sourceMappingURL=findMatchingEndingInArray.js.map

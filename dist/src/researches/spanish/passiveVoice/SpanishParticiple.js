@@ -22,15 +22,6 @@ var _precedenceExceptionWithoutRegex2 = _interopRequireDefault(_precedenceExcept
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Creates an Participle object for the Spanish language.
- *
- * @param {string} participle The participle.
- * @param {string} sentencePart The sentence part that contains the participle.
- * @param {Object} attributes The attributes object.
- *
- * @constructor
- */
 var SpanishParticiple = function SpanishParticiple(participle, sentencePart, attributes) {
   _Participle2.default.call(this, participle, sentencePart, attributes);
   _checkException2.default.call(this);
@@ -38,12 +29,6 @@ var SpanishParticiple = function SpanishParticiple(participle, sentencePart, att
 
 require("util").inherits(SpanishParticiple, _Participle2.default);
 
-/**
- * Checks if any exceptions are applicable to this participle that would result in the sentence part not being passive.
- * If no exceptions are found, the sentence part is passive.
- *
- * @returns {boolean} Returns true if no exception is found.
- */
 SpanishParticiple.prototype.isPassive = function () {
   const sentencePart = this.getSentencePart();
   const participle = this.getParticiple();
@@ -57,4 +42,3 @@ SpanishParticiple.prototype.directPrecedenceException = _directPrecedenceExcepti
 SpanishParticiple.prototype.precedenceException = _precedenceExceptionWithoutRegex2.default;
 
 exports.default = SpanishParticiple;
-//# sourceMappingURL=SpanishParticiple.js.map

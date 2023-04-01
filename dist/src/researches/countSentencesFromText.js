@@ -18,4 +18,3 @@ var _sentencesLength = require("./../stringProcessing/sentencesLength.js");
 var _sentencesLength2 = _interopRequireDefault(_sentencesLength);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-//# sourceMappingURL=countSentencesFromText.js.map

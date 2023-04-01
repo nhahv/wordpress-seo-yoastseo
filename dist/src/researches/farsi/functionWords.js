@@ -6,16 +6,10 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = function () {
 	return {
-		// This export contains all of the above words.
 		all: [].concat(cardinalNumerals, ordinalNumerals, pronouns, interrogatives, quantifiers, reflexivePronouns, indefinitePronouns, prepositions, conjunctions, interviewVerbs, intensifiers, auxiliariesAndDelexicalizedVerbs, generalAdjectivesAdverbs, interjections, recipeWords, timeWords, vagueNouns, miscellaneous, transitionWords)
 	};
 };
 
-/**
- * Returns an object with function words.
- *
- * @returns {Object} The object filled with various categories of function word arrays.
- */
 const cardinalNumerals = ["یک", "دو", "سه", "چهار", "پنج", "شش", "هفت", "هشت", "نه", "ده", "یازده", "دوازده", "سیزده", "چهارده", "پانزده", "شانزده", "هفده", "هجده", "نوزده", "بیست", "صد", "هزار", "میلیون", "میلیارد"];
 
 const ordinalNumerals = ["اول", "اوّل", "دوم", "سوم", "چهارم", "پنجم", "ششم", "هفتم", "هشتم", "نهم", "دهم", "یازدهم", "دوازدهم", "سیزدهم", "چهاردهم", "پانزدهم", "شانزدهم", "هفدهم", "هجدهم", "نوزدهم", "بیستم"];
@@ -53,10 +47,3 @@ const vagueNouns = [];
 const miscellaneous = [];
 
 const transitionWords = ["دوباره", "قطعاً", "حتماً", "اصلاً", "قاعدتاً", "ظبیعتاً", "شاید", "کاملاً", "به", "از", "و", "همچنین", "هم", "مانند", "مثل", "شبیه به", "ولی", "اما", "امّا", "لیکن", "ولو", "در ضمن", "در کنار", "ترجیحاً", "وگرنه", "پس", "سپس", "وقتی", "زمانی که", "به خاطر", "مخصوصاً", "مشخصاً", "در کل", "بعد", "قبل", "تا"];
-
-/**
- * Returns function words for Farsi.
- *
- * @returns {Object} Farsi function words.
- */
-//# sourceMappingURL=functionWords.js.map

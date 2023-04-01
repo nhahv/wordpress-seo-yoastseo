@@ -6,26 +6,18 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = function () {
 	return {
-
-		// These word categories are filtered at the beginning of word combinations.
 		filteredAtBeginning: generalAdjectivesAdverbs,
 
-		// These word categories are filtered at the ending of word combinations.
 		filteredAtEnding: [].concat(ordinalNumerals, otherAuxiliariesInfinitive, copulaEstarInfinitive, copulaSerInfinitive, delexicalizedVerbsInfinitive),
 
-		// These word categories are filtered at the beginning and ending of word combinations.
 		filteredAtBeginningAndEnding: [].concat(articles, prepositions, coordinatingConjunctions, demonstrativePronouns, intensifiers, quantifiers, possessivePronouns),
 
-		// These word categories are filtered everywhere within word combinations.
 		filteredAnywhere: [].concat(transitionWords, personalPronounsNominative, personalPronounsAccusative, personalPronounsPrepositional, personalPronounsComitative, interjections, cardinalNumerals, otherAuxiliaries, copulaEstar, copulaSer, interviewVerbs, delexicalizedVerbs, indefinitePronouns, correlativeConjunctions, subordinatingConjunctions, interrogativeDeterminers, interrogativePronouns, interrogativeProAdverbs, locativeAdverbs, miscellaneous, prepositionalAdverbs, recipeWords, timeWords, vagueNouns),
 
-		// These word categories cannot directly precede a passive participle.
 		cannotDirectlyPrecedePassiveParticiple: [].concat(articles, prepositions, personalPronounsAccusative, possessivePronouns, indefinitePronouns, interrogativeProAdverbs, cardinalNumerals, ordinalNumerals, delexicalizedVerbs, delexicalizedVerbsInfinitive, interviewVerbs, interrogativeDeterminers, interrogativePronouns, personalPronounsComitative, personalPronounsPrepositional, prepositionalAdverbs),
 
-		// These word categories cannot intervene between an auxiliary and a corresponding passive participle.
 		cannotBeBetweenPassiveAuxiliaryAndParticiple: [].concat(copulaEstar, copulaEstarInfinitive),
 
-		// This export contains all of the above words.
 		all: [].concat(articles, cardinalNumerals, ordinalNumerals, demonstrativePronouns, possessivePronouns, personalPronounsNominative, personalPronounsComitative, personalPronounsPrepositional, personalPronounsAccusative, quantifiers, indefinitePronouns, interrogativeDeterminers, interrogativePronouns, interrogativeProAdverbs, locativeAdverbs, prepositionalAdverbs, otherAuxiliaries, otherAuxiliariesInfinitive, copulaEstar, copulaSer, copulaEstarInfinitive, copulaSerInfinitive, prepositions, coordinatingConjunctions, correlativeConjunctions, subordinatingConjunctions, interviewVerbs, transitionWords, additionalTransitionWords, intensifiers, delexicalizedVerbs, delexicalizedVerbsInfinitive, interjections, generalAdjectivesAdverbs, recipeWords, vagueNouns, miscellaneous, titlesPreceding, titlesFollowing)
 	};
 };
@@ -38,14 +30,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const transitionWords = (0, _transitionWords2.default)().singleWords;
 
-/**
- * Returns an array with exceptions for the prominent words researcher
- * @returns {Array} The array filled with exceptions.
- */
-
 const articles = ["el", "la", "los", "las", "un", "una", "unos", "unas"];
 
-// "Uno" is already included in the articles.
 const cardinalNumerals = ["dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez", "once", "doce", "trece", "catorce", "quince", "dieciseis", "diecisiete", "dieciocho", "diecinueve", "veinte", "cien", "centena", "mil", "millon", "millones"];
 
 const ordinalNumerals = ["primera", "segunda", "tercera", "cuarto", "cuarta", "quinto", "quinta", "sexto", "sexta", "septimo", "septima", "octavo", "octava", "noveno", "novena", "décimo", "décima", "vigésimo", "vigésima", "primeros", "primeras", "segundos", "segundas", "terceros", "terceras", "cuartos", "cuartas", "quintos", "quintas", "sextos", "sextas", "septimos", "septimas", "octavos", "octavas", "novenos", "novenas", "décimos", "décimas", "vigésimos", "vigésimas"];
@@ -70,10 +56,6 @@ const interrogativeDeterminers = ["cuyas", "cual"];
 
 const interrogativePronouns = ["cuyo"];
 
-/*
-'Qué' is part of 'por qué' ('why'). The combination 'quien sea' ('whoever') is separated into two entries: 'quien' and 'sea'.
-'quira' is part of 'cuando quiera' ('whenever').
- */
 const interrogativeProAdverbs = ["comoquiera", "cualesquiera", "cualquier", "cuanta", "cuantas", "cuanto", "cuantos", "cuál", "cuáles", "cuánta", "cuántas", "cuánto", "cuántos", "cómo", "dondequiera", "dónde", "quien", "quienes", "quienquiera", "quién", "quiénes", "qué"];
 
 const locativeAdverbs = ["allí", "ahí", "allá", "aquí", "acá", "adónde", "delante", "detrás", "debajo", "adelante", "atrás", "adentro", "afuera"];
@@ -82,10 +64,8 @@ const otherAuxiliaries = ["he", "has", "ha", "hay", "hemos", "habéis", "han", "
 
 const otherAuxiliariesInfinitive = ["haber", "deber", "empezar", "comenzar", "seguir", "tener", "andar", "quedar", "hallar", "venir", "abrir", "ir", "acabar", "llevar", "alcanzar", "decir", "continuar", "resultar", "poder", "querer", "saber", "soler", "necesitar"];
 
-// Estar is not used to form passives in Spanish.
 const copulaEstar = ["estoy", "estás", "está", "estamos", "estáis", "están", "estuve", "estuviste", "estuvo", "estuvimos", "estuvisteis", "estuvieron", "estuba", "estabas", "estábamos", "estabais", "estaban", "estraría", "estarías", "estaríamos", "estaríais", "estarían", "estaré", "estarás", "estará", "estaremos", "estaréis", "estarán", "esté", "estés", "estemos", "estéis", "estén", "estuviera", "estuviese", "estuvieras", "estuviéramos", "estuvierais", "estuvieran", "estuvieses", "estuviésemos", "estuvieseis", "estuviesen", "estuviere", "estuvieres", "estuviéremos", "estuviereis", "estuvieren", "estad", "estado"];
 
-// Ser is the copula used to form passives in Spanish.
 const copulaSer = ["soy", "eres", "es", "somos", "sois", "son", "fui", "fuiste", "fuimos", "fuisteis", "fueron", "era", "eras", "éramos", "erais", "eran", "sería", "serías", "seríamos", "seríais", "serían", "seré", "serás", "seremos", "seréis", "serán", "sea", "seas", "seamos", "seáis", "sean", "fueras", "fuéramos", "fuerais", "fueran", "fuese", "fueses", "fuésemos", "fueseis", "fuesen", "fuere", "fueres", "fuéremos", "fuereis", "fueren", "sé", "sed", "sido"];
 
 const copulaEstarInfinitive = ["estar"];
@@ -98,37 +78,28 @@ const prepositionalAdverbs = ["cerca"];
 
 const coordinatingConjunctions = ["o", "y", "entonces", "e", "u", "ni", "bien", "ora"];
 
-// 'Igual' is part of 'igual...que'.
 const correlativeConjunctions = ["igual"];
 
 const subordinatingConjunctions = ["apenas", "segun", "que"];
 
-// These verbs are frequently used in interviews to indicate questions and answers.
-// 'Dijo' is already included in the otherAuxiliaries category.
 const interviewVerbs = ["apunto", "apunta", "confieso", "confiesa", "confesaba", "revelado", "revelo", "revela", "revelaba", "declarado", "declaro", "declara", "declaba", "señalo", "señala", "señalaba", "declaraba", "comento", "comenta"];
 
-// These transition words were not included in the list for the transition word assessment for various reasons.
 const additionalTransitionWords = ["básicamente", "esencialmente", "primeramente", "siempre", "nunca", "ahora", "quizá", "acaso", "inclusive", "probablemente", "verdaderamente", "seguramente", "jamás", "obviamente", "indiscutiblement", "inmediatamente", "previamente"];
 
 const intensifiers = ["muy", "tan", "completamente", "suficiente", "tal", "tales"];
 
-// These verbs convey little meaning.
 const delexicalizedVerbs = ["hago", "haces", "hace", "hacemos", "hacéis", "hacen", "hice", "hiciste", "hizo", "hicimos", "hicisteis", "hicieron", "hacía", "hacías", "hacíamos", "hacíais", "hacían", "haría,", "harías", "haríamos", "haríais", "harían", "haré", "harás", "hará", "haremos", "haréis", "harán", "haga", "hagas", "hagamos", "hagáis", "hagan", "hiciera", "hicieras", "hiciéramos", "hicierais", "hicieran", "hiciese", "hicieses", "hiciésemos", "hicieseis", "hiciesen", "hiciere", "hicieres", "hiciéremos", "hiciereis", "hicieren", "haz", "haced", "hecho", "parezco", "pareces", "parece", "parecemos", "parecéis", "parecen", "parecí", "pareciste", "pareció", "parecimos", "parecisteis", "parecieron", "parecía", "parecías", "parecíamos", "parecíais", "parecían", "parecería", "parecerías", "pareceríamos", "pareceríais", "parecerían", "pareceré", "parecerás", "parecerá", "pareceremos", "pareceréis", "parecerán", "parezca", "parezcas", "parezcamos", "parezcáis", "parezcan", "pareciera", "parecieras", "pareciéramos", "parecierais", "parecieran", "pareciese", "parecieses", "pareciésemos", "parecieseis", "pareciesen", "pareciere", "parecieres", "pareciéremos", "pareciereis", "parecieren", "pareced", "parecido", "iba", "ibais", "iban", "ibas", "id", "ido", "iremos", "irá", "irán", "irás", "iré", "iréis", "iría", "iríais", "iríamos", "irían", "irías", "va", "vais", "vamos", "van", "vas", "vaya", "vayamos", "vayan", "vayas", "vayáis", "ve", "voy", "yendo", "íbamos"];
 
 const delexicalizedVerbsInfinitive = ["hacer", "parecer", "ir"];
 
-// These adjectives and adverbs are so general, they should never be suggested as a (single) keyword.
-// Keyword combinations containing these adjectives/adverbs are fine.
 const generalAdjectivesAdverbs = ["enfrente", "claro", "bueno", "mejor", "mejores", "buena", "buenos", "buenas", "óptimo", "óptimos", "óptimas", "bonísimo", "bonísima", "bonísimos", "bonísimas", "buenísimo", "buenísima", "buenísimos", "buenísimas", "buenérrimo", "buenérrima", "buenérrimos", "buenérrimas", "nuevo", "nueva", "nuevos", "nuevas", "novísimo", "novísima", "novísimos", "novísimas", "nuevísimo", "nuevísima", "nuevísimos", "nuevísimas", "viejo", "viejos", "vieja", "viejas", "anterior", "grande", "gran", "grandes", "mayores", "mayor", "máximo", "máxima", "grandísimo", "grandísima", "máximos", "máximas", "grandísimos", "grandísimas", "fácil", "fáciles", "rápido", "rápida", "rápidos", "rápidas", "lejos", "lejas", "lejote", "lejotes", "difícil", "difíciles", "propio", "propios", "propia", "propias", "largo", "larga", "largos", "largas", "bajos", "baja", "bajas", "inferior", "ínfimo", "ínfima", "ínfimos", "ínfimas", "bajísimo", "bajísima", "bajísimos", "bajísimas", "alto", "alta", "altos", "altas", "superior", "superiores", "supremo", "suprema", "supremos", "supremas", "sumo", "suma", "sumos", "sumas", "altísimo", "altísima", "altísimos", "altísimas", "regular", "regulares", "normal", "pequeño", "pequeña", "pequeños", "pequeñas", "menor", "pequeñísimo", "pequeñísima", "pequeñísimos", "pequeñísimas", "mínimo", "mínima", "mínimos", "mínimas", "diminuta", "diminuto", "diminutas", "diminutos", "chiquitito", "chiquititos", "chiquitita", "chiquititas", "corta", "corto", "cortas", "cortos", "principal", "principales", "mismo", "mismos", "misma", "mismas", "capaz", "capaces", "cierta", "cierto", "ciertas", "ciertos", "certísimos", "certísimas", "ciertísimo", "ciertísima", "ciertísimos", "ciertísimas", "llamado", "llamada", "llamados", "llamadas", "mayormente", "reciente", "recientes", "completa", "completo", "completas", "completos", "absoluta", "absoluto", "absolutas", "absolutos", "últimamente", "posible", "común", "comúnes", "comúnmente", "constantemente", "continuamente", "directamente", "fácilmente", "casi", "ligeramente", "estima", "estimada", "estimado", "aproximada", "aproximadamente", "última", "últimas", "último", "últimos", "diferente", "diferentes", "similar", "mal", "malo", "malos", "mala", "malas", "peor", "pésimo", "pésima", "malísimo", "malísima", "pésimos", "pésimas", "malísimos", "malísimas", "perfectamente", "excelente", "final", "general"];
 
 const interjections = ["ah", "eh", "ejem", "ele", "achís", "adiós", "agur", "ajá", "ajajá", "ala", "alá", "albricias", "aleluya", "alerta", "alirón", "aló", "amalaya", "ar", "aro", "arrarray", "arre", "arsa", "atatay", "aúpa", "ax", "ay", "ayayay", "bah", "banzai", "barajo", "bla", "bravo", "buf", "bum", "ca", "caguendiós", "canastos", "caracho", "caracoles", "carajo", "caramba", "carape", "caray", "cáscaras", "cáspita", "cataplum", "ce", "chao", "chau", "che", "chis", "chist", "chitón", "cho", "chucho", "chus", "cielos", "clo", "coche", "cochi", "cojones", "concho", "coño", "córcholis", "cuchí", "cuidado", "cuz", "demonio", "demontre", "despacio", "diablo", "diantre", "dios", "ea", "epa", "equilicuá", "estúpido", "eureka", "evohé", "exacto", "fantástico", "firmes", "fo", "forte", "gua", "gualá", "guarte", "guay", "hala", "hale", "he", "hi", "hin", "hola", "hopo", "huesque", "huiche", "huichó", "huifa", "hurra", "huy", "ja", "jajajá", "jajay", "jaque", "jau", "jo", "jobar", "joder", "jolín", "jopo", "leñe", "listo", "malhayas", "mamola", "mecachis", "miéchica", "mondo", "moste", "mutis", "nanay", "narices", "oh", "ojalá", "ojo", "okay", "ole", "olé", "órdiga", "oste", "ostras", "ox", "oxte", "paf", "pardiez", "paso", "pucha", "puf", "puff", "pumba", "puñeta", "quia", "quiúbole", "recórcholis", "rediez", "rediós", "salve", "sanseacabó", "sniff", "socorro", "ta", "tararira", "tate", "tururú", "uf", "uh", "ui", "upa", "uste", "uy", "victoria", "vítor", "viva", "za", "zambomba", "zapateta", "zape", "zas"];
 
-// These words and abbreviations are frequently used in recipes in lists of ingredients.
 const recipeWords = ["kg", "mg", "gr", "g", "km", "m", "l", "ml", "cl"];
 
 const timeWords = ["minuto", "minutos", "hora", "horas", "día", "días", "semana", "semanas", "mes", "meses", "año", "años", "hoy", "mañana", "ayer"];
 
-// 'People' should only be removed in combination with 'some', 'many' and 'few' (and is therefore not yet included in the list below).
 const vagueNouns = ["cosa", "cosas", "manera", "maneras", "caso", "casos", "pieza", "piezas", "vez", "veces", "parte", "partes", "porcentaje", "instancia", "aspecto", "aspectos", "punto", "puntos", "objeto", "objectos", "persona", "personas"];
 
 const miscellaneous = ["no", "euros", "sí", "síes", "noes"];
@@ -136,10 +107,3 @@ const miscellaneous = ["no", "euros", "sí", "síes", "noes"];
 const titlesPreceding = ["sra", "sras", "srta", "sr", "sres", "dra", "dr", "profa", "prof"];
 
 const titlesFollowing = ["jr", "sr"];
-
-/**
- * Returns the function words for Spanish.
- *
- * @returns {Object} The Spanish function words.
- */
-//# sourceMappingURL=functionWords.js.map

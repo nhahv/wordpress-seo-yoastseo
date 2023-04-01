@@ -31,11 +31,6 @@ var _lodashEs = require("lodash-es");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Gets the complexity per word, along with the index for the sentence.
- * @param {string} sentence The sentence to get wordComplexity from.
- * @returns {Array} A list with words, the index and the complexity per word.
- */
 var getWordComplexityForSentence = function getWordComplexityForSentence(sentence) {
 	var words = (0, _getWords2.default)(sentence);
 	var results = [];
@@ -50,10 +45,3 @@ var getWordComplexityForSentence = function getWordComplexityForSentence(sentenc
 
 	return results;
 };
-
-/**
- * Calculates the complexity of words in a text, returns each words with their complexity.
- * @param {Paper} paper The Paper object to get the text from.
- * @returns {Object} The words found in the text with the number of syllables.
- */
-//# sourceMappingURL=getWordComplexity.js.map

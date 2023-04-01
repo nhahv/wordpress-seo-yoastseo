@@ -6,31 +6,17 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = function () {
 	return {
-		// This export contains all of the above words.
 		all: [].concat(articles, cardinalNumerals, ordinalNumerals, pronouns, interrogatives, quantifiers, reflexivePronouns, indefinitePronouns, prepositions, conjunctions, interviewVerbs, intensifiers, auxiliariesAndDelexicalizedVerbs, generalAdjectivesAdverbs, interjections, recipeWords, timeWords, vagueNouns, miscellaneous)
 	};
 };
 
-/**
- * Returns an object with function words.
- *
- * @returns {Object} The object filled with various categories of function word arrays.
- */
 const articles = ["det", "en"];
 
 const cardinalNumerals = ["en", "to", "tre", "fire", "fem", "seks", "syv", "åtte", "ni", "ti", "elleve", "tolv", "tretten", "fjorten", "femten", "seksten", "sytten", "atten", "nitten", "tjue", "hundre", "tusen", "million", "milliarder"];
 
 const ordinalNumerals = ["første", "først", "sekund", "tredje", "fjerde", "femte", "sjette", "syvende", "åttende", "niende", "tiende"];
 
-const pronouns = [
-// Personal pronouns.
-"jeg", "du", "den", "vi", "de", "han", "hun", "henne", "oss", "meg", "ham", "dem",
-// Possessive pronouns.
-"vår", "deres", "ditt", "mitt", "våre", "vårt", "hans", "hennes", "dens", "egen", "egne",
-// Demonstrative pronouns.
-"denne", "dette", "disse",
-// Reciprocal pronouns.
-"hverandre", "hvert"];
+const pronouns = ["jeg", "du", "den", "vi", "de", "han", "hun", "henne", "oss", "meg", "ham", "dem", "vår", "deres", "ditt", "mitt", "våre", "vårt", "hans", "hennes", "dens", "egen", "egne", "denne", "dette", "disse", "hverandre", "hvert"];
 
 const interrogatives = ["hvem", "hvordan", "hvorfor", "hvor", "hva", "hvilken", "hvilket"];
 
@@ -50,11 +36,7 @@ const intensifiers = ["virkelig", "akkurat", "visst"];
 
 const auxiliariesAndDelexicalizedVerbs = [];
 
-const generalAdjectivesAdverbs = [
-// General adjective.
-"helt", "andre", "litt", "lenge", "siste", "fint", "annet", "stor", "neste", "lenger", "annen", "nye", "alene", "flott", "klart", "liten", "langt", "gamle", "dårlig", "hyggelig", "gode", "sånt", "nytt", "best", "lang", "små", "lot", "større", "høyt", "største", "slikt",
-// General adverbs.
-"alltid", "godt", "sammen", "tilbake", "etter", "igjen", "bare", "så", "veldig", "bedre", "samme", "far", "eneste", "enig", "borte", "snart", "rundt", "beste", "bort", "vekk", "nesten", "ganske", "senere", "videre", "mindre", "straks", "svært"];
+const generalAdjectivesAdverbs = ["helt", "andre", "litt", "lenge", "siste", "fint", "annet", "stor", "neste", "lenger", "annen", "nye", "alene", "flott", "klart", "liten", "langt", "gamle", "dårlig", "hyggelig", "gode", "sånt", "nytt", "best", "lang", "små", "lot", "større", "høyt", "største", "slikt", "alltid", "godt", "sammen", "tilbake", "etter", "igjen", "bare", "så", "veldig", "bedre", "samme", "far", "eneste", "enig", "borte", "snart", "rundt", "beste", "bort", "vekk", "nesten", "ganske", "senere", "videre", "mindre", "straks", "svært"];
 
 const interjections = ["hei"];
 
@@ -65,10 +47,3 @@ const timeWords = ["år", "dag", "nå", "tid", "tiden", "morgen", "dager", "minu
 const vagueNouns = ["ting", "tingene"];
 
 const miscellaneous = ["ok", "okay", "ja", "jaså", "nei", "ikke", "unnskyld", "beklager", "herr", "altså"];
-
-/**
- * Returns function words for Norwegian.
- *
- * @returns {Object} Norwegian function words.
- */
-//# sourceMappingURL=functionWords.js.map

@@ -27,17 +27,9 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Contains the logic to assess a tree representation of a text.
- *
- * @module tree/assess
- *
- * @see module:parsedPaper/structure
- */
 exports.TreeAssessor = _TreeAssessor2.default;
 exports.ScoreAggregators = ScoreAggregators;
 exports.Assessments = Assessments;
 exports.assessorFactories = assessorFactories;
 exports.cornerstoneAssessorFactories = _cornerstone.cornerstoneAssessorFactories;
 exports.cornerstoneAssessmentListFactories = _cornerstone.cornerstoneAssessmentListFactories;
-//# sourceMappingURL=index.js.map

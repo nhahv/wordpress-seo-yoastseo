@@ -18,4 +18,3 @@ var _diacritics = require("../config/diacritics.js");
 var _diacritics2 = _interopRequireDefault(_diacritics);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-//# sourceMappingURL=replaceDiacritics.js.map

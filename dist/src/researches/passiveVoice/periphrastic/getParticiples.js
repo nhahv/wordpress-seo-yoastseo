@@ -89,13 +89,3 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const matchParticiples = (0, _matchParticiples2.default)();
 const regularParticipleRegex = matchParticiples.regularParticiples;
 const irregularParticipleRegex = matchParticiples.irregularParticiples;
-
-/**
- * Creates participle objects for the participles found in a sentence part.
- *
- * @param {string} sentencePartText The sentence part to find participles in.
- * @param {Array} auxiliaries The list of auxiliaries from the sentence part.
- * @param {string} language The language to find the participles for.
- * @returns {Array} The list with participle objects.
- */
-//# sourceMappingURL=getParticiples.js.map

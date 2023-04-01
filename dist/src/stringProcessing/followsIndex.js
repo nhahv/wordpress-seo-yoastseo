@@ -9,7 +9,6 @@ exports.default = function (followingWords, match) {
 		return false;
 	}
 
-	// The followingWordIndices include the preceding space.
 	var wordAfterMatchIndex = match.index + match.match.length;
 	var followingWordsIndices = [];
 
@@ -21,4 +20,3 @@ exports.default = function (followingWords, match) {
 };
 
 var _lodashEs = require("lodash-es");
-//# sourceMappingURL=followsIndex.js.map

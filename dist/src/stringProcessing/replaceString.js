@@ -9,4 +9,3 @@ exports.default = function (text, stringToReplace, replacement) {
 
   return text;
 };
-//# sourceMappingURL=replaceString.js.map
