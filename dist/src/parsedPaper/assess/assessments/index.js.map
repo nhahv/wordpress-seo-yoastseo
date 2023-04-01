@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../../src/parsedPaper/assess/assessments/index.js"],"names":["default"],"mappings":";;;;;;;;;;;+CAKSA,O","file":"index.js","sourcesContent":["/**\n * Contains the logic to assess a tree.\n *\n * @module module:parsedPaper/assess\n */\nexport { default as Assessment } from \"./Assessment\";\n"]}
