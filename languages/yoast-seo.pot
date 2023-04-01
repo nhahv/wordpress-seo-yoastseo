@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the yoastseo package.
+# This file is distributed under the same license as the @nhahv/wordpress-seo-yoastseo package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: yoastseo 1.91.0\n"
+"Project-Id-Version: @nhahv/wordpress-seo-yoastseo 1.91.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-05 15:58+0700\n"
+"POT-Creation-Date: 2022-08-08 15:32+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -242,6 +242,13 @@ msgstr ""
 msgid ""
 "%1$sFunction words in keyphrase%3$s: Your keyphrase \"%4$s\" contains "
 "function words only. %2$sLearn more about what makes a good keyphrase.%3$s"
+msgstr ""
+
+#: src/assessments/seo/FunctionWordsInKeyphraseAssessment.js:72
+#, javascript-format
+msgid ""
+"%1$sFunction words in keyphrase%3$s: Your keyphrase \"%4$s\" not contains "
+"function words only."
 msgstr ""
 
 #. Translators: %1$s and %2$s expand to links on yoast.com, %3$s expands to the anchor end tag
@@ -523,7 +530,12 @@ msgstr ""
 msgid "%1$sSEO title width%3$s: %2$sPlease create an SEO title%3$s."
 msgstr ""
 
-#: src/assessments/seo/SingleH1Assessment.js:96
+#: src/assessments/seo/SingleH1Assessment.js:53
+#, javascript-format
+msgid "%1$sSingle title%3$s: OK!"
+msgstr ""
+
+#: src/assessments/seo/SingleH1Assessment.js:100
 #, javascript-format
 msgid ""
 "%1$sSingle title%3$s: H1s should only be used as your main title. Find all "
@@ -647,6 +659,12 @@ msgstr[1] ""
 msgid ""
 "%1$sLink keyphrase%3$s: You're linking to another page with the words you "
 "want this page to rank for. %2$sDon't do that%3$s!"
+msgstr ""
+
+#: src/assessments/seo/TextCompetingLinksAssessment.js:107
+#, javascript-format
+msgid ""
+"%1$sLink keyphrase%3$s: You're not linking other page with the keyword. OK"
 msgstr ""
 
 #: src/assessments/seo/TextImagesAssessment.js:133

@@ -18,19 +18,19 @@ class FunctionWordsInKeyphraseAssessment extends Assessment {
 	 *
 	 * @returns {void}
 	 */
-	constructor( config = {} ) {
+	constructor(config = {}) {
 		super();
 
 		const defaultConfig = {
 			scores: {
 				onlyFunctionWords: 0,
 			},
-			urlTitle: createAnchorOpeningTag( "https://yoa.st/functionwordskeyphrase-1" ),
-			urlCallToAction: createAnchorOpeningTag( "https://yoa.st/functionwordskeyphrase-2" ),
+			urlTitle: createAnchorOpeningTag("https://yoa.st/functionwordskeyphrase-1"),
+			urlCallToAction: createAnchorOpeningTag("https://yoa.st/functionwordskeyphrase-2"),
 		};
 
 		this.identifier = "functionWordsInKeyphrase";
-		this._config = merge( defaultConfig, config );
+		this._config = merge(defaultConfig, config);
 	}
 
 	/**
@@ -42,29 +42,41 @@ class FunctionWordsInKeyphraseAssessment extends Assessment {
 	 *
 	 * @returns {AssessmentResult} The result of the assessment.
 	 */
-	getResult( paper, researcher, i18n ) {
-		this._functionWordsInKeyphrase = researcher.getResearch( "functionWordsInKeyphrase" );
-		this._keyword = escape( paper.getKeyword() );
+	getResult(paper, researcher, i18n) {
+		this._functionWordsInKeyphrase = researcher.getResearch("functionWordsInKeyphrase");
+		this._keyword = escape(paper.getKeyword());
 		const assessmentResult = new AssessmentResult();
 
-		if ( this._functionWordsInKeyphrase ) {
-			assessmentResult.setScore( this._config.scores.onlyFunctionWords );
-			assessmentResult.setText( i18n.sprintf(
+		if (this._functionWordsInKeyphrase) {
+			assessmentResult.setScore(this._config.scores.onlyFunctionWords);
+			assessmentResult.setText(i18n.sprintf(
 				/**
 				 * Translators:
 				 * %1$s and %2$s expand to links on yoast.com,
 				 * %3$s expands to the anchor end tag,
 				 * %4$s expands to the focus keyphrase of the article.
 				 */
-				i18n.dgettext( "js-text-analysis", "%1$sFunction words in keyphrase%3$s: " +
+				i18n.dgettext("js-text-analysis", "%1$sFunction words in keyphrase%3$s: " +
 					"Your keyphrase \"%4$s\" contains function words only. " +
-					"%2$sLearn more about what makes a good keyphrase.%3$s" ),
+					"%2$sLearn more about what makes a good keyphrase.%3$s"),
 				this._config.urlTitle,
 				this._config.urlCallToAction,
 				"</a>",
 				this._keyword,
-			) );
+			));
 		}
+		else {
+			assessmentResult.setText(i18n.sprintf(
+				/* Translators:  %1$s and %2$s expand to links on yoast.com, %3$s expands to the anchor end tag */
+				i18n.dgettext("js-text-analysis",
+					"%1$sFunction words in keyphrase%3$s: Your keyphrase \"%4$s\" not contains function words only."),
+				this._config.urlTitle,
+				this._config.urlCallToAction,
+				"</a>",
+				this._keyword,
+			))
+		}
+
 
 		return assessmentResult;
 	}
@@ -76,7 +88,7 @@ class FunctionWordsInKeyphraseAssessment extends Assessment {
 	 *
 	 * @returns {boolean} Whether the paper has keyword.
 	 */
-	isApplicable( paper ) {
+	isApplicable(paper) {
 		return paper.hasKeyword();
 	}
 }

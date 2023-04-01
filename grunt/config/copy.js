@@ -22,10 +22,14 @@ module.exports = {
 				dest: "dist/",
 			},
 			{
+				src: "index.d.ts",
+				dest: "dist/",
+			},
+			{
 				expand: true,
 				cwd: "types",
 				src: "**/*.d.ts",
-				dest: "dist/",
+				dest: "dist/types",
 			},
 			{
 				src: "package.json",
@@ -53,6 +57,10 @@ module.exports = {
 			},
 			{
 				src: ".npmrc",
+				dest: "dist/",
+			},
+			{
+				src: "languages/**/*.json",
 				dest: "dist/",
 			}
 		],

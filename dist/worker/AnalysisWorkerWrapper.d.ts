@@ -1,3 +1,7 @@
+<<<<<<<< HEAD:dist/worker/AnalysisWorkerWrapper.d.ts
+========
+import type { Configuration } from "./index";
+>>>>>>>> e8a384994641cec667ff2b1ffe9a9a1163bf8205:dist/types/worker/AnalysisWorkerWrapper.d.ts
 export default AnalysisWorkerWrapper;
 /**
  * Analysis worker is an API around the Web Worker.
@@ -17,12 +21,20 @@ declare class AnalysisWorkerWrapper {
     /**
      * Initializes the worker with a configuration.
      *
+<<<<<<<< HEAD:dist/worker/AnalysisWorkerWrapper.d.ts
      * @param {Object} configuration The configuration to initialize the worker
+========
+     * @param {Configuration} configuration The configuration to initialize the worker
+>>>>>>>> e8a384994641cec667ff2b1ffe9a9a1163bf8205:dist/types/worker/AnalysisWorkerWrapper.d.ts
      *                               with.
      *
      * @returns {Promise} The promise of initialization.
      */
+<<<<<<<< HEAD:dist/worker/AnalysisWorkerWrapper.d.ts
     initialize(configuration: Object): Promise<any>;
+========
+    initialize(configuration: Configuration): Promise<any>;
+>>>>>>>> e8a384994641cec667ff2b1ffe9a9a1163bf8205:dist/types/worker/AnalysisWorkerWrapper.d.ts
     /**
      * Analyzes the paper.
      *

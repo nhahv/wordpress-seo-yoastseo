@@ -20,19 +20,19 @@ class singleH1Assessment extends Assessment {
 	 *
 	 * @returns {void}
 	 */
-	constructor( config = {} ) {
+	constructor(config = {}) {
 		super();
 
 		const defaultConfig = {
 			scores: {
 				textContainsSuperfluousH1: 1,
 			},
-			urlTitle: createAnchorOpeningTag( "https://yoa.st/3a6" ),
-			urlCallToAction: createAnchorOpeningTag( "https://yoa.st/3a7" ),
+			urlTitle: createAnchorOpeningTag("https://yoa.st/3a6"),
+			urlCallToAction: createAnchorOpeningTag("https://yoa.st/3a7"),
 		};
 
 		this.identifier = "singleH1";
-		this._config = merge( defaultConfig, config );
+		this._config = merge(defaultConfig, config);
 	}
 
 	/**
@@ -44,17 +44,27 @@ class singleH1Assessment extends Assessment {
 	 *
 	 * @returns {AssessmentResult} The assessment result.
 	 */
-	getResult( paper, researcher, i18n ) {
-		this._h1s = researcher.getResearch( "h1s" );
+	getResult(paper, researcher, i18n) {
+		this._h1s = researcher.getResearch("h1s");
 
 		const assessmentResult = new AssessmentResult();
+		assessmentResult.setText(i18n.sprintf(
+			/* Translators: %1$s and %2$s expand to links on yoast.com, %3$s expands to the anchor end tag */
+			i18n.dgettext(
+				"js-text-analysis",
+				"%1$sSingle title%3$s: OK!"
+			),
+			this._config.urlTitle,
+			this._config.urlCallToAction,
+			"</a>"
+		))
 
-		const calculatedResult = this.calculateResult( i18n );
+		const calculatedResult = this.calculateResult(i18n);
 
-		if ( ! isUndefined( calculatedResult ) ) {
-			assessmentResult.setScore( calculatedResult.score );
-			assessmentResult.setText( calculatedResult.resultText );
-			assessmentResult.setHasMarks( true );
+		if (!isUndefined(calculatedResult)) {
+			assessmentResult.setScore(calculatedResult.score);
+			assessmentResult.setText(calculatedResult.resultText);
+			assessmentResult.setHasMarks(true);
 		}
 
 		return assessmentResult;
@@ -66,7 +76,7 @@ class singleH1Assessment extends Assessment {
 	 * @returns {boolean} Returns true if there is an H1 in the first position of the body.
 	 */
 	firstH1AtBeginning() {
-		return ( this._h1s[ 0 ].position === 0 );
+		return (this._h1s[0].position === 0);
 	}
 
 	/**
@@ -76,14 +86,14 @@ class singleH1Assessment extends Assessment {
 	 *
 	 * @returns {Object|null} The calculated score and the feedback string.
 	 */
-	calculateResult( i18n ) {
+	calculateResult(i18n) {
 		// Returns the default assessment result if there are no H1s in the body.
-		if ( this._h1s.length === 0 ) {
+		if (this._h1s.length === 0) {
 			return;
 		}
 
 		// Returns the default assessment result if there is one H1 and it's at the beginning of the body.
-		if ( this._h1s.length === 1 && this.firstH1AtBeginning() ) {
+		if (this._h1s.length === 1 && this.firstH1AtBeginning()) {
 			return;
 		}
 
@@ -116,16 +126,16 @@ class singleH1Assessment extends Assessment {
 		 * Removes the first H1 from the array if that H1 is in the first position of the body.
 		 * The very beginning of the body is the only position where an H1 is deemed acceptable.
 		 */
-		if ( this.firstH1AtBeginning() ) {
+		if (this.firstH1AtBeginning()) {
 			h1s.shift();
 		}
 
-		return map( h1s, function( h1 ) {
-			return new Mark( {
+		return map(h1s, function (h1) {
+			return new Mark({
 				original: "<h1>" + h1.content + "</h1>",
-				marked: "<h1>" + marker( h1.content ) + "</h1>",
-			} );
-		} );
+				marked: "<h1>" + marker(h1.content) + "</h1>",
+			});
+		});
 	}
 
 	/**
@@ -135,7 +145,7 @@ class singleH1Assessment extends Assessment {
 	 *
 	 * @returns {boolean} True when there is text.
 	 */
-	isApplicable( paper ) {
+	isApplicable(paper) {
 		return paper.hasText();
 	}
 }

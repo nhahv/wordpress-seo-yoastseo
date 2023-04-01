@@ -33,3 +33,4 @@ publish:
   - 'clean:publish'
   - 'babel:publish'
   - 'copy:publish'
+  - 'copy:package'

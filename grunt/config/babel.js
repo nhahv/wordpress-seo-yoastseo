@@ -1,8 +1,8 @@
 module.exports = {
 	publish: {
-		files: [ {
+		files: [{
 			expand: true,
-			src: [ "src/**/*.js", "vendor/**/*.js" ],
+			src: ["src/**/*.js", "vendor/**/*.js"],
 			/**
 			 * Filters the source files.
 			 *
@@ -10,16 +10,17 @@ module.exports = {
 			 *
 			 * @returns {boolean} Whether to process this file.
 			 */
-			filter: function( filePath ) {
-				const insideParsedPaper = filePath.startsWith( "src/parsedPaper/" );
-				const insideParsedPaperScoreAggregator = filePath.startsWith( "src/parsedPaper/assess/scoreAggregators/" );
-				return ( ! insideParsedPaper ) || insideParsedPaperScoreAggregator;
+			filter: function (filePath) {
+				return true;
+				// const insideParsedPaper = filePath.startsWith( "src/parsedPaper/" );
+				// const insideParsedPaperScoreAggregator = filePath.startsWith( "src/parsedPaper/assess/scoreAggregators/" );
+				// return ( ! insideParsedPaper ) || insideParsedPaperScoreAggregator;
 			},
 			dest: "dist/",
-		} ],
+		}],
 		options: {
-			sourceMap: true,
-			comments: true,
+			sourceMap: false,
+			comments: false,
 		},
 	},
 };
